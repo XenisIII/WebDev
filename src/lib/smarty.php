@@ -10,5 +10,4 @@ class AppSmarty extends Smarty{
     $this->setCacheDir(APP_DIR . '\\cache');
     }
 }
-echo APP_DIR;
 ?>
