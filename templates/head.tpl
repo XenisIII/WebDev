@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang='fr'>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,21 +10,6 @@
       sizes="180x180"
       href="/img/krita.png"
     />
-    {block name=style}{/block}
     <script src="https://cdn.tailwindcss.com/3.2.6"></script>
     <script src="https://kit.fontawesome.com/8ed527737a.js" crossorigin="anonymous"></script>
 </head>
-<body>
-{block name='body'}
-    
-{/block}
-<script>
-      if('serviceWorker' in navigator){
-            navigator.serviceWorker.register('ServiceWorker.js')
-                    .then( (sw) => console.log('Le Service Worker a été enregistrer', sw))
-                    .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
-}
-
-    </script>
-</body>
-</html>

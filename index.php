@@ -17,18 +17,17 @@ if (file_exists($controllerFile)) {
         $controller->$trueActionName();
     } else {
         // Gestion de l'erreur
-        echo '404 Not found';
+        $controller->Error();
     }
 } else {
     // Gestion de l'erreur
     if(isset($_COOKIE['logged'])){
-    require_once(__DIR__."/src/contoller/NavbarController.php");
+    require_once(__DIR__."/src/contoller/NavbarController.php");//mettre page_accueil
     $controller= new NavbarController();
     $controller->index();
     }
     else{
-        setcookie("logged","oui");
-    require_once(__DIR__."/src/contoller/DemoController.php");
+    require_once(__DIR__."/src/contoller/DemoController.php"); //mettre page connexion
     $controller= new DemoController();
     $controller->index();}
 }

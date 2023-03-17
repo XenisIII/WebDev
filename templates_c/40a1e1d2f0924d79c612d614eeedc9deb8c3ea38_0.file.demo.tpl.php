@@ -1,78 +1,38 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-15 14:51:00
+/* Smarty version 4.3.0, created on 2023-03-17 14:11:52
   from 'C:\Users\daval\Documents\CESI\A2\Web\mvc\templates\demo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6411cd446dc884_40499550',
+  'unifunc' => 'content_64146718435229_58692512',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40a1e1d2f0924d79c612d614eeedc9deb8c3ea38' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\A2\\Web\\mvc\\templates\\demo.tpl',
-      1 => 1678888259,
+      1 => 1679058711,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_6411cd446dc884_40499550 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_loadInheritance();
-$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+function content_64146718435229_58692512 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14408172116411cd446d99d0_40314324', 'style');
+<!doctype html>
+<html lang="fr">
+<?php $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18795491536411cd446db6e4_23810681', "body");
-?>
-
-
-
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "head.tpl");
-}
-/* {block 'style'} */
-class Block_14408172116411cd446d99d0_40314324 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'style' => 
-  array (
-    0 => 'Block_14408172116411cd446d99d0_40314324',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<?php
-}
-}
-/* {/block 'style'} */
-/* {block "body"} */
-class Block_18795491536411cd446db6e4_23810681 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'body' => 
-  array (
-    0 => 'Block_18795491536411cd446db6e4_23810681',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
     <body class="text-center">
     <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-          <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
-          Flowbite    
+          <img class="w-8 h-8 mr-2" src="../img/Logo.png" alt="logo">
+          InternTracke    
       </a>
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -109,8 +69,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   </div>
 </section>
 </body>
-<?php
-}
-}
-/* {/block "body"} */
+
+
+
+<?php }
 }
