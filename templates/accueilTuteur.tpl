@@ -100,5 +100,28 @@
     </div>
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script>
+        const graph = document.getElementById("graph").getContext("2d");
+
+        let massPopChart = new Chart(graph, {
+            type: "doughnut", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                datasets: [
+                    {
+                        label: "Population en M ",
+                        data: [20, 10, 16],
+                        // backgroundColor: "blue",
+                        backgroundColor: [
+                            "red",
+                            "orange",
+                            "green",
+                        ],
+                        hoverBorderWidth: 3,
+                    },
+                ],
+            },
+        });
+    </script>
 </body>
 </html>
