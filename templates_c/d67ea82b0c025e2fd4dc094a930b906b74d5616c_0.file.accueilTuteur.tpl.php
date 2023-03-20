@@ -1,7 +1,34 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-20 17:24:55
+  from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\accueilTuteur.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641888d7e49534_05552078',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd67ea82b0c025e2fd4dc094a930b906b74d5616c' => 
+    array (
+      0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\accueilTuteur.tpl',
+      1 => 1679329494,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_641888d7e49534_05552078 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 <body>
 <div>
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </div>
 <!--Bouton raccourci-->
 <div class="flex flex-row flex-wrap justify-center min-[880px]:justify-evenly content-evenly ">
@@ -95,8 +122,11 @@
     </div>
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script>
+<?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
         const graph = document.getElementById("graph").getContext("2d");
 
         let massPopChart = new Chart(graph, {
@@ -117,6 +147,8 @@
                 ],
             },
         });
-    </script>
+    <?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}
