@@ -1,6 +1,6 @@
 <?php
-require(__DIR__."\\..\\lib\\smarty.php");
-class ConnexionController{
+require(__DIR__."/../lib/smarty.php");
+class AccueilTuteurController{
     private $smarty;
     function __construct()
     {
