@@ -54,37 +54,32 @@
 </div>
 </div>
 <!--Statut étudiant + statistiques -->
-<div class=" flex justify-evenly  max-[880px]:flex-col items-center flex-wrap h-3/6">
+<div class=" flex justify-evenly  max-[880px]:flex-col max-[880px]:items-center min-[880px]:items-end flex-wrap h-3/6">
 <!--Statut étudiant-->
-<div class="  w-8/12 min-[880px]:w-5/12 ml-5 mt-10  h-[100%] bg-green-50">
+<div class="  w-8/12 min-[880px]:w-5/12 ml-5 mt-10  h-[100%] ">
     <div class="h-14 bg-white border border-[#dfdfdf] flex items-center justify-center">
         <h3 class="text-center">En recherche</h3>
     </div>
-    <div class="overflow-y-scroll bg-white h-64 min-[880px]:h-[100%] border border-[#dfdfdf]">
+    <div class="overflow-y-scroll bg-white h-64 min-[880px]:max-h-[100%] border border-[#dfdfdf]">
         <ul class="list-disc ">
-            <li>Élément 1</li>
-            <li>Élément 2</li>
-            <li>Élément 3</li>
-            <li>Élément 4</li>
-            <li>Élément 5</li>
-            <li>Élément 6</li>
-            <li>Élément 7</li>
-            <li>Élément 8</li>
-            <li>Élément 9</li>
-            <li>Élément 10</li>
-            <li>Élément 6</li>
-            <li>Élément 5</li>
-            <li>Élément 6</li>
-            <li>Élément 7</li>
-            <li>Élément 8</li>
-            <li>Élément 9</li>
-            <li>Élément 10</li>
-            <li>Élément 6</li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
+        
         </ul>
     </div>
 </div>
 <!--Statistiques-->
-<div class="flex items-center flex-col min-[880px]:w-5/12 w-8/12 ml-5 mt-10 h-[117%] bg-white border border-[#dfdfdf] overflow-hidden">
+<div class="flex items-center flex-col w-8/12 min-[880px]:w-5/12 ml-5 mt-10  h-[100%] bg-white border border-[#dfdfdf] overflow-hidden">
     <div class="h-10 self-start mt-2">
         <p class="px-10">
             <i class="fa-solid fa-circle-info text-2xl"></i>Statut recherches étudiants :
