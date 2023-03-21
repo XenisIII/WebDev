@@ -28,7 +28,7 @@ if (file_exists($controllerFile)) {
     }
     else{
     require_once(__DIR__."/src/contoller/ConnexionController.php"); //mettre page connexion
-    $controller= new DemoController();
+    $controller= new ConnexionController();
     $controller->index();}
 }
 ?>

@@ -1,6 +1,27 @@
+<?php
+/* Smarty version 4.3.0, created on 2023-03-21 16:43:38
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev-mvc\WebDev-mvc\templates\rechercheStage.tpl' */
 
-
-<div
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_6419d0aad6e648_49588677',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e76fc3baa4b51a8a5686d3ba2c03fe6e7cf19c7d' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev-mvc\\WebDev-mvc\\templates\\rechercheStage.tpl',
+      1 => 1679327564,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6419d0aad6e648_49588677 (Smarty_Internal_Template $_smarty_tpl) {
+?><div
 class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:mr-[2%] lg:ml-[5%] mt-5 md:ml-[10%] md:mr-[5%] sm:mx-[3%] lg:mt-0">
 <div
     class=" w-[90%] sm:w-[80%] h-[650px] bg-gray-300 mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] border-r-8 flex flex-col">
@@ -62,11 +83,13 @@ class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:mr-[2%] lg:m
         <input type="range" id="points" name="points" min="0" max="100" step="10"
             onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
         <span id="valBox">Valeur=4</span>
-        <script>
+        <?php echo '<script'; ?>
+>
             function AfficheRange2(newVal) {
                 document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
             }
-        </script>
+        <?php echo '</script'; ?>
+>
     </div>
     <div>
         <div>
@@ -84,3 +107,5 @@ class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:mr-[2%] lg:m
     </div>
 </div>
 </div>
+<?php }
+}
