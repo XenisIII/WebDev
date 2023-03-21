@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-20 16:55:58
+/* Smarty version 4.3.0, created on 2023-03-21 09:12:23
   from '/home/lilian/Documents/webdev/WebDev-mvc/templates/accueilTuteur.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6418820e763417_75822758',
+  'unifunc' => 'content_641966e79fd213_22906432',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '724eedecf99bb0871747689d1944745d0547d33e' => 
     array (
       0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/accueilTuteur.tpl',
-      1 => 1679327755,
+      1 => 1679385491,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_6418820e763417_75822758 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641966e79fd213_22906432 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body>
@@ -81,13 +81,13 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
 </div>
 </div>
 <!--Statut étudiant + statistiques -->
-<div class=" flex justify-evenly  max-[880px]:flex-col max-[880px]:items-center min-[880px]:items-end flex-wrap h-3/6">
+<div class=" flex justify-evenly  max-[880px]:flex-col max-[880px]:items-center min-[880px]:items-end flex-wrap h-3/6 ">
 <!--Statut étudiant-->
-<div class="  w-8/12 min-[880px]:w-5/12 ml-5 mt-10  h-[100%] ">
-    <div class="h-14 bg-white border border-[#dfdfdf] flex items-center justify-center">
+<div class="  w-8/12 min-[880px]:w-5/12 ml-5 mt-10 h-96 ">
+    <div class="h-16 bg-white border border-[#dfdfdf] flex items-center justify-center ">
         <h3 class="text-center">En recherche</h3>
     </div>
-    <div class="overflow-y-scroll bg-white h-64 min-[880px]:max-h-[100%] border border-[#dfdfdf]">
+    <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
         <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
         <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
@@ -106,7 +106,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     </div>
 </div>
 <!--Statistiques-->
-<div class="flex items-center flex-col w-8/12 min-[880px]:w-5/12 ml-5 mt-10  h-[100%] bg-white border border-[#dfdfdf] overflow-hidden">
+<div class="flex items-center flex-col w-8/12 min-[880px]:w-5/12 ml-5 mt-10 h-96 bg-white border border-[#dfdfdf] overflow-hidden ">
     <div class="h-10 self-start mt-2">
         <p class="px-10">
             <i class="fa-solid fa-circle-info text-2xl"></i>Statut recherches étudiants :
