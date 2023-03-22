@@ -39,20 +39,20 @@
                     </div>
                 </a>
                 <a href="#"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                    id="mobile-menu-item">
-                    <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                        <label for="points">Distance(Entre 0 et 100 Km):</label>
-                        <input type="range" id="points" name="points" min="0" max="100" step="10"
-                            onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
-                        <span id="valBox">Valeur=4</span>
-                        <script>
-                            function AfficheRange2(newVal) {
-                                document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
-                            }
-                        </script>
-                    </div>
-                </a>
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                id="mobile-menu-item">
+                <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                    <label for="points">Distance(Entre 0 et 100 Km):</label>
+                    <input type="range" id="points" name="points" min="0" max="100" step="10"
+                        onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
+                    <span id="valBox">Valeur</span>
+                    <script>
+                        function AfficheRange2(newVal) {
+                            document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
+                        }
+                    </script>
+                </div>
+            </a>
                 <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                     id="mobile-menu-item">
@@ -287,18 +287,17 @@
                 <input type="radio" value="Professionel">
                 <label for="professionel">Professionel</label>
             </div>
-            <div class="bg-gray-300 text-black block  px-3 py-2 text-base font-medium ">
-                <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
-                <label for="points">Distance(Entre 0 et 100 Km):</label>
-                <input type="range" id="points" name="points" min="0" max="100" step="10"
-                    onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
-                <span id="valBox">Valeur=4</span>
-                <script>
-                    function AfficheRange2(newVal) {
-                        document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
-                    }
-                </script>
-            </div>
+                <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                    <label for="point">Distance(Entre 0 et 100 Km):</label>
+                    <input type="range" id="point" name="point" min="0" max="100" step="10"
+                        onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
+                    <span id="val">Valeur</span>
+                    <script>
+                        function AfficheRange2(newVal) {
+                            document.getElementById("val").innerHTML = "Valeur=" + newVal;
+                        }
+                    </script>
+                </div>
             <div class="bg-gray-300 text-black block     px-3 py-2 text-base font-medium">
                 <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
                 <input type="checkbox" id="scales" name="scales" checked>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-22 16:38:54
+/* Smarty version 4.3.0, created on 2023-03-22 22:59:27
   from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev-mvc\WebDev-mvc\templates\rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641b210eb60468_27515154',
+  'unifunc' => 'content_641b7a3fb929f4_65663836',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e76fc3baa4b51a8a5686d3ba2c03fe6e7cf19c7d' => 
     array (
       0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev-mvc\\WebDev-mvc\\templates\\rechercheStage.tpl',
-      1 => 1679499531,
+      1 => 1679522354,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_641b210eb60468_27515154 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641b7a3fb929f4_65663836 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -66,22 +66,22 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                     </div>
                 </a>
                 <a href="#"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                    id="mobile-menu-item">
-                    <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                        <label for="points">Distance(Entre 0 et 100 Km):</label>
-                        <input type="range" id="points" name="points" min="0" max="100" step="10"
-                            onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
-                        <span id="valBox">Valeur=4</span>
-                        <?php echo '<script'; ?>
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                id="mobile-menu-item">
+                <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                    <label for="points">Distance(Entre 0 et 100 Km):</label>
+                    <input type="range" id="points" name="points" min="0" max="100" step="10"
+                        onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
+                    <span id="valBox">Valeur</span>
+                    <?php echo '<script'; ?>
 >
-                            function AfficheRange2(newVal) {
-                                document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
-                            }
-                        <?php echo '</script'; ?>
+                        function AfficheRange2(newVal) {
+                            document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
+                        }
+                    <?php echo '</script'; ?>
 >
-                    </div>
-                </a>
+                </div>
+            </a>
                 <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                     id="mobile-menu-item">
@@ -125,7 +125,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             </div>
             <div class="bg-white w-[90%] sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
                 <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-                w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <div class="flex flex-col ">
                         <div class=''>
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
@@ -316,20 +316,19 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                 <input type="radio" value="Professionel">
                 <label for="professionel">Professionel</label>
             </div>
-            <div class="bg-gray-300 text-black block  px-3 py-2 text-base font-medium ">
-                <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
-                <label for="points">Distance(Entre 0 et 100 Km):</label>
-                <input type="range" id="points" name="points" min="0" max="100" step="10"
-                    onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
-                <span id="valBox">Valeur=4</span>
-                <?php echo '<script'; ?>
+                <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                    <label for="point">Distance(Entre 0 et 100 Km):</label>
+                    <input type="range" id="point" name="point" min="0" max="100" step="10"
+                        onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
+                    <span id="val">Valeur</span>
+                    <?php echo '<script'; ?>
 >
-                    function AfficheRange2(newVal) {
-                        document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
-                    }
-                <?php echo '</script'; ?>
+                        function AfficheRange2(newVal) {
+                            document.getElementById("val").innerHTML = "Valeur=" + newVal;
+                        }
+                    <?php echo '</script'; ?>
 >
-            </div>
+                </div>
             <div class="bg-gray-300 text-black block     px-3 py-2 text-base font-medium">
                 <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
                 <input type="checkbox" id="scales" name="scales" checked>
