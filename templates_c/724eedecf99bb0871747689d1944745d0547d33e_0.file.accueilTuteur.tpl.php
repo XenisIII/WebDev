@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-21 09:12:23
+/* Smarty version 4.3.0, created on 2023-03-22 14:51:01
   from '/home/lilian/Documents/webdev/WebDev-mvc/templates/accueilTuteur.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641966e79fd213_22906432',
+  'unifunc' => 'content_641b07c5abf6d2_43364557',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '724eedecf99bb0871747689d1944745d0547d33e' => 
     array (
       0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/accueilTuteur.tpl',
-      1 => 1679385491,
+      1 => 1679492681,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_641966e79fd213_22906432 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641b07c5abf6d2_43364557 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body>
@@ -41,7 +41,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <p class="">Étudiant</p>
     </div>
     <div
-        class="flex justify-between items-center bg-[#fafafa] divide-x-[3px] divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
+        class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
         <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2">
             <p class="text-center">Gestion Étudiant</p>
 
