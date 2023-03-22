@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-21 09:20:08
+/* Smarty version 4.3.0, created on 2023-03-22 16:24:28
   from '/home/lilian/Documents/webdev/WebDev-mvc/templates/navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641968b8975ad8_33354974',
+  'unifunc' => 'content_641b1dace02866_61032058',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8f446077958a25f1ca302c3c9d57107dba7106ee' => 
     array (
       0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/navbar.tpl',
-      1 => 1679386431,
+      1 => 1679498660,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641968b8975ad8_33354974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641b1dace02866_61032058 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="bg-[#f5f5f5] sm:overflow-hidden">
     <div class="min-h-full">
@@ -148,6 +148,7 @@ function content_641968b8975ad8_33354974 (Smarty_Internal_Template $_smarty_tpl)
     };  
 <?php echo '</script'; ?>
 >
+
 </header>
 
 
