@@ -1,7 +1,35 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-22 21:02:16
+  from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\offre.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641b5ec8a50eb2_28172228',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '60b68d69071b06cfbe4f9e26bc2e77ead64922a3' => 
+    array (
+      0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\offre.tpl',
+      1 => 1679515335,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_641b5ec8a50eb2_28172228 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 <body class="bg-[#f5f5f5]">
 <div>
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </div>
 <!-- Box globale-->
 <div class="bg-[#f5f5f5] flex justify-center min-[880px]:h-screen h-[100%]">
@@ -80,6 +108,8 @@
     </div>
 </div>
 </div>
-{include file="footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
-</html>
+</html><?php }
+}
