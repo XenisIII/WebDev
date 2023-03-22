@@ -14,7 +14,7 @@
         <p class="">Étudiant</p>
     </div>
     <div
-        class="flex justify-between items-center bg-[#fafafa] divide-x-[3px] divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
+        class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
         <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2">
             <p class="text-center">Gestion Étudiant</p>
 
