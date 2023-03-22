@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-22 20:56:21
+/* Smarty version 4.3.0, created on 2023-03-22 21:20:12
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\connexion.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641b5d65f3cf02_77217152',
+  'unifunc' => 'content_641b62fc9eea97_98238730',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '46bb260228518fd715b3049c9097d7054b53103b' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\connexion.tpl',
-      1 => 1679512829,
+      1 => 1679516409,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_641b5d65f3cf02_77217152 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641b62fc9eea97_98238730 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="fr">
@@ -57,7 +57,7 @@ function content_641b5d65f3cf02_77217152 (Smarty_Internal_Template $_smarty_tpl)
                             <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
                           </div>
                       </div>
-                      <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                      <button type="submit" class="w-full text-black bg-gray-50 border bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
                   </div>
               </form>
           </div>
