@@ -86,11 +86,11 @@
                 </ul>
             </div>
         </div>
-        <div class="hidden md:block bg-gray-200 mt-[5%] ml-5 w-1/5 h-1/2">
+        <div class="hidden md:block mt-[5%] ml-5 w-1/5 h-1/2 border border-[#dfdfdf] rounded-md">
             <div class="text-center">
                 <p>Trier par</p>
             </div>
-            <p class="mt-4"> Promotion </p>
+            <p class="mt-4 pl-2"> Promotion </p>
             <div class=" flex w-52  my-1 mb-3 cursor-pointer pl-8">
                 <div class=" w-36">
                     <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
@@ -108,7 +108,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="mt-4"> Statut </p>
+            <p class="mt-4 pl-2"> Statut </p>
             <div class=" flex w-52  my-1 mb-3 cursor-pointer pl-8">
                 <div class=" w-36">
                     <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
@@ -124,7 +124,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="mt-4"> Centre </p>
+            <p class="mt-4 pl-2"> Centre </p>
             <div class=" flex w-52  my-1 mb-3 cursor-pointer pl-8">
                 <div class=" w-36">
                     <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
@@ -197,7 +197,7 @@
                         break;
                     case 'statut':
                         liste_statut.setAttribute("class",
-                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll h-24");
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll h-18");
                             bool_statut = !bool_statut;
                         break;
                     case 'centre':
