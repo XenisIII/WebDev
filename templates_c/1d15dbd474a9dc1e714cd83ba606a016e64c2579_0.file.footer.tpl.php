@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 11:46:39
-  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/footer.tpl' */
+/* Smarty version 4.3.0, created on 2023-03-23 15:46:18
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c2e0fe85408_81070656',
+  'unifunc' => 'content_641c663ad04808_57845871',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd5a5e0a07a3bc091701af4cfeaf0abe905bdd71a' => 
+    '1d15dbd474a9dc1e714cd83ba606a016e64c2579' => 
     array (
-      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/footer.tpl',
-      1 => 1679568396,
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\footer.tpl',
+      1 => 1679582764,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c2e0fe85408_81070656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c663ad04808_57845871 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class=" max-sm:relative mas-sm:bottom-0 bg-gray-900 h-12 w-full absolute -bottom-12">
     <div class="flex justify-between">

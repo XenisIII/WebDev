@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-22 16:24:28
-  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/navbar.tpl' */
+/* Smarty version 4.3.0, created on 2023-03-23 14:53:04
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641b1dace02866_61032058',
+  'unifunc' => 'content_641c59c053a2f5_21399277',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '8f446077958a25f1ca302c3c9d57107dba7106ee' => 
+    'f91d0ddad90d064d5c2e28f8cba1433346a4a088' => 
     array (
-      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/navbar.tpl',
-      1 => 1679498660,
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\navbar.tpl',
+      1 => 1679578317,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641b1dace02866_61032058 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c59c053a2f5_21399277 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="bg-[#f5f5f5] sm:overflow-hidden">
     <div class="min-h-full">
