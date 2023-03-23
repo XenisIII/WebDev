@@ -8,7 +8,6 @@ class CreationOffreController{
     }
     public function index(){
         $this->smarty->assign("DocumentTitle","CreationOffre");
-        $this->smarty->assign("style","<link rel='stylesheet' type='text/css' href='../../css/creationOffre.css' />");
         $this->smarty->display('creationOffre.tpl');
     }
     public function error(){
