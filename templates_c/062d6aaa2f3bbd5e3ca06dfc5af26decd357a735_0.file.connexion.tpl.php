@@ -1,7 +1,32 @@
+<?php
+/* Smarty version 4.3.0, created on 2023-03-21 16:43:22
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev-mvc\WebDev-mvc\templates\connexion.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_6419d09a27c312_01353421',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '062d6aaa2f3bbd5e3ca06dfc5af26decd357a735' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev-mvc\\WebDev-mvc\\templates\\connexion.tpl',
+      1 => 1679323595,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+  ),
+),false)) {
+function content_6419d09a27c312_01353421 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!doctype html>
 <html lang="fr">
-{include file="head.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <body class="text-center">
     <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -32,7 +57,7 @@
                             <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
                           </div>
                       </div>
-                      <button type="submit" class="w-full text-black bg-gray-50 border bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                      <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
                   </div>
               </form>
           </div>
@@ -43,3 +68,5 @@
 
 
 
+<?php }
+}

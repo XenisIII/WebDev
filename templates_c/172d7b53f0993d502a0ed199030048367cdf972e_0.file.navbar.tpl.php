@@ -1,4 +1,27 @@
+<?php
+/* Smarty version 4.3.0, created on 2023-03-22 21:01:52
+  from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\navbar.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641b5eb0c62333_77243719',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '172d7b53f0993d502a0ed199030048367cdf972e' => 
+    array (
+      0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\navbar.tpl',
+      1 => 1679514593,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_641b5eb0c62333_77243719 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <header class="bg-[#f5f5f5] sm:overflow-hidden">
     <div class="min-h-full">
         <nav class="bg-gray-900">
@@ -104,7 +127,8 @@
             </div>
         </div>
     </div>
-    <script>
+    <?php echo '<script'; ?>
+>
     function mobileMenu() {
         var menu = document.getElementById("mobile-menu");
         if (menu.classList.contains("hidden")) {
@@ -122,8 +146,11 @@
             menu.classList.add("hidden");
         }
     };  
-</script>
+<?php echo '</script'; ?>
+>
 
 </header>
 
 
+<?php }
+}
