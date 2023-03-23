@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 14:26:06
+/* Smarty version 4.3.0, created on 2023-03-23 14:56:47
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\creationEtudiant.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c536e4ebb97_10485121',
+  'unifunc' => 'content_641c5a9fb5a972_03749232',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a21097fda3df8cf1e1dfb53a26430aca648e86b3' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\creationEtudiant.tpl',
-      1 => 1679577964,
+      1 => 1679579807,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_641c536e4ebb97_10485121 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c5a9fb5a972_03749232 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -88,11 +88,18 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                         <input type="text" name="login" placeholder="login"
                             class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
 
-                        <label name="mdp" class="my-1"> Mot de passe 
+                        <label name="mdp" class="my-1"> Mot de passe
                         </label>
-                        <input type="text" name="mdp"
-                            placeholder="************"
+                        <input type="text" name="mdp" placeholder="************"
                             class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
+
+                        <div class="csv border-solid border-gray-400 border rounded my-1 mb-3 flex justify-between h-7">
+                            <p> Ajouter des étudiants avec un fichier .csv</p>
+                            <div class=" px-2 cursor-pointer bg-gray-200 overflow-hidden rounded">
+                            <i class="fa-solid fa-file-import "></i>
+                            </div> 
+                        </div>
+
 
                         <div class="flex  justify-evenly mt-5">
                             <button type="reset" name="reset"

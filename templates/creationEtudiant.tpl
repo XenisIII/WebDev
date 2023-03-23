@@ -61,11 +61,18 @@
                         <input type="text" name="login" placeholder="login"
                             class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
 
-                        <label name="mdp" class="my-1"> Mot de passe 
+                        <label name="mdp" class="my-1"> Mot de passe
                         </label>
-                        <input type="text" name="mdp"
-                            placeholder="************"
+                        <input type="text" name="mdp" placeholder="************"
                             class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
+
+                        <div class="csv border-solid border-gray-400 border rounded my-1 mb-3 flex justify-between h-7">
+                            <p> Ajouter des étudiants avec un fichier .csv</p>
+                            <div class=" px-2 cursor-pointer bg-gray-200 overflow-hidden rounded">
+                            <i class="fa-solid fa-file-import "></i>
+                            </div> 
+                        </div>
+
 
                         <div class="flex  justify-evenly mt-5">
                             <button type="reset" name="reset"
