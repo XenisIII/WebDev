@@ -7,7 +7,7 @@ class RechercheEtudiantController{
         $this->smarty=new AppSmarty();
     }
     public function index(){
-        $this->smarty->assign("DocumentTitle","RechercheEtudiant");
+        $this->smarty->assign("DocumentTitle","rRechercheEtudiant");
         $this->smarty->display('rechercheEtudiant.tpl');
     }
     public function error(){

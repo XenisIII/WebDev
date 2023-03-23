@@ -20,19 +20,54 @@
         </button>
     </div>
 
-    <div class="hidden lg:hidden" id="mobile-fast-serach">
-        <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-                aria-current="page" id="mobile-menu-item">Tirer par 1</a>
-
-            <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                id="mobile-menu-item">Tirer par 2</a>
-
-            <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                id="mobile-menu-item">Tirer par 3</a>
+    <div class="hidden lg:hidden flex justify-center max-[640px]:flex-col max-[640px]:items-center pt-4" id="mobile-fast-serach">
+    <div class=" flex lg:w-52 md:w-30 my-1 mb-3 cursor-pointer pl-8">
+        <div class=" w-36">
+            <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
+                onclick="apparitionM(bool_promoM, 'promotion')">
+                <p id="competence " class="ml-1"> Promotion </p>
+                <p class="bg-gray-100 px-1 font-extralight"><i class="fa-solid fa-chevron-down text-base "></i>
+                </p>
+            </div>
+            <ul class="hidden" id="liste_promoM">
+                <li><input type="checkbox">CPI A1</input></li>
+                <li><input type="checkbox">CPI A2</input></li>
+                <li><input type="checkbox">FISE A3</input></li>
+                <li><input type="checkbox">FISE A4</input></li>
+                <li><input type="checkbox">FISE A5</input></li>
+            </ul>
+        </div>
+    </div>
+    <div class=" flex lg:w-52 md:w-30 my-1 mb-3 cursor-pointer pl-8">
+        <div class=" w-36">
+            <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
+                onclick="apparitionM(bool_statutM, 'statut')">
+                <p id="competence " class="ml-1"> Statut </p>
+                <p class="bg-gray-100 px-1 font-extralight"><i class="fa-solid fa-chevron-down text-base "></i>
+                </p>
+            </div>
+            <ul class="hidden" id="liste_statutM">
+                <li><input type="checkbox">Validé</input></li>
+                <li><input type="checkbox">En attente</input></li>
+                <li><input type="checkbox">En recherche</input></li>
+            </ul>
+        </div>
+    </div>
+    <div class=" flex lg:w-52 md:w-30  my-1 mb-3 cursor-pointer pl-8">
+        <div class=" w-36">
+            <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
+                onclick="apparitionM(bool_centreM, 'centre')">
+                <p id="competence " class="ml-1"> Centre </p>
+                <p class="bg-gray-100 px-1 font-extralight"><i class="fa-solid fa-chevron-down text-base "></i>
+                </p>
+            </div>
+            <ul class="hidden" id="liste_centreM">
+                <li><input type="checkbox">Validé</input></li>
+                <li><input type="checkbox">En attente</input></li>
+                <li><input type="checkbox">En recherche</input></li>
+            </ul>
+        </div>
+    </div>
         </div>
     </div>
 
@@ -59,29 +94,29 @@
             <div
                 class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf] mt-6 rounded-md">
                 <ul class="list-disc ">
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 1<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 2<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 3<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 4<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 5<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 6<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 7<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 8<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 9<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 10<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 11<div class="px-5">Statut</div>
                     </li>
-                    <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div>
+                    <li class="flex justify-between px-3 mb-3">Elève 12<div class="px-5">Statut</div>
                     </li>
                 </ul>
             </div>
@@ -91,7 +126,7 @@
                 <p>Trier par</p>
             </div>
             <p class="mt-4 pl-2"> Promotion </p>
-            <div class=" flex w-52  my-1 mb-3 cursor-pointer pl-8">
+            <div class=" flex lg:w-52 md:w-30 my-1 mb-3 cursor-pointer pl-8">
                 <div class=" w-36">
                     <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
                         onclick="apparition(bool_promo, 'promotion')">
@@ -109,7 +144,7 @@
                 </div>
             </div>
             <p class="mt-4 pl-2"> Statut </p>
-            <div class=" flex w-52  my-1 mb-3 cursor-pointer pl-8">
+            <div class=" flex lg:w-52 md:w-30 my-1 mb-3 cursor-pointer pl-8">
                 <div class=" w-36">
                     <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
                         onclick="apparition(bool_statut, 'statut')">
@@ -125,7 +160,7 @@
                 </div>
             </div>
             <p class="mt-4 pl-2"> Centre </p>
-            <div class=" flex w-52  my-1 mb-3 cursor-pointer pl-8">
+            <div class=" flex lg:w-52 md:w-30  my-1 mb-3 cursor-pointer pl-8">
                 <div class=" w-36">
                     <div class="flex justify-between border-solid border-gray-400 border rounded overflow-hidden h-6"
                         onclick="apparition(bool_centre, 'centre')">
@@ -204,6 +239,58 @@
                         liste_centre.setAttribute("class",
                             "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll h-24");
                             bool_centre = !bool_centre;
+                        break;
+                }
+                break;
+        }
+    };
+
+    let bool_promoM;
+    bool_promoM = false;
+    let bool_statutM;
+    bool_statutM = false;
+    let bool_centreM;
+    bool_centreM = false;
+
+    function apparitionM(bool_apparition, filtre) {
+        console.log(bool_apparition);
+
+        switch (bool_apparition) {
+            case true:
+                switch (filtre) {
+                    case 'promotion':
+                        liste_promoM.setAttribute("class",
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll hidden");
+                            bool_promoM = !bool_promoM;
+                        break;
+                    case 'statut':
+                        liste_statutM.setAttribute("class",
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll hidden");
+                            bool_statutM = !bool_statutM;
+                        break;
+                    case 'centre':
+                        liste_centreM.setAttribute("class",
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll hidden");
+                            bool_centreM = !bool_centreM;
+                        break;
+                }
+                break;
+            case false:
+                switch (filtre) {
+                    case 'promotion':
+                        liste_promoM.setAttribute("class",
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll h-24");
+                            bool_promoM = !bool_promoM;
+                        break;
+                    case 'statut':
+                        liste_statutM.setAttribute("class",
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll h-18");
+                            bool_statutM = !bool_statutM;
+                        break;
+                    case 'centre':
+                        liste_centreM.setAttribute("class",
+                            "border-solid border-gray-400 border-l border-r border-b overflow-y-scroll h-24");
+                            bool_centreM = !bool_centreM;
                         break;
                 }
                 break;
