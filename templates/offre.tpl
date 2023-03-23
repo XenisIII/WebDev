@@ -17,15 +17,9 @@
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
                 <ul class="flex flex-wrap my-5">
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li> 
+                    {foreach $Competences as $competence}
+                        <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">{$competence->competence}</li>
+                    {/foreach}
                 </ul>
             </div>
             <!--durée-->
@@ -80,7 +74,7 @@
             <p class="h-full p-2 min-[880px]:p-7  text-md ">{$info}</p>
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/rechercheStage'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Postuler</button>
         </div>
 

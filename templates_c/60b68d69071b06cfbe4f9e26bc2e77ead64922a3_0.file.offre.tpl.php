@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-22 21:02:16
+/* Smarty version 4.3.0, created on 2023-03-23 22:57:29
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641b5ec8a50eb2_28172228',
+  'unifunc' => 'content_641ccb49b334f4_28925936',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60b68d69071b06cfbe4f9e26bc2e77ead64922a3' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\offre.tpl',
-      1 => 1679515335,
+      1 => 1679608583,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641b5ec8a50eb2_28172228 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641ccb49b334f4_28925936 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
@@ -40,27 +40,39 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <div>
             <!-- Titre -->
             <div class="mt-3 text-2xl">
-                <h3>Titre offre</h3>
+                <h3><?php echo $_smarty_tpl->tpl_vars['nomOffre']->value;?>
+</h3>
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
                 <ul class="flex flex-wrap my-5">
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li> 
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Competences']->value, 'competence');
+$_smarty_tpl->tpl_vars['competence']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['competence']->value) {
+$_smarty_tpl->tpl_vars['competence']->do_else = false;
+?>
+                        <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2"><?php echo $_smarty_tpl->tpl_vars['competence']->value->competence;?>
+</li>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </ul>
             </div>
             <!--durée-->
             <div class="my-2">
             <p class="text-xl">
                 <i class="fa-solid fa-stopwatch"></i>
-                 4 Mois
+                 <?php echo $_smarty_tpl->tpl_vars['Duree']->value;?>
+ Mois
+            </p>
+            <p>
+                Date de début : <?php echo $_smarty_tpl->tpl_vars['DateDebut']->value;?>
+
+            </p>
+            <p>
+                Date de mise en ligne  : <?php echo $_smarty_tpl->tpl_vars['DatePoste']->value;?>
+
             </p>
             </div>
         </div>
@@ -69,19 +81,22 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             <div class="mx-2">
                 <p class="text-3xl">
                 <i class="fa-regular fa-building"></i>
-                    Nom Entreprise
+                    <?php echo $_smarty_tpl->tpl_vars['NomEntreprise']->value;?>
+
                 </p>
             </div>
             <div class="ml-3">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"></i>
-                <i class="fa-regular fa-star cursor-pointer " name="star2" id="star2" ></i>
-                <i class="fa-regular fa-star cursor-pointer" name="star3" id="star3" ></i>
-                <i class="fa-regular fa-star cursor-pointer" name="star4" id="star4" ></i>
-                <i class="fa-regular fa-star cursor-pointer" name="star5" id="star5" ></i>
+                <i class="fa-regular fa-star" name="star1" id="star1"></i>
+                <i class="fa-regular fa-star " name="star2" id="star2" ></i>
+                <i class="fa-regular fa-star " name="star3" id="star3" ></i>
+                <i class="fa-regular fa-star " name="star4" id="star4" ></i>
+                <i class="fa-regular fa-star " name="star5" id="star5" ></i>
+                
             </div>
             <div class="ml-2">
-                <i class="fa fa-compass fa-xl"></i>
-                Orléans
+                <i class="fa fa-compassEntreprise fa-xl"></i>
+                <?php echo $_smarty_tpl->tpl_vars['Localite']->value;?>
+
             </div>
         </div>
         <!-- Bouton-->
@@ -97,17 +112,53 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             <h3>Sujet</h3>
         </div>
         <!-- information-->
-        <div class="border border-black rounded min-[880px]:h-[70%] overflow-y-scroll max-h-52">
-            <p class="h-full p-2 min-[880px]:p-7  text-md ">Lorem ipsum dolor sit amet, <br><br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, <br><br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+        <div class="border border-black rounded min-[880px]:h-[70%] overflow-y-scroll max-h-96">
+            <p class="h-full p-2 min-[880px]:p-7  text-md "><?php echo $_smarty_tpl->tpl_vars['info']->value;?>
+</p>
+            </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/rechercheStage'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Postuler</button>
         </div>
 
     </div>
 </div>
 </div>
+<?php echo '<script'; ?>
+>
+function star(etoile){
+    switch(etoile){
+        case 1:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 2:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 3:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            star3.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 4:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            star3.setAttribute("class", "fa fa-star text-yellow-300");
+            star4.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 5:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            star3.setAttribute("class", "fa fa-star text-yellow-300");
+            star4.setAttribute("class", "fa fa-star text-yellow-300");
+            star5.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+    }
+}
+star(<?php echo $_smarty_tpl->tpl_vars['NoteTuteur']->value;?>
+)
+<?php echo '</script'; ?>
+>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </body>

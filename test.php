@@ -10,7 +10,7 @@
     oui
     <h1><?php require(__DIR__."/src/modele/OffreModele.php");
     $offre=new OffreModele();
-    echo $offre->getAllById(2)[0]->nom_offre;
+    print_r($offre->getCompetencesById(2)[0]->id_localite);
     ?></h1>
 </body>
 </html>

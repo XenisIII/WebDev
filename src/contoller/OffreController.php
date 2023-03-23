@@ -22,6 +22,7 @@
             $this->smarty->assign("NomEntreprise",$this->offre->getAllById($this->id)->nom_entreprise);
             $this->smarty->assign("Localite",$this->offre->getAllById($this->id)->localite);
             $this->smarty->assign("NoteTuteur",$this->offre->getAllById($this->id)->confiance_pilote);
+            $this->smarty->assign("Competences",$this->offre->getCompetencesById($this->id));
             $this->smarty->display('offre.tpl');
         }
         public function error(){
