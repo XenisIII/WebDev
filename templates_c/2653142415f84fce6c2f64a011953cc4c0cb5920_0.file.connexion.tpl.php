@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-20 16:06:37
+/* Smarty version 4.3.0, created on 2023-03-23 11:22:01
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\connexion.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6418767d7df751_07030850',
+  'unifunc' => 'content_641c28491cdaf8_91664886',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2653142415f84fce6c2f64a011953cc4c0cb5920' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\connexion.tpl',
-      1 => 1679323683,
+      1 => 1679566641,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_6418767d7df751_07030850 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c28491cdaf8_91664886 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="fr">
@@ -57,7 +57,7 @@ function content_6418767d7df751_07030850 (Smarty_Internal_Template $_smarty_tpl)
                             <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
                           </div>
                       </div>
-                      <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                      <button type="submit" class="w-full text-black bg-gray-50 border bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
                   </div>
               </form>
           </div>
