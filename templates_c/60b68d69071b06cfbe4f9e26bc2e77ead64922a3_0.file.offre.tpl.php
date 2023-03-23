@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 22:57:29
+/* Smarty version 4.3.0, created on 2023-03-23 23:00:50
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641ccb49b334f4_28925936',
+  'unifunc' => 'content_641ccc1262a760_50244018',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60b68d69071b06cfbe4f9e26bc2e77ead64922a3' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\offre.tpl',
-      1 => 1679608583,
+      1 => 1679608845,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641ccb49b334f4_28925936 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641ccc1262a760_50244018 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
@@ -117,8 +117,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </p>
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/rechercheStage'">Retour</button>
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Postuler</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button>
         </div>
 
     </div>
