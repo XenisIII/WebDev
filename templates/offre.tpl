@@ -51,14 +51,15 @@
                 </p>
             </div>
             <div class="ml-3">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"></i>
-                <i class="fa-regular fa-star cursor-pointer " name="star2" id="star2" ></i>
-                <i class="fa-regular fa-star cursor-pointer" name="star3" id="star3" ></i>
-                <i class="fa-regular fa-star cursor-pointer" name="star4" id="star4" ></i>
-                <i class="fa-regular fa-star cursor-pointer" name="star5" id="star5" ></i>
+                <i class="fa-regular fa-star" name="star1" id="star1"></i>
+                <i class="fa-regular fa-star " name="star2" id="star2" ></i>
+                <i class="fa-regular fa-star " name="star3" id="star3" ></i>
+                <i class="fa-regular fa-star " name="star4" id="star4" ></i>
+                <i class="fa-regular fa-star " name="star5" id="star5" ></i>
+                
             </div>
             <div class="ml-2">
-                <i class="fa fa-compass fa-xl"></i>
+                <i class="fa fa-compassEntreprise fa-xl"></i>
                 {$Localite}
             </div>
         </div>
@@ -86,6 +87,38 @@
     </div>
 </div>
 </div>
+<script>
+function star(etoile){
+    switch(etoile){
+        case 1:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 2:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 3:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            star3.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 4:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            star3.setAttribute("class", "fa fa-star text-yellow-300");
+            star4.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+        case 5:
+            star1.setAttribute("class", "fa fa-star text-yellow-300");
+            star2.setAttribute("class", "fa fa-star text-yellow-300");
+            star3.setAttribute("class", "fa fa-star text-yellow-300");
+            star4.setAttribute("class", "fa fa-star text-yellow-300");
+            star5.setAttribute("class", "fa fa-star text-yellow-300");
+            break;
+    }
+}
+star({$NoteTuteur})
+</script>
 {include file="footer.tpl"}
 </body>
 </html>
