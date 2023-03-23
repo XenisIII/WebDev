@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-20 16:15:24
+/* Smarty version 4.3.0, created on 2023-03-23 15:24:22
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\accueilAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6418788cb07ec2_64596124',
+  'unifunc' => 'content_641c6116bc3729_11379604',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8919e11b66b4ea3794dc08b5e107bc59a4c341bf' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\accueilAdmin.tpl',
-      1 => 1679325321,
+      1 => 1679566641,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:head.tpl' => 1,
     'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6418788cb07ec2_64596124 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c6116bc3729_11379604 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -82,8 +83,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     <?php echo '<script'; ?>
 >
         function gestion_offre() {
-            location.href =
-                "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
         }
 
         function gestion_entreprise() {
@@ -91,17 +91,16 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         }
 
         function gestion_etudiant() {
-            location.href =
-                "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
         }
 
         function gestion_tuteur() {
-            location.href =
-                "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
         }
     <?php echo '</script'; ?>
 >
-
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 
 </html><?php }
