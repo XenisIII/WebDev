@@ -5,7 +5,7 @@
     private $db_host;
     private $pdo;
 
-    public function __construct($db_name="Prosit 8",$db_user ='Erwan',$db_pass='rootroot',$db_host='dominancea2.ddns.net'){
+    public function __construct($db_name="BDD_Projet",$db_user ='Erwan',$db_pass='rootroot',$db_host='dominancea2.ddns.net'){
         $this->db_dsn=$db_name;
         $this->db_user=$db_user;
         $this->db_pass =$db_pass;
@@ -32,6 +32,7 @@
     public function execute($statement,$params=array()){
         $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
         $tmp_->execute($params);
+        return($tmp_->fetch(PDO::FETCH_OBJ));
     }
 }
 ?>

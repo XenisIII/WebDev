@@ -1,6 +1,31 @@
-<!doctype html>
+<?php
+/* Smarty version 4.3.0, created on 2023-03-23 15:16:22
+  from 'C:\Users\aphou\Desktop\CESI\Projet\WebDev-mvc\templates\connexion.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641c5f36b09b00_82032814',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '154f00f8c6e68fa4a80387cca5aab2ee2914b3e3' => 
+    array (
+      0 => 'C:\\Users\\aphou\\Desktop\\CESI\\Projet\\WebDev-mvc\\templates\\connexion.tpl',
+      1 => 1679580966,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+  ),
+),false)) {
+function content_641c5f36b09b00_82032814 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="fr">
-{include file="head.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <body class="text-center">
     <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -8,11 +33,12 @@
           <img class="w-20 h-20 mr-2" src="../img/Logo.png" alt="logo">
           InternTracker    
       </a>
-      {if $errorMessage}
-        <div class="bg-red-200 w-full p-2 rounded-md mb-4">
-          <p class="text-red-700"><i class="fas fa-exclamation-circle"></i> {$errorMessage}</p>
-        </div>
-        {/if}
+      <?php if ($_smarty_tpl->tpl_vars['errorMessage']->value) {?>
+      <div class="bg-red-200 w-full p-2 rounded-md mb-4">
+        <p class="text-red-700"><i class="fas fa-exclamation-circle"></i> <?php echo $_smarty_tpl->tpl_vars['errorMessage']->value;?>
+</p>
+      </div>
+      <?php }?>
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -45,5 +71,8 @@
 </section>
 </body>
 
-<script>
-</script>
+<?php echo '<script'; ?>
+>
+<?php echo '</script'; ?>
+><?php }
+}
