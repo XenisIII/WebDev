@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 11:42:33
+/* Smarty version 4.3.0, created on 2023-03-23 11:44:52
   from '/home/lilian/Documents/webdev/WebDev-mvc/templates/rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c2d191dc623_11931008',
+  'unifunc' => 'content_641c2da4c4f3d3_55895444',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '47f3b01cb307b6bebfef9ea1a6ff6b054f7d488c' => 
     array (
       0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/rechercheStage.tpl',
-      1 => 1679568152,
+      1 => 1679568160,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641c2d191dc623_11931008 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c2da4c4f3d3_55895444 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -308,7 +308,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         </div>
 
         <div
-            class=" bg-white h-fit rounded-[12px] ml-3 border border-[#dadada] invisible md:visible w-[20%]  sm:w-[20%] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] ">
+            class=" bg-white h-fit rounded-[12px] border border-[#dadada] invisible md:visible w-[20%]  sm:w-[20%] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] ">
             <div class=" text-black block  px-3 py-2 text-base font-medium">
             <!--bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
                 <p>Trier par :</p>

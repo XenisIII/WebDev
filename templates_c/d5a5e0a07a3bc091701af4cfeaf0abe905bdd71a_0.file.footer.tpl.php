@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-22 16:44:36
+/* Smarty version 4.3.0, created on 2023-03-23 11:46:39
   from '/home/lilian/Documents/webdev/WebDev-mvc/templates/footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641b22645150e0_55010242',
+  'unifunc' => 'content_641c2e0fe85408_81070656',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd5a5e0a07a3bc091701af4cfeaf0abe905bdd71a' => 
     array (
       0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/footer.tpl',
-      1 => 1679499875,
+      1 => 1679568396,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641b22645150e0_55010242 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641c2e0fe85408_81070656 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<footer class="bg-black h-12 w-full absolute -bottom-12">
+<footer class=" max-sm:relative mas-sm:bottom-0 bg-gray-900 h-12 w-full absolute -bottom-12">
     <div class="flex justify-between">
         <div class="flex items-center ml-5">
         <img src="../img/krita.png" alt="logo InternTracker" class="h-12"></img>
