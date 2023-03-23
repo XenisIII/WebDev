@@ -17,11 +17,21 @@ class ConnexionController{
             $userName=$_POST["username"];
             $password=$_POST["password"];
             $loggedIn = $this->model->login($userName,$password);
-            //$this->smarty->assign("loggedIn",$loggedIn);
-            //header("Location: index.php/accueilEtudiant");
+            $type = $_SESSION['user_type'];
             if (!$loggedIn){
                 //Afficher message erreur
                 $this->smarty->assign("errorMessage","Invalid username or password");
+            }
+            switch($type){
+                case "Eleve":
+                    header("Location: index.php/accueilEtudiant");
+                    break;
+                case "Tuteur":
+                    header("Location: index.php/accueilTuteur");
+                    break;
+                case "Admin":
+                    header("Location: index.php/accueilAdmin");
+                    break;
             }
             }
         else{
