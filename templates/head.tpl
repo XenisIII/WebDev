@@ -8,5 +8,4 @@
     <title>{$DocumentTitle}</title>
     <script src="https://cdn.tailwindcss.com/3.2.6"></script>
     <script src="https://kit.fontawesome.com/8ed527737a.js" crossorigin="anonymous"></script>
-    {$style}
 </head>
