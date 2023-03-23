@@ -1,7 +1,32 @@
+<?php
+/* Smarty version 4.3.0, created on 2023-03-23 11:19:46
+  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/connexion.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641c27c2c687b7_68892768',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'dcf34ff84128fb2d92ce396f86be196c26819c80' => 
+    array (
+      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/connexion.tpl',
+      1 => 1679566785,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+  ),
+),false)) {
+function content_641c27c2c687b7_68892768 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!doctype html>
 <html lang="fr">
-{include file="head.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <body class="text-center">
     <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -36,3 +61,5 @@
 
 
 
+<?php }
+}

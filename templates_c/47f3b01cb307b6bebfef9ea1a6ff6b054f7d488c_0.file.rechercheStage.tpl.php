@@ -1,8 +1,36 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-23 11:44:52
+  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/rechercheStage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641c2da4c4f3d3_55895444',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '47f3b01cb307b6bebfef9ea1a6ff6b054f7d488c' => 
+    array (
+      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/rechercheStage.tpl',
+      1 => 1679568160,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_641c2da4c4f3d3_55895444 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <body class="bg-[#f5f5f5]">
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </div>
     <div>
         <div class="md:hidden flex justify-center mt-4">
@@ -46,11 +74,13 @@
                     <input type="range" id="points" name="points" min="0" max="100" step="10"
                         onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
                     <span id="valBox">Valeur</span>
-                    <script>
+                    <?php echo '<script'; ?>
+>
                         function AfficheRange2(newVal) {
                             document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
                         }
-                    </script>
+                    <?php echo '</script'; ?>
+>
                 </div>
             </a>
                 <a href="#"
@@ -292,11 +322,13 @@
                     <input type="range" id="point" name="point" min="0" max="100" step="10"
                         onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
                     <span id="val">Valeur</span>
-                    <script>
+                    <?php echo '<script'; ?>
+>
                         function AfficheRange2(newVal) {
                             document.getElementById("val").innerHTML = "Valeur=" + newVal;
                         }
-                    </script>
+                    <?php echo '</script'; ?>
+>
                 </div>
             <div class="text-black block     px-3 py-2 text-base font-medium">
                 <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
@@ -314,7 +346,8 @@
             </div>
         </div>
     </div>
-    <script>
+    <?php echo '<script'; ?>
+>
         function heartv2() {
             heart.setAttribute("class", "text-red-500 fa fa-heart m-8")
             console.log('test');
@@ -328,6 +361,9 @@
                 menu.classList.add("hidden");
             }
         };
-    </script>
-    {include file="footer.tpl"}
-</body>
+    <?php echo '</script'; ?>
+>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+</body><?php }
+}
