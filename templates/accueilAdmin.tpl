@@ -69,7 +69,7 @@
             location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
         }
     </script>
-
+{include file="footer.tpl"}
 </body>
 
 </html>

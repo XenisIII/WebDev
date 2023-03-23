@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 11:02:11
-  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/head.tpl' */
+/* Smarty version 4.3.0, created on 2023-03-22 20:56:22
+  from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c23a3a899d2_84645407',
+  'unifunc' => 'content_641b5d660b9d36_76715495',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '87ed1676acd777bcc8c1f3fd0d8095837e5ff3fd' => 
+    '7461e37aa6650e51de74e3f3fba6dea0477c3d5c' => 
     array (
-      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/head.tpl',
-      1 => 1679565512,
+      0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\head.tpl',
+      1 => 1679514870,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c23a3a899d2_84645407 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641b5d660b9d36_76715495 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 

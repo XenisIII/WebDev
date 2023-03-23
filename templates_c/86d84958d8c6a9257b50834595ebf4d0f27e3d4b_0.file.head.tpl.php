@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 11:02:11
-  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/head.tpl' */
+/* Smarty version 4.3.0, created on 2023-03-21 16:43:22
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev-mvc\WebDev-mvc\templates\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c23a3a899d2_84645407',
+  'unifunc' => 'content_6419d09a2af850_33390211',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '87ed1676acd777bcc8c1f3fd0d8095837e5ff3fd' => 
+    '86d84958d8c6a9257b50834595ebf4d0f27e3d4b' => 
     array (
-      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/head.tpl',
-      1 => 1679565512,
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev-mvc\\WebDev-mvc\\templates\\head.tpl',
+      1 => 1679323595,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c23a3a899d2_84645407 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6419d09a2af850_33390211 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -30,7 +30,6 @@ function content_641c23a3a899d2_84645407 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_smarty_tpl->tpl_vars['DocumentTitle']->value;?>
 </title>
-    <link rel="icon" href="../img/Logo.png"/>
     <?php echo '<script'; ?>
  src="https://cdn.tailwindcss.com/3.2.6"><?php echo '</script'; ?>
 >

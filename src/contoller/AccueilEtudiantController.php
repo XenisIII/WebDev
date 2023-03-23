@@ -1,14 +1,14 @@
 <?php
-require(__DIR__."/../lib/smarty.php");
-class ConnexionController{
+require(__DIR__."\\..\\lib\\smarty.php");
+class AccueilEtudiantController{
     private $smarty;
     function __construct()
     {
         $this->smarty=new AppSmarty();
     }
     public function index(){
-        $this->smarty->assign("DocumentTitle","Connexion");
-        $this->smarty->display('connexion.tpl');
+        $this->smarty->assign("DocumentTitle","accueilEtudiant");
+        $this->smarty->display('accueilEtudiant.tpl');
     }
     public function error(){
         $this->smarty->assign("DocumentTitle","404 NOT FOUND");
