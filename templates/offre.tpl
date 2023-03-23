@@ -12,7 +12,7 @@
         <div>
             <!-- Titre -->
             <div class="mt-3 text-2xl">
-                <h3>Titre offre</h3>
+                <h3>{$nomOffre}</h3>
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
@@ -32,7 +32,13 @@
             <div class="my-2">
             <p class="text-xl">
                 <i class="fa-solid fa-stopwatch"></i>
-                 4 Mois
+                 {$Duree} Mois
+            </p>
+            <p>
+                Date de début : {$DateDebut}
+            </p>
+            <p>
+                Date de mise en ligne  : {$DatePoste}
             </p>
             </div>
         </div>
@@ -41,7 +47,7 @@
             <div class="mx-2">
                 <p class="text-3xl">
                 <i class="fa-regular fa-building"></i>
-                    Nom Entreprise
+                    {$NomEntreprise}
                 </p>
             </div>
             <div class="ml-3">
@@ -53,7 +59,7 @@
             </div>
             <div class="ml-2">
                 <i class="fa fa-compass fa-xl"></i>
-                Orléans
+                {$Localite}
             </div>
         </div>
         <!-- Bouton-->
@@ -70,8 +76,8 @@
         </div>
         <!-- information-->
         <div class="border border-black rounded min-[880px]:h-[70%] overflow-y-scroll max-h-96">
-            <p class="h-full p-2 min-[880px]:p-7  text-md ">Lorem ipsum dolor sit amet, <br><br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, <br><br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+            <p class="h-full p-2 min-[880px]:p-7  text-md ">{$info}</p>
+            </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Retour</button>
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Postuler</button>
