@@ -17,17 +17,20 @@ class EtudiantModele{
          INNER JOIN Statut s on e.id_statut = s.id_statut WHERE s.statut = :statut ;";
         return $this->db->execute($statement,array(":statut"=>$statut));
     }
-    public function getAllByIdTuteur($id){
-        $statement="SELECT e.id_eleve, u.prenom_utilisateur, u.nom_utilisateur
+    public function getAllRechercheByIdTuteur(){
+        $statement="SELECT e.id_eleve
         FROM Eleve e INNER JOIN Utilisateur u on e.id_utilisateur = u.id_utilisateur WHERE (
-        e.id_classe = (SELECT c.id_classe FROM (
-        (Classe c INNER JOIN Pilote p on c.id_classe = p.id_classe)
-        INNER JOIN Tuteur t on p.id_tuteur = t.id_tuteur)
-        WHERE t.id_utilisateur = :id
-        )
-        );
-        ";
-        return $this->db->execute($statement,array(":id"=>$id));
+            e.id_classe = (SELECT c.id_classe FROM (
+            Classe c INNER JOIN Pilote p on c.id_classe = p.id_classe)
+            INNER JOIN Tuteur t on p.id_tuteur = t.id_tuteur
+            WHERE t.id_utilisateur = :sess
+            ) 
+            )
+            AND e.id_statut = (SELECT DISTINCT s.id_statut FROM 
+            Eleve e INNER JOIN Statut s on e.id_statut = s.id_statut 
+            WHERE s.statut = 'En recherche') 
+            ;";
+        return $this->db->execute($statement,array(":sess"=>$_SESSION['id_utilisateur']));
     }
     public function getCountByStatutByIdTuteur($statut){
         $statement="SELECT COUNT(e.id_eleve)
@@ -39,9 +42,9 @@ class EtudiantModele{
         ) 
         )
         AND e.id_statut = (SELECT DISTINCT s.id_statut FROM 
-        Eleve e INNER JOIN Statut s on e.id_statut = :statut 
+        Eleve e INNER JOIN Statut s on e.id_statut = :statut ;
         ";
-        return $this->db->execute($statement,array(":statut"=>$statut, ":sess"=>$_SESSION[id_utilisateur]));
+        return $this->db->execute($statement,array(":statut"=>$statut, ":sess"=>$_SESSION['id_utilisateur']));
     }
 }
 ?>

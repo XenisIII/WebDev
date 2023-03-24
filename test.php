@@ -9,7 +9,7 @@
 <body>
     <h1><?php require(__DIR__."/src/modele/EtudiantModele.php");
     $a = new EtudiantModele;
-    print_r($a->getAllById(2));
+    print_r($a->getAllRechercheByIdTuteur(5));
     ?></h1>
 </body>
 </html>
