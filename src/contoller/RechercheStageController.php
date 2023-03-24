@@ -9,6 +9,7 @@ class RechercheStageController{
         $this->offer=new OffreModele();
     }
     public function index(){
+        $get="";
         if(isset($_GET['page'])){
             $page=$_GET['page'];
         }else{
@@ -21,6 +22,24 @@ class RechercheStageController{
         }else{
         $arrayOffer= $this->offer->getAllOffer();
         $count=count($arrayOffer);}
+        if(isset($_GET['scales'])){
+            $scale=$_GET['scales'];
+            $get=$get."&scales=$scale"
+            switch($scale){
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+        }
         $nbpage=intval(round($count/5));
         $this->smarty->assign("DocumentTitle","Recherche Stage");
         $this->smarty->assign("Pages",$nbpage);

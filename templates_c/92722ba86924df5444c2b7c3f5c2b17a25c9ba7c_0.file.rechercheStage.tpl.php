@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-24 16:23:14
+/* Smarty version 4.3.0, created on 2023-03-24 16:39:18
   from '/home/lilian/Documents/git/WebDev-mvc/templates/rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641dc062836479_22813580',
+  'unifunc' => 'content_641dc426270fa1_07468522',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '92722ba86924df5444c2b7c3f5c2b17a25c9ba7c' => 
     array (
       0 => '/home/lilian/Documents/git/WebDev-mvc/templates/rechercheStage.tpl',
-      1 => 1679671391,
+      1 => 1679672343,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641dc062836479_22813580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641dc426270fa1_07468522 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -100,16 +100,9 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-black">Search</label>
                     <div class="relative">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </div>
                         <input type="search" id="default-search" name="search"
                             class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Recherche ton avenir..." required>
+                            placeholder="Recherche ton avenir..." >
                         <button type="submit" 
                             class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
@@ -264,17 +257,21 @@ echo $_smarty_tpl->tpl_vars['get']->value;?>
             </div>
             <div class="text-black block     px-3 py-2 text-base font-medium">
                 <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
-                <input type="checkbox" id="scales" name="scales" checked>
+                <form metho="get">
+                <input type="radio"  name="scales" value="0">
+                <label for="a">Tous</label></br>
+                <input type="radio" name="scales" value="1">
                 <label for="scales">Il y a 1 jour</label></br>
-                <input type="checkbox" id="scales" name="scales" checked>
-                <label for="scales">Il y a 2 à 7 jours</label></br>
-                <input type="checkbox" id="scales" name="scales" checked>
+                <input type="radio"  name="scales" value="2">
+                <label for="radio">Il y a 2 à 7 jours</label></br>
+                <input type="radio"  name="scales" value="3" >
                 <label for="scales">Il y a 8 à 14 jours</label></br>
-                <input type="checkbox" id="scales" name="scales" checked>
+                <input type="radio"  name="scales" value="4">
                 <label for="scales">Il y a 15 à 30 jours</label></br>
-                <input type="checkbox" id="scales" name="scales" checked>
+                <input type="radio"  name="scales" value="5">
                 <label for="scales">Il y a plus de 30 jours</label></br>
-
+                <input type="submit">
+                </form>
             </div>
         </div>
     </div>

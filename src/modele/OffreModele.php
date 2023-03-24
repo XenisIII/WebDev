@@ -22,6 +22,10 @@ class OffreModele{
         return $this->db->executeAll($statement,array(":string"=>"%".$value."%"));
         
     }
+    public function getAllOfferScale($value){
+        $statement="SELECT * from Offre natural join Localite natural join Entreprise where $value";
+        return $this->db->Query($statement);
+    }
 
 
 }
