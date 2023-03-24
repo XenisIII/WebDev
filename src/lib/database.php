@@ -32,6 +32,12 @@
     public function execute($statement,$params=array()){
         $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
         $tmp_->execute($params);
+        return($tmp_->fetch(PDO::FETCH_OBJ));
     }
+    /*public function executeCount($statement,$params=array()){
+        $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $tmp_->execute($params);
+        return($tmp_->columnCount());
+    }*/
 }
 ?>

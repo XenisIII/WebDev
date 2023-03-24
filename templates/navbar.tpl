@@ -1,5 +1,5 @@
 
-<header class="bg-[#f5f5f5] sm:overflow-hidden">
+<header class="bg-[#f5f5f5]">
     <div class="min-h-full">
         <nav class="bg-gray-900">
             <div class="mx-auto px-2 lg:ml-0">
