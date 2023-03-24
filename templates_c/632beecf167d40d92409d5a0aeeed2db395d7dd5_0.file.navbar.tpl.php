@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 14:17:09
+/* Smarty version 4.3.0, created on 2023-03-24 09:08:41
   from 'C:\Users\aphou\Desktop\CESI\Projet\WebDev-mvc\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c5155c12833_56638694',
+  'unifunc' => 'content_641d5a8931e634_89119137',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '632beecf167d40d92409d5a0aeeed2db395d7dd5' => 
     array (
       0 => 'C:\\Users\\aphou\\Desktop\\CESI\\Projet\\WebDev-mvc\\templates\\navbar.tpl',
-      1 => 1679566653,
+      1 => 1679645312,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c5155c12833_56638694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d5a8931e634_89119137 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<header class="bg-[#f5f5f5] sm:overflow-hidden">
+<header class="">
     <div class="min-h-full">
         <nav class="bg-gray-900">
             <div class="mx-auto px-2 lg:ml-0">
@@ -75,7 +75,7 @@ function content_641c5155c12833_56638694 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
 
                         <div id="user-menu"
-                            class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+                            class="absolute bg-black right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"

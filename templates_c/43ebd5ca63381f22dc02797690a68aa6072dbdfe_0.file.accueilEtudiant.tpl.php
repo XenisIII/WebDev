@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 14:17:09
+/* Smarty version 4.3.0, created on 2023-03-24 09:08:41
   from 'C:\Users\aphou\Desktop\CESI\Projet\WebDev-mvc\templates\accueilEtudiant.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c5155af0353_98234191',
+  'unifunc' => 'content_641d5a892d5da9_97278738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '43ebd5ca63381f22dc02797690a68aa6072dbdfe' => 
     array (
       0 => 'C:\\Users\\aphou\\Desktop\\CESI\\Projet\\WebDev-mvc\\templates\\accueilEtudiant.tpl',
-      1 => 1679566653,
+      1 => 1679645314,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_641c5155af0353_98234191 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d5a892d5da9_97278738 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <body>
-    <div>
         <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <div
