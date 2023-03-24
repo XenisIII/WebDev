@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 23:38:55
+/* Smarty version 4.3.0, created on 2023-03-24 09:15:43
   from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641cd4ffb982f9_85297058',
+  'unifunc' => 'content_641d5c2f44c719_19904805',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7678183d7a7fad89f915b5f49a3c9545e1faf5f5' => 
     array (
       0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\offre.tpl',
-      1 => 1679578317,
+      1 => 1679644484,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641cd4ffb982f9_85297058 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d5c2f44c719_19904805 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
