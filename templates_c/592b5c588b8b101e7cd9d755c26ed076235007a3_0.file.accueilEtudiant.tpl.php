@@ -1,8 +1,35 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-24 16:50:02
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\accueilEtudiant.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641dc6aaad9a04_10086794',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '592b5c588b8b101e7cd9d755c26ed076235007a3' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\accueilEtudiant.tpl',
+      1 => 1679672999,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_641dc6aaad9a04_10086794 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <body>
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
         <div
         class="flex sm:flex-wrap sm:justify-between lg:mr-[7%] lg:ml-[10%] mt-5 md:ml-[10%] sm:mx-[3%] md:mr-[5%] lg:mt-6 flex-col sm:flex-row">
         <div class="rounded-md w-[90%] sm:w-[30%] h-[8rem] bg-white mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] border border-[#dfdfdf]">
@@ -66,10 +93,19 @@
     </div>
     <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
-        {foreach $DerniereOffre as $data}
-        <li class="flex justify-between px-3 mb-3">{$data->nom_offre} <div class="px-5">{$data->competence}</div></li> <!-- dollar est une variable/  nom_offre =attribut attribut lié a l'objet
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['DerniereOffre']->value, 'data');
+$_smarty_tpl->tpl_vars['data']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
+$_smarty_tpl->tpl_vars['data']->do_else = false;
+?>
+        <li class="flex justify-between px-3 mb-3"><?php echo $_smarty_tpl->tpl_vars['data']->value->nom_offre;?>
+ <div class="px-5"><?php echo $_smarty_tpl->tpl_vars['data']->value->competence;?>
+</div></li> <!-- dollar est une variable/  nom_offre =attribut attribut lié a l'objet
          -->
-        {/foreach}
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </ul>
     </div>
         </div>
@@ -97,13 +133,16 @@
         </div>
     </div>
     <!-----------------------------------------------graphe----------------------------------------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"><?php echo '</script'; ?>
+>
     <!---------------------------------------------------------------------------------------------->
 </body>
 
 </html>
 
-<script>
+<?php echo '<script'; ?>
+>
 
     const graph = document.getElementById("graph").getContext("2d");
 
@@ -166,4 +205,6 @@
                 break;
         }
     }; 
-</script>
+<?php echo '</script'; ?>
+><?php }
+}
