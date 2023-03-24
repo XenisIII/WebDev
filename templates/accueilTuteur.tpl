@@ -20,7 +20,7 @@
 
         </div>
         <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 ">
-            <p class="text-center">Statut Recherche</p>
+            <a href="rechercheEtudiant/index"><p class="text-center">Statut Recherche</p></a>
         </div>
     </div>
 </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="flex justify-around flex-wrap border border-[#dfdfdf] bg-[#fafafa] rounded-b-lg ">
         <div class="flex items-center max-[880px]:h-10 h-20">
-            <p>Gestion Entreprise</p>
+            <a href="vueEntreprise/index"><p>Gestion Entreprise</p></a>
         </div>
     </div>
 </div>
