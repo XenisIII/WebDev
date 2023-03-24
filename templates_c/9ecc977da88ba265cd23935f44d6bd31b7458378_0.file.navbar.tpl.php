@@ -1,5 +1,28 @@
+<?php
+/* Smarty version 4.3.0, created on 2023-03-24 10:04:07
+  from '/home/lilian/Documents/git/WebDev-mvc/templates/navbar.tpl' */
 
-<header class="bg-[#f5f5f5]">
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641d67870cb851_89861251',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '9ecc977da88ba265cd23935f44d6bd31b7458378' => 
+    array (
+      0 => '/home/lilian/Documents/git/WebDev-mvc/templates/navbar.tpl',
+      1 => 1679648039,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_641d67870cb851_89861251 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<header class="bg-[#f5f5f5] sm:overflow-hidden">
     <div class="min-h-full">
         <nav class="bg-gray-900">
             <div class="mx-auto px-2 lg:ml-0">
@@ -27,7 +50,7 @@
 
                     <div class="flex flex-1 sm:items-stretch sm:justify-start ml-2 lg:ml-0">
                         <div class="flex flex-shrink-0 items-center">
-                            <img class="block h-9 w-auto h-6" src="/../img/krita.png" alt="Your Company">
+                            <img class="block h-9 w-auto h-6" src="../img/krita.png" alt="Your Company">
                         </div>
                         <div class="sm:ml-6 sm:block">
                             <div class="flex space-x-4">
@@ -104,7 +127,8 @@
             </div>
         </div>
     </div>
-    <script>
+    <?php echo '<script'; ?>
+>
     function mobileMenu() {
         var menu = document.getElementById("mobile-menu");
         if (menu.classList.contains("hidden")) {
@@ -122,8 +146,11 @@
             menu.classList.add("hidden");
         }
     };  
-</script>
+<?php echo '</script'; ?>
+>
 
 </header>
 
 
+<?php }
+}

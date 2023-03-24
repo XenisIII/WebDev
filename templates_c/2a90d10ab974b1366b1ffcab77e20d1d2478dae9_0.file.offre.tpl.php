@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 17:06:12
-  from '/home/lilian/Documents/webdev/WebDev-mvc/templates/offre.tpl' */
+/* Smarty version 4.3.0, created on 2023-03-24 10:05:52
+  from '/home/lilian/Documents/git/WebDev-mvc/templates/offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c78f4bc0283_26512740',
+  'unifunc' => 'content_641d67f0532956_79602444',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ad6f92d60e43ab509dcab22b717eafb4c799f500' => 
+    '2a90d10ab974b1366b1ffcab77e20d1d2478dae9' => 
     array (
-      0 => '/home/lilian/Documents/webdev/WebDev-mvc/templates/offre.tpl',
-      1 => 1679587571,
+      0 => '/home/lilian/Documents/git/WebDev-mvc/templates/offre.tpl',
+      1 => 1679648747,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641c78f4bc0283_26512740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d67f0532956_79602444 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
@@ -46,15 +46,17 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
                 <ul class="flex flex-wrap my-5">
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">CSS</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">HTML</li>
-                    <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2">Javascript</li> 
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Competences']->value, 'competence');
+$_smarty_tpl->tpl_vars['competence']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['competence']->value) {
+$_smarty_tpl->tpl_vars['competence']->do_else = false;
+?>
+                        <li class="rounded-full bg-gray-200 px-5 mx-2 mt-2"><?php echo $_smarty_tpl->tpl_vars['competence']->value->competence;?>
+</li>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </ul>
             </div>
             <!--durée-->
@@ -99,7 +101,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         </div>
         <!-- Bouton-->
         <div class="flex justify-between max-[880px]:hidden h-1/5 items-center">
-            <button class="border border-black w-3/12 h-3/5 rounded">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 rounded">Postuler</button>
         </div>
     </div>
@@ -115,8 +117,8 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
 </p>
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Retour</button>
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full">Postuler</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button>
         </div>
 
     </div>
