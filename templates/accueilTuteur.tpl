@@ -80,8 +80,8 @@
     </div>
     <div class="bg-white h-32 w-10/12 divide-y mt-2">
         <div class="h-10 flex items-center justify-between"><p>Stage trouvé :</p> <div class="rounded-full bg-green-200 px-5"> {$stage_trouve} / {$tot_eleve} </div></div>
-        <div class="h-10 flex items-center justify-between"><p>En attente de papier :</p><div class="rounded-full bg-orange-200 px-5"> 10/46</div></div>
-        <div class="h-10 flex items-center justify-between"><p>En recherche</p><div class="rounded-full bg-red-200 px-5"> 16/46</div></div>
+        <div class="h-10 flex items-center justify-between"><p>En attente de papier :</p><div class="rounded-full bg-orange-200 px-5"> {$stage_attente} / {$tot_eleve}</div></div>
+        <div class="h-10 flex items-center justify-between"><p>En recherche</p><div class="rounded-full bg-red-200 px-5"> {$stage_recherche} / {$tot_eleve}</div></div>
     </div>
     <div class="min-[880px]:pt-10">
         <canvas id="graph" width="100%" height="100%" style="display: block; height: 66px; width: 133px;" class="chartjs-render-monitor"></canvas>
@@ -101,7 +101,7 @@
                 datasets: [
                     {
                         label: "Population en M ",
-                        data: [20, 10, 16],
+                        data: [{$stage_recherche}, {$stage_attente}, {$stage_trouve}],
                         // backgroundColor: "blue",
                         backgroundColor: [
                             "red",

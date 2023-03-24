@@ -12,7 +12,7 @@
     session_start();
             $_SESSION['user_id']="4";
             $_SESSION['user_type']="Tuteur";
-    print_r (($test->getCountByStatutByIdTuteur("Accepté")));
+    echo (($test->getCountByStatutByIdTuteur("Accepté")[0]->nb_eleve));
     ?></h1>
 </body>
 </html>
