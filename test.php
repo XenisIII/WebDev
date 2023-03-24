@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><?php require(__DIR__."/src/modele/StagesModele.php");
-    echo $this->db->getAllById(2)->nom_offre;
+    <h1><?php require(__DIR__."/src/modele/EtudiantModele.php");
+    $a = new EtudiantModele;
+    print_r($a->getAllById(2));
     ?></h1>
 </body>
 </html>
+
