@@ -27,7 +27,7 @@
 
                     <div class="flex flex-1 sm:items-stretch sm:justify-start ml-2 lg:ml-0">
                         <div class="flex flex-shrink-0 items-center">
-                            <img class="block h-9 w-auto h-6" src="../img/krita.png" alt="Your Company">
+                            <img class="block h-9 w-auto h-6" src="/../img/krita.png" alt="Your Company">
                         </div>
                         <div class="sm:ml-6 sm:block">
                             <div class="flex space-x-4">
