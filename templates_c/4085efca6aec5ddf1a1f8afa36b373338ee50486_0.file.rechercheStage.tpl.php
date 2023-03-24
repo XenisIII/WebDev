@@ -1,8 +1,36 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-24 09:54:02
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\rechercheStage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641d652ade8728_30305039',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '4085efca6aec5ddf1a1f8afa36b373338ee50486' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\rechercheStage.tpl',
+      1 => 1679648034,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_641d652ade8728_30305039 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <body class="bg-[#f5f5f5] ">
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </div>
     <!--bouton caché trier par-->
     <div class=" ">
@@ -47,11 +75,13 @@
                             onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
                         <span id="valBox">Valeur</span>
                         <!-- script permettant l'affichage de la la valeur choisi en fonction du curseur-->
-                        <script>
+                        <?php echo '<script'; ?>
+>
                             function AfficheRange2(newVal) {
                                 document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
                             }
-                        </script>
+                        <?php echo '</script'; ?>
+>
                     </div>
                 </a>
             </div>
@@ -95,14 +125,11 @@
                         <div class=''>
                             <!-- Div Pour le titre du stage-->
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                            <!--{* {$nomOffre} *}-->
+                            <!---->
                         </div>
                         <div class="invisible sm:visible">
                             <!-- Div pour la location ect qui se cache quand on est sur téléphone-->
-                            <i class="fa fa-building"></i> Orange
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
+                            <i class="fa fa-building"></i> Orange                             <i class="fa fa-location-dot"></i> Orléans                             <i class="fa fa-clock"></i> 3 mois                         </div>
                     </div>
                     <!-- Div pour les étoiles et les centrer au milieu-->
                     <div class="flex items-stretch self-center">
@@ -125,10 +152,7 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
+                            <i class="fa fa-building"></i> Orange                             <i class="fa fa-location-dot"></i> Orléans                             <i class="fa fa-clock"></i> 3 mois                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
                         <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
@@ -149,10 +173,7 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="mb-0 invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
+                            <i class="fa fa-building"></i> Orange                             <i class="fa fa-location-dot"></i> Orléans                             <i class="fa fa-clock"></i> 3 mois                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
                         <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
@@ -173,10 +194,7 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="mb-0 invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
+                            <i class="fa fa-building"></i> Orange                             <i class="fa fa-location-dot"></i> Orléans                             <i class="fa fa-clock"></i> 3 mois                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
                         <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
@@ -197,10 +215,7 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
+                            <i class="fa fa-building"></i> Orange                             <i class="fa fa-location-dot"></i> Orléans                             <i class="fa fa-clock"></i> 3 mois                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
                         <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
@@ -287,11 +302,13 @@
                 <input type="range" id="point" name="point" min="0" max="100" step="10"
                     onchange="AfficheRange(this.value)" onkeyup="AfficheRange(this.value)">
                 <span id="val">Valeur</span>
-                <script>
+                <?php echo '<script'; ?>
+>
                     function AfficheRange(newVal2) {
                         document.getElementById("val").innerHTML = "Valeur=" + newVal2;
                     }
-                </script>
+                <?php echo '</script'; ?>
+>
             </div>
             <div class="text-black block     px-3 py-2 text-base font-medium">
                 <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
@@ -310,7 +327,8 @@
         </div>
     </div>
     <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
-    <script>
+    <?php echo '<script'; ?>
+>
         function heartv2() {
             heart.setAttribute("class", "text-red-500 fa fa-heart m-8")
             console.log('test');
@@ -324,6 +342,9 @@
                 menu.classList.add("hidden");
             }
         };
-    </script>
-    {include file="footer.tpl"}
-</body>
+    <?php echo '</script'; ?>
+>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+</body><?php }
+}
