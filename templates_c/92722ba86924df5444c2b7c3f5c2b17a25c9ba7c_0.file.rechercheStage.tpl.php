@@ -1,14 +1,41 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-24 10:05:57
+  from '/home/lilian/Documents/git/WebDev-mvc/templates/rechercheStage.tpl' */
 
-<body class="bg-[#f5f5f5] ">
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641d67f5aca757_59493304',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '92722ba86924df5444c2b7c3f5c2b17a25c9ba7c' => 
+    array (
+      0 => '/home/lilian/Documents/git/WebDev-mvc/templates/rechercheStage.tpl',
+      1 => 1679648039,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_641d67f5aca757_59493304 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<body class="bg-[#f5f5f5]">
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </div>
-    <!--bouton caché trier par-->
-    <div class=" ">
-        <div class="md:hidden flex justify-center mt-4 ">
+    <div>
+        <div class="md:hidden flex justify-center mt-4">
             <button onclick="mobileFastSearch()" type="button"
-                class="inline-flex items-center justify-center rounded-md bg-white p-2 text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                class="inline-flex items-center justify-center rounded-md  p-2 text-white-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 aria-controls="mobile-fast-serach" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <!-- Menu open: "hidden", Menu closed: "block" -->
@@ -20,12 +47,12 @@
                 </svg>
             </button>
         </div>
-        <!--Quand on est dans un écran de tel on a l'apparition des chackboxs -->
-        <div class="hidden md:hidden" id="mobile-fast-serach">
-            <div class="flex space-y-1 px-2 pt-2 pb-3 sm:px-3 bg-white rounded-[12px]">
-                <a href="#" class=" text-black² block rounded-md px-3 py-2 text-base font-medium" aria-current="page"
-                    id="mobile-menu-item">
-                    <div class="justify-center">
+        <div class="hidden lg:hidden" id="mobile-fast-serach">
+            <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class=" text-white block rounded-md px-3 py-2 text-base font-medium"
+                    aria-current="page" id="mobile-menu-item">
+                    <div class="">
                         <input type="checkbox" id="scales" name="scales" checked>
                         <label for="scales">Il y a 1 jour</label></br>
                         <input type="checkbox" id="scales" name="scales" checked>
@@ -39,32 +66,44 @@
 
                     </div>
                 </a>
-                <!--choix de la distance en km -->
-                <a href="#" class="text-black rounded-md px-3 py-2 text-base font-medium" id="mobile-menu-item">
-                    <div class="w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                        <label for="points">Distance(Entre 0 et 100 Km):</label>
-                        <input type="range" id="points" name="points" min="0" max="100" step="10"
-                            onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
-                        <span id="valBox">Valeur</span>
-                        <!-- script permettant l'affichage de la la valeur choisi en fonction du curseur-->
-                        <script>
-                            function AfficheRange2(newVal) {
-                                document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
-                            }
-                        </script>
-                    </div>
+                <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                id="mobile-menu-item">
+                <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                    <label for="points">Distance(Entre 0 et 100 Km):</label>
+                    <input type="range" id="points" name="points" min="0" max="100" step="10"
+                        onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
+                    <span id="valBox">Valeur</span>
+                    <?php echo '<script'; ?>
+>
+                        function AfficheRange2(newVal) {
+                            document.getElementById("valBox").innerHTML = "Valeur=" + newVal;
+                        }
+                    <?php echo '</script'; ?>
+>
+                </div>
+            </a>
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                    id="mobile-menu-item">
+                    <div class="">
+                        <div class="">
+                            <p>Trier par :</p>
+                            <input type="radio" value="Personnel">
+                            <label for="personnel">Personnel</label>
+                            <input type="radio" value="Professionel">
+                            <label for="professionel">Professionel</label>
+                        </div>
                 </a>
             </div>
         </div>
 
     </div>
-    <!--séparation en 2 colonnes puis en ligne quand format téléphone est présent-->
     <div
         class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:mr-[2%] mr-5 lg:ml-[5%] mt-5 md:ml-[10%] md:mr-[5%] sm:mx-[3%] lg:mt-0">
-        <!--première grande div celle de gauche -->
+
         <div
-            class=" w-[90%] sm:w-[80%] h-fit divide-y bg-white mr-3 rounded-[12px] border border-[#dadada] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] mr-5 flex flex-col">
-            <!-- barre de recherche de tailwind -->
+            class=" w-[90%] sm:w-[80%] h-[650px] divide-y bg-white mr-3 rounded-[12px] border border-[#dadada] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] mr-5 flex flex-col">
             <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] divide-y mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
                 <form>
                     <label for="default-search"
@@ -85,26 +124,19 @@
                     </div>
                 </form>
             </div>
-            <div class="bg-white divide-y w-[90%] h-fit sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
-                <!--grande div contenant les offres-->
-                <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between                                           
+            <div class="bg-white divide-y w-[90%] sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
+                <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
-                    <!--div contenant les différentes colones-->
                     <div class="flex flex-col ">
-                        <!-- Div pour séparer le titre de la location ect-->
                         <div class=''>
-                            <!-- Div Pour le titre du stage-->
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                            <!--{* {$nomOffre} *}-->
                         </div>
                         <div class="invisible sm:visible">
-                            <!-- Div pour la location ect qui se cache quand on est sur téléphone-->
                             <i class="fa fa-building"></i> Orange
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
+                            <i class="fa fa-location-dot"></i> Orléans
+                            <i class="fa fa-clock"></i> 3 mois
                         </div>
                     </div>
-                    <!-- Div pour les étoiles et les centrer au milieu-->
                     <div class="flex items-stretch self-center">
                         <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
                             onclick="star(1)"></i>
@@ -114,7 +146,6 @@
                         <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
                     </div>
                     <div class="flex items-stretch self-center">
-                        <!-- Div pour centrer le coeur -->
                         <i id="heart" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2()"></i>
                     </div>
                 </div>
@@ -125,9 +156,9 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
+                            <i class="fa fa-building"></i> Orange
+                            <i class="fa fa-location-dot"></i> Orléans
+                            <i class="fa fa-clock"></i> 3 mois
                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
@@ -149,9 +180,9 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="mb-0 invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
+                            <i class="fa fa-building"></i> Orange
+                            <i class="fa fa-location-dot"></i> Orléans
+                            <i class="fa fa-clock"></i> 3 mois
                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
@@ -173,9 +204,9 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="mb-0 invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
+                            <i class="fa fa-building"></i> Orange
+                            <i class="fa fa-location-dot"></i> Orléans
+                            <i class="fa fa-clock"></i> 3 mois
                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
@@ -197,9 +228,9 @@
                             <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
                         </div>
                         <div class="invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
+                            <i class="fa fa-building"></i> Orange
+                            <i class="fa fa-location-dot"></i> Orléans
+                            <i class="fa fa-clock"></i> 3 mois
                         </div>
                     </div>
                     <div class="flex items-stretch self-center">
@@ -216,7 +247,6 @@
                     </div>
                 </div>
                 <div class="flex items-center content-end border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                    <!-- Div pour mettre la pagination de tailwind -->
                     <div class="flex flex-1 justify-between sm:hidden">
                         <a href="#"
                             class="relative inline-flex items-center content-end rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
@@ -276,23 +306,30 @@
                 </div>
             </div>
         </div>
-        <!--même chose que préscédemment mais pour la version large-->
+
         <div
             class=" bg-white h-fit rounded-[12px] border border-[#dadada] invisible md:visible w-[20%]  sm:w-[20%] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] ">
             <div class=" text-black block  px-3 py-2 text-base font-medium">
+            <!--bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
                 <p>Trier par :</p>
+                <input type="radio" value="Personnel">
+                <label for="personnel">Personnel</label>
+                <input type="radio" value="Professionel">
+                <label for="professionel">Professionel</label>
             </div>
-            <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                <label for="point">Distance(Entre 0 et 100 Km):</label>
-                <input type="range" id="point" name="point" min="0" max="100" step="10"
-                    onchange="AfficheRange(this.value)" onkeyup="AfficheRange(this.value)">
-                <span id="val">Valeur</span>
-                <script>
-                    function AfficheRange(newVal2) {
-                        document.getElementById("val").innerHTML = "Valeur=" + newVal2;
-                    }
-                </script>
-            </div>
+                <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
+                    <label for="point">Distance(Entre 0 et 100 Km):</label>
+                    <input type="range" id="point" name="point" min="0" max="100" step="10"
+                        onchange="AfficheRange2(this.value)" onkeyup="AfficheRange2(this.value)">
+                    <span id="val">Valeur</span>
+                    <?php echo '<script'; ?>
+>
+                        function AfficheRange2(newVal) {
+                            document.getElementById("val").innerHTML = "Valeur=" + newVal;
+                        }
+                    <?php echo '</script'; ?>
+>
+                </div>
             <div class="text-black block     px-3 py-2 text-base font-medium">
                 <!---bg-red-100 w-[90%] sm:w-[95%] h-12 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]-->
                 <input type="checkbox" id="scales" name="scales" checked>
@@ -309,8 +346,8 @@
             </div>
         </div>
     </div>
-    <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
-    <script>
+    <?php echo '<script'; ?>
+>
         function heartv2() {
             heart.setAttribute("class", "text-red-500 fa fa-heart m-8")
             console.log('test');
@@ -324,6 +361,9 @@
                 menu.classList.add("hidden");
             }
         };
-    </script>
-    {include file="footer.tpl"}
-</body>
+    <?php echo '</script'; ?>
+>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+</body><?php }
+}
