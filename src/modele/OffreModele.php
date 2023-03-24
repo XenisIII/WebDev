@@ -17,9 +17,9 @@ class OffreModele{
         $statement="SELECT * from Offre natural join Localite natural join Entreprise";
         return $this->db->Query($statement);
     }
-    public function getAllOfferLike($string){
-        $statement="SELECT * from Offre natural join Localite natural join Entreprise where informations like :string";
-        return $this->db->executeAll($statement,array(":string"=>$string));
+    public function getAllOfferLike($value){
+        $statement="SELECT * from Offre natural join Localite natural join Entreprise where informations like :string;";
+        return $this->db->executeAll($statement,array(":string"=>"%".$value."%"));
         
     }
 

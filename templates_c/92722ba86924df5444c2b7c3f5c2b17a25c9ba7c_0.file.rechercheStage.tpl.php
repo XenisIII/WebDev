@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-24 14:41:54
+/* Smarty version 4.3.0, created on 2023-03-24 16:23:14
   from '/home/lilian/Documents/git/WebDev-mvc/templates/rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641da8a2edd015_50504531',
+  'unifunc' => 'content_641dc062836479_22813580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '92722ba86924df5444c2b7c3f5c2b17a25c9ba7c' => 
     array (
       0 => '/home/lilian/Documents/git/WebDev-mvc/templates/rechercheStage.tpl',
-      1 => 1679665313,
+      1 => 1679671391,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641da8a2edd015_50504531 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641dc062836479_22813580 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -96,7 +96,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             class=" w-[90%] sm:w-[80%] h-fit divide-y bg-white mr-3 rounded-[12px] border border-[#dadada] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] mr-5 flex flex-col">
             <!-- barre de recherche de tailwind -->
             <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] divide-y mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                <form>
+                <form method="get">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-black">Search</label>
                     <div class="relative">
@@ -107,10 +107,10 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input type="search" id="default-search"
+                        <input type="search" id="default-search" name="search"
                             class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Recherche ton avenir..." required>
-                        <button type="submit"
+                        <button type="submit" 
                             class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
                 </form>
@@ -118,7 +118,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             <div class="bg-white divide-y w-[90%] h-fit sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
                 <!--grande div contenant les offres-->
                 <?php
-$_smarty_tpl->tpl_vars['nboffre'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['nboffre']->step = 1;$_smarty_tpl->tpl_vars['nboffre']->total = (int) ceil(($_smarty_tpl->tpl_vars['nboffre']->step > 0 ? 4+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5+1 - (0+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5) : 0+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5-(4+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5)+1)/abs($_smarty_tpl->tpl_vars['nboffre']->step));
+$_smarty_tpl->tpl_vars['nboffre'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['nboffre']->step = 1;$_smarty_tpl->tpl_vars['nboffre']->total = (int) min(ceil(($_smarty_tpl->tpl_vars['nboffre']->step > 0 ? $_smarty_tpl->tpl_vars['TotalOffre']->value-1+1 - (0+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5) : 0+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5-($_smarty_tpl->tpl_vars['TotalOffre']->value-1)+1)/abs($_smarty_tpl->tpl_vars['nboffre']->step)),5);
 if ($_smarty_tpl->tpl_vars['nboffre']->total > 0) {
 for ($_smarty_tpl->tpl_vars['nboffre']->value = 0+($_smarty_tpl->tpl_vars['Thispage']->value-1)*5, $_smarty_tpl->tpl_vars['nboffre']->iteration = 1;$_smarty_tpl->tpl_vars['nboffre']->iteration <= $_smarty_tpl->tpl_vars['nboffre']->total;$_smarty_tpl->tpl_vars['nboffre']->value += $_smarty_tpl->tpl_vars['nboffre']->step, $_smarty_tpl->tpl_vars['nboffre']->iteration++) {
 $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->iteration === 1;$_smarty_tpl->tpl_vars['nboffre']->last = $_smarty_tpl->tpl_vars['nboffre']->iteration === $_smarty_tpl->tpl_vars['nboffre']->total;?>
@@ -187,7 +187,9 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                             <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
             <a href="?page=<?php if ($_smarty_tpl->tpl_vars['Thispage']->value > 1) {
 echo $_smarty_tpl->tpl_vars['Thispage']->value-1;
-} else { ?>1<?php }?> "
+} else { ?>1<?php }
+echo $_smarty_tpl->tpl_vars['get']->value;?>
+"
                                     class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                     <span class="sr-only">Previous</span>
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -197,14 +199,16 @@ echo $_smarty_tpl->tpl_vars['Thispage']->value-1;
                                     </svg>
                                 </a>
                                 <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                                <a href="?page=1" aria-current="page"
+                                <a href="?page=1<?php echo $_smarty_tpl->tpl_vars['get']->value;?>
+" aria-current="page"
                                     class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
                                 <?php
 $_smarty_tpl->tpl_vars['page'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['page']->step = 1;$_smarty_tpl->tpl_vars['page']->total = (int) min(ceil(($_smarty_tpl->tpl_vars['page']->step > 0 ? $_smarty_tpl->tpl_vars['Pages']->value+1 - ($_smarty_tpl->tpl_vars['Thispage']->value-2) : $_smarty_tpl->tpl_vars['Thispage']->value-2-($_smarty_tpl->tpl_vars['Pages']->value)+1)/abs($_smarty_tpl->tpl_vars['page']->step)),5);
 if ($_smarty_tpl->tpl_vars['page']->total > 0) {
 for ($_smarty_tpl->tpl_vars['page']->value = $_smarty_tpl->tpl_vars['Thispage']->value-2, $_smarty_tpl->tpl_vars['page']->iteration = 1;$_smarty_tpl->tpl_vars['page']->iteration <= $_smarty_tpl->tpl_vars['page']->total;$_smarty_tpl->tpl_vars['page']->value += $_smarty_tpl->tpl_vars['page']->step, $_smarty_tpl->tpl_vars['page']->iteration++) {
 $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteration === 1;$_smarty_tpl->tpl_vars['page']->last = $_smarty_tpl->tpl_vars['page']->iteration === $_smarty_tpl->tpl_vars['page']->total;?>
-                                <?php if ($_smarty_tpl->tpl_vars['page']->value > 1 && $_smarty_tpl->tpl_vars['page']->value < $_smarty_tpl->tpl_vars['Pages']->value) {?><a href="?page=<?php echo $_smarty_tpl->tpl_vars['page']->value;?>
+                                <?php if ($_smarty_tpl->tpl_vars['page']->value > 1 && $_smarty_tpl->tpl_vars['page']->value < $_smarty_tpl->tpl_vars['Pages']->value) {?><a href="?page=<?php echo $_smarty_tpl->tpl_vars['page']->value;
+echo $_smarty_tpl->tpl_vars['get']->value;?>
 "
                                     class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 </a>
@@ -212,15 +216,19 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
 }
 }
 ?>
-                                <a href="?page=<?php echo $_smarty_tpl->tpl_vars['Pages']->value;?>
+                                <?php if ($_smarty_tpl->tpl_vars['Pages']->value != 1) {?>
+                                <a href="?page=<?php echo $_smarty_tpl->tpl_vars['Pages']->value;
+echo $_smarty_tpl->tpl_vars['get']->value;?>
 " aria-current="page"
-                                    class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><?php echo $_smarty_tpl->tpl_vars['Pages']->value;?>
-</a>
+                                class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><?php echo $_smarty_tpl->tpl_vars['Pages']->value;?>
+</a><?php }?>
                                     <a href="?page=<?php if ($_smarty_tpl->tpl_vars['Thispage']->value < $_smarty_tpl->tpl_vars['Pages']->value) {
 echo $_smarty_tpl->tpl_vars['Thispage']->value+1;
 } else {
 echo $_smarty_tpl->tpl_vars['Pages']->value;
-}?>"
+}
+echo $_smarty_tpl->tpl_vars['get']->value;?>
+"
                                     class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                     <span class="sr-only">Next</span>
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

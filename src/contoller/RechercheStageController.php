@@ -17,10 +17,11 @@ class RechercheStageController{
         if(isset($_GET['search'])){
             $arrayOffer=$this->offer->getAllOfferlike($_GET['search']);
             $count=count($arrayOffer);
+            $get="&search=".$_GET['search'];
         }else{
         $arrayOffer= $this->offer->getAllOffer();
         $count=count($arrayOffer);}
-        $nbpage=$count/5;
+        $nbpage=intval(round($count/5));
         $this->smarty->assign("DocumentTitle","Recherche Stage");
         $this->smarty->assign("Pages",$nbpage);
         $this->smarty->assign("Thispage",$page);
@@ -28,6 +29,7 @@ class RechercheStageController{
         $this->smarty->assign('nbdebut',1+($page-1)*5);
         $this->smarty->assign('nbfin',5+($page-1)*5);
         $this->smarty->assign("AllOffer",$arrayOffer);
+        $this->smarty->assign("get",$get);
         $this->smarty->display('rechercheStage.tpl');
     }
     public function error(){

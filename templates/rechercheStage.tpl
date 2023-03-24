@@ -66,7 +66,7 @@
             class=" w-[90%] sm:w-[80%] h-fit divide-y bg-white mr-3 rounded-[12px] border border-[#dadada] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] mr-5 flex flex-col">
             <!-- barre de recherche de tailwind -->
             <div class=" w-[90%] sm:w-[95%] h-12 mx-[5%] divide-y mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                <form>
+                <form method="get">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-black">Search</label>
                     <div class="relative">
@@ -77,17 +77,17 @@
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input type="search" id="default-search"
+                        <input type="search" id="default-search" name="search"
                             class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Recherche ton avenir..." required>
-                        <button type="submit"
+                        <button type="submit" 
                             class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
                 </form>
             </div>
             <div class="bg-white divide-y w-[90%] h-fit sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
                 <!--grande div contenant les offres-->
-                {for $nboffre=0+($Thispage-1)*5 to 4+($Thispage-1)*5}
+                {for $nboffre=0+($Thispage-1)*5 to $TotalOffre-1 max=5}
                 <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between                                           
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <!--div contenant les différentes colones-->
@@ -142,7 +142,7 @@
                         </div>
                         <div>
                             <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-            <a href="?page={if $Thispage>1}{$Thispage-1}{else}1{/if} "
+            <a href="?page={if $Thispage>1}{$Thispage-1}{else}1{/if}{$get}"
                                     class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                     <span class="sr-only">Previous</span>
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -152,15 +152,16 @@
                                     </svg>
                                 </a>
                                 <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                                <a href="?page=1" aria-current="page"
+                                <a href="?page=1{$get}" aria-current="page"
                                     class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
                                 {for $page=$Thispage-2 to $Pages max=5}
-                                {if $page>1 and $page<$Pages}<a href="?page={$page}"
+                                {if $page>1 and $page<$Pages}<a href="?page={$page}{$get}"
                                     class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">{$page}</a>
                                 {/if}{/for}
-                                <a href="?page={$Pages}" aria-current="page"
-                                    class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{$Pages}</a>
-                                    <a href="?page={if $Thispage<$Pages}{$Thispage+1}{else}{$Pages}{/if}"
+                                {if $Pages!=1}
+                                <a href="?page={$Pages}{$get}" aria-current="page"
+                                class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{$Pages}</a>{/if}
+                                    <a href="?page={if $Thispage<$Pages}{$Thispage+1}{else}{$Pages}{/if}{$get}"
                                     class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                     <span class="sr-only">Next</span>
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
