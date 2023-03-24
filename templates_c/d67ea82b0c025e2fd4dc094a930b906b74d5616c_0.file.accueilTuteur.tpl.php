@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-21 09:01:30
+/* Smarty version 4.3.0, created on 2023-03-24 16:54:31
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\accueilTuteur.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6419645a5b1b10_01609297',
+  'unifunc' => 'content_641dc7b7909d87_97687858',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd67ea82b0c025e2fd4dc094a930b906b74d5616c' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\accueilTuteur.tpl',
-      1 => 1679329508,
+      1 => 1679673120,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:head.tpl' => 1,
     'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6419645a5b1b10_01609297 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641dc7b7909d87_97687858 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body>
@@ -41,7 +42,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <p class="">Étudiant</p>
     </div>
     <div
-        class="flex justify-between items-center bg-[#fafafa] divide-x-[3px] divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
+        class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
         <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2">
             <p class="text-center">Gestion Étudiant</p>
 
@@ -89,19 +90,20 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     </div>
     <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
-        
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['etudiant']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
+            <li class="flex justify-between px-3 mb-3">
+            <?php echo $_smarty_tpl->tpl_vars['row']->value->prenom_utilisateur;?>
+
+            <div class="rounded-full bg-red-200 px-5">
+             En recherche</div></li>
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>        
         </ul>
     </div>
 </div>
@@ -113,7 +115,9 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         </p>
     </div>
     <div class="bg-white h-32 w-10/12 divide-y mt-2">
-        <div class="h-10 flex items-center justify-between"><p>Stage trouvé :</p> <div class="rounded-full bg-green-200 px-5"> 20/46</div></div>
+        <div class="h-10 flex items-center justify-between"><p>Stage trouvé :</p> <div class="rounded-full bg-green-200 px-5"> <?php echo $_smarty_tpl->tpl_vars['stage_trouve']->value;?>
+ / <?php echo $_smarty_tpl->tpl_vars['tot_eleve']->value;?>
+ </div></div>
         <div class="h-10 flex items-center justify-between"><p>En attente de papier :</p><div class="rounded-full bg-orange-200 px-5"> 10/46</div></div>
         <div class="h-10 flex items-center justify-between"><p>En recherche</p><div class="rounded-full bg-red-200 px-5"> 16/46</div></div>
     </div>
@@ -122,6 +126,9 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     </div>
 </div>
 </div>
+
+
+
 <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"><?php echo '</script'; ?>
 >
@@ -149,6 +156,10 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         });
     <?php echo '</script'; ?>
 >
+    <div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    </div>
 </body>
 </html><?php }
 }
