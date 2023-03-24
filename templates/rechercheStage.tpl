@@ -87,6 +87,7 @@
             </div>
             <div class="bg-white divide-y w-[90%] h-fit sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
                 <!--grande div contenant les offres-->
+                {for $nboffre=0+($Thispage-1)*5 to 4+($Thispage-1)*5}
                 <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between                                           
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <!--div contenant les différentes colones-->
@@ -94,127 +95,31 @@
                         <!-- Div pour séparer le titre de la location ect-->
                         <div class=''>
                             <!-- Div Pour le titre du stage-->
-                            <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
+                            <h2 class="mb-2 text-sm font-medium text-xl"> {$AllOffer[$nboffre]->nom_offre}</h2>
                             <!--{* {$nomOffre} *}-->
                         </div>
                         <div class="invisible sm:visible">
                             <!-- Div pour la location ect qui se cache quand on est sur téléphone-->
-                            <i class="fa fa-building"></i> Orange
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
+                            <i class="fa fa-building"></i> {$AllOffer[$nboffre]->nom_offre}
+                            <i class="fa fa-location-dot"></i> {$AllOffer[$nboffre]->localite} 
+                            <i class="fa fa-clock"></i> {$AllOffer[$nboffre]->duree_stage} mois 
                         </div>
                     </div>
                     <!-- Div pour les étoiles et les centrer au milieu-->
                     <div class="flex items-stretch self-center">
-                        <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                            onclick="star(1)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
+                <i class="fa fa-star  {if $AllOffer[$nboffre]->confiance_pilote >=1}text-yellow-300{else}text-black{/if}" name="star1" id="star1"></i>
+                        <i class="fa fa-star {if $AllOffer[$nboffre]->confiance_pilote >=2}text-yellow-300{else}text-black{/if}" name="star2" id="star2"></i>
+                        <i class="fa fa-star {if $AllOffer[$nboffre]->confiance_pilote >=3}text-yellow-300{else}text-black{/if}" name="star3" id="star3"></i>
+                        <i class="fa fa-star  {if $AllOffer[$nboffre]->confiance_pilote >=4}text-yellow-300{else}text-black{/if}" name="star4" id="star4"></i>
+                        <i class="fa fa-star  {if $AllOffer[$nboffre]->confiance_pilote >=5}text-yellow-300{else}text-black{/if}" name="star5" id="star5"></i>
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
                         <i id="heart" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2()"></i>
                     </div>
                 </div>
-                <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-                w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                    <div class="flex flex-col ">
-                        <div>
-                            <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                        </div>
-                        <div class="invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                            onclick="star(1)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-heart m-8"></i>
-                    </div>
-                </div>
-                <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-                w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                    <div class="flex flex-col ">
-                        <div>
-                            <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                        </div>
-                        <div class="mb-0 invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                            onclick="star(1)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-heart m-8"></i>
-                    </div>
-                </div>
-                <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-                w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%] ">
-                    <div class="flex flex-col ">
-                        <div>
-                            <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                        </div>
-                        <div class="mb-0 invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                            onclick="star(1)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-heart m-8"></i>
-                    </div>
-                </div>
-                <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-                w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-                    <div class="flex flex-col ">
-                        <div>
-                            <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                        </div>
-                        <div class="invisible sm:visible">
-                            <i class="fa fa-building"></i> Orange 
-                            <i class="fa fa-location-dot"></i> Orléans 
-                            <i class="fa fa-clock"></i> 3 mois 
-                        </div>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                            onclick="star(1)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                        <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-                    </div>
-                    <div class="flex items-stretch self-center">
-                        <i class="fa fa-heart m-8"></i>
-                        <!---text-red-500-->
-                    </div>
-                </div>
+                {/for}
+
                 <div class="flex items-center content-end border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
                     <!-- Div pour mettre la pagination de tailwind -->
                     <div class="flex flex-1 justify-between sm:hidden">
@@ -227,17 +132,17 @@
                         <div>
                             <p class="text-sm text-gray-700">
                                 Showing
-                                <span class="font-medium">1</span>
+                                <span class="font-medium">{$nbdebut}</span>
                                 to
-                                <span class="font-medium">10</span>
+                                <span class="font-medium">{$nbfin}</span>
                                 of
-                                <span class="font-medium">97</span>
+                                <span class="font-medium">{$TotalOffre}</span>
                                 results
                             </p>
                         </div>
                         <div>
                             <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                                <a href="#"
+            <a href="?page={if $Thispage>1}{$Thispage-1}{else}1{/if} "
                                     class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                     <span class="sr-only">Previous</span>
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -247,21 +152,15 @@
                                     </svg>
                                 </a>
                                 <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                                <a href="#" aria-current="page"
-                                    class="relative z-10 inline-flex items-center  px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                                <a href="#"
-                                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
-                                <a href="#"
-                                    class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
-                                <span
-                                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
-                                <a href="#"
-                                    class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
-                                <a href="#"
-                                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
-                                <a href="#"
-                                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
-                                <a href="#"
+                                <a href="?page=1" aria-current="page"
+                                    class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                                {for $page=$Thispage-2 to $Pages max=5}
+                                {if $page>1 and $page<$Pages}<a href="?page={$page}"
+                                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">{$page}</a>
+                                {/if}{/for}
+                                <a href="?page={$Pages}" aria-current="page"
+                                    class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{$Pages}</a>
+                                    <a href="?page={if $Thispage<$Pages}{$Thispage+1}{else}{$Pages}{/if}"
                                     class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                     <span class="sr-only">Next</span>
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
