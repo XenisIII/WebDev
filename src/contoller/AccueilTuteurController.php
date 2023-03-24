@@ -1,5 +1,6 @@
 <?php
 require(__DIR__."/../lib/smarty.php");
+require(__DIR__."../modele/EtudiantModele.php");
 class AccueilTuteurController{
     private $smarty;
     function __construct()
@@ -8,6 +9,9 @@ class AccueilTuteurController{
     }
     public function index(){
         $this->smarty->assign("DocumentTitle","Accueil");
+        $request = new EtudiantModele;
+        $this->smarty->assign("etudiant",$this->request->getAllRechercheByIdTuteur);
+
         $this->smarty->display('accueilTuteur.tpl');
     }
     public function error(){
