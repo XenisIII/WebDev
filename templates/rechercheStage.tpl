@@ -84,7 +84,7 @@
                 <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between                                           
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <!--div contenant les différentes colones-->
-                    <div class="flex flex-col ">
+                    <a href="/index.php/offre/index?id={$AllOffer[$nboffre]->id_offre}"><div class="flex flex-col cursor-pointer ">
                         <!-- Div pour séparer le titre de la location ect-->
                         <div class=''>
                             <!-- Div Pour le titre du stage-->
@@ -97,7 +97,7 @@
                             <i class="fa fa-location-dot"></i> {$AllOffer[$nboffre]->localite} 
                             <i class="fa fa-clock"></i> {$AllOffer[$nboffre]->duree_stage} mois 
                         </div>
-                    </div>
+                    </div></a>
                     <!-- Div pour les étoiles et les centrer au milieu-->
                     <div class="flex items-stretch self-center">
                 <i class="fa fa-star  {if $AllOffer[$nboffre]->confiance_pilote >=1}text-yellow-300{else}text-black{/if}" name="star1" id="star1"></i>

@@ -14,7 +14,7 @@ class OffreModele{
         return $this->db->Query($statement);
     }
     public function getAllOffer(){
-        $statement="SELECT * from Offre natural join Localite natural join Entreprise";
+        $statement="SELECT * from Offre natural join Localite natural join Entreprise" ;
         return $this->db->Query($statement);
     }
     public function getAllOfferLike($value){

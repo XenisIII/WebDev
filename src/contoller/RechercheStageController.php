@@ -12,6 +12,7 @@ class RechercheStageController{
     }
     public function index(){
         $get="";
+        $searchget="";
         $scale=0;
         $bool=false;
         if(isset($_GET['page'])){
@@ -90,16 +91,34 @@ class RechercheStageController{
                     $statement="date_mise_en_ligne>$yesterday and date_mise_en_ligne<$weekago";
                     break;
                 case 3:
-                    $yesterday=date("y-m-").date('d'-1);
-                    $statement="date_mise_en_ligne=$yesterday";
+                    if(!checkdate(date('m'),(intval(date('d'))-7),date('y'))){
+                        if(checkdate((intval(date('m'))-1),date('d'),date('y'))){
+                            if(checkdate((intval(date('m'))-1),31,date('y'))){
+                                $day=31-7+intval(date('d'));
+                            }elseif(checkdate((intval(date('m'))-1),30,date('y'))){
+                                $day=30-7+intval(date('d'));
+                            }elseif(checkdate((intval(date('m'))-1),29,date('y'))){
+                                $day=29-7+intval(date('d'));
+                            }else{$day=28-7+intval(date('d'));}
+                            $weekago=$yesterday=date("y-").(intval(date('m'))-1).$day;;
+                        }
+                        else{
+                            $weekago=(intval(date('y'))-7)."12".(31-7+intval(date('d')));
+                        }
+                    }else{$weekago=date("y-m-").(intval(date('d'))-7);}
+                    $statement="date_mise_en_ligne>$weekago";
                     break;
                 case 4:
                     $yesterday=date("y-m-").date('d'-1);
                     $statement="date_mise_en_ligne=$yesterday";
                     break;
                 case 5:
-                    $yesterday=date("y-m-").date('d'-1);
-                    $statement="date_mise_en_ligne=$yesterday";
+                    if(!checkdate(intval(date('m'))-1,28,date('y'))){
+                        $moreamonth=(intval(date('y'))-1)."-12-".date('d');
+                    }else{
+                        $moreamonth=date('y-').intval(date('m').date('d'));
+                    }
+                    $statement="date_mise_en_ligne>$moreamonth";
                     break;
             }
 
