@@ -151,7 +151,7 @@
                                 {if $page>1 and $page<$Pages}<a href="?page={$page}{$get}"
                                     class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">{$page}</a>
                                 {/if}{/for}
-                                {if $Pages!=1}
+                                {if $Pages!=1 and $Pages!=0}
                                 <a href="?page={$Pages}{$get}" aria-current="page"
                                 class="relative inline-flex items-center b px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{$Pages}</a>{/if}
                                     <a href="?page={if $Thispage<$Pages}{$Thispage+1}{else}{$Pages}{/if}{$get}"
@@ -193,15 +193,16 @@
                                     <a href="?scales=0{$SearchGet}"><input type="radio"  name="scales" value="0" {if $ActualScale==0} checked{/if}></a>
                 <label for="a">Tous</label></br>
                 <a href="?scales=1{$SearchGet}"><input type="radio" name="scales" value="1"{if $ActualScale==1} checked{/if}></a>
-                <label for="scales">Il y a 1 jour</label></br>
+                <label for="scales">Hier</label></br>
                 <a href="?scales=2{$SearchGet}"><input type="radio"  name="scales" value="2"{if $ActualScale==2} checked{/if}></a>
-                <label for="radio">Il y a 2 à 7 jours</label></br>
-                <a href="?scales=3{$SearchGet}"><input type="radio"  name="scales" value="3" {if $ActualScale==3} checked{/if}></a>
-                <label for="scales">Il y a 8 à 14 jours</label></br>
-                <a href="?scales=4{$SearchGet}"><input type="radio"  name="scales" value="4"{if $ActualScale==4} checked{/if}></a>
-                <label for="scales">Il y a 15 à 30 jours</label></br>
+                <label for="radio">La semaine dernière</label></br>
                 <a href="?scales=5{$SearchGet}"><input type="radio"  name="scales" value="5"{if $ActualScale==5} checked{/if}></a>
-                <label for="scales">Il y a plus de 30 jours</label></br>
+                <label for="scales"> 1 mois ou +</label></br>
+                <a href="?scales=3{$SearchGet}"><input type="radio" class="hidden" name="scales" value="3" {if $ActualScale==3} checked{/if}></a>
+                <label for="scales" class="hidden">Il y a 8 à 14 jours</label></br>
+                <a href="?scales=4{$SearchGet}"><input type="radio" class="hidden"  name="scales" value="4"{if $ActualScale==4} checked{/if}></a>
+                <label for="scales" class="hidden">Il y a 15 à 30 jours</label></br>
+                
                 </form>
             </div>
         </div>

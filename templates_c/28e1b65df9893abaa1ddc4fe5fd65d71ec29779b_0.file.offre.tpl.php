@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-25 15:11:15
+/* Smarty version 4.3.0, created on 2023-03-25 15:13:47
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641f01038d04f9_00924354',
+  'unifunc' => 'content_641f019b15abb7_73463491',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '28e1b65df9893abaa1ddc4fe5fd65d71ec29779b' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\offre.tpl',
-      1 => 1679736287,
+      1 => 1679753620,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641f01038d04f9_00924354 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641f019b15abb7_73463491 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
@@ -101,7 +101,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <!-- Bouton-->
         <div class="flex justify-between max-[880px]:hidden h-1/5 items-center">
-            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 rounded">Postuler</button>
         </div>
     </div>
@@ -117,7 +117,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </p>
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button>
         </div>
 

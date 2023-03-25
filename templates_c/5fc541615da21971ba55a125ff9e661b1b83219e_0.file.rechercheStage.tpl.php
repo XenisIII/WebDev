@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-25 15:11:12
+/* Smarty version 4.3.0, created on 2023-03-25 15:19:15
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641f0100ed5f83_91869127',
+  'unifunc' => 'content_641f02e3acaba9_71366364',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5fc541615da21971ba55a125ff9e661b1b83219e' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\rechercheStage.tpl',
-      1 => 1679753470,
+      1 => 1679753954,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641f0100ed5f83_91869127 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641f02e3acaba9_71366364 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -211,7 +211,7 @@ echo $_smarty_tpl->tpl_vars['get']->value;?>
 }
 }
 ?>
-                                <?php if ($_smarty_tpl->tpl_vars['Pages']->value != 1) {?>
+                                <?php if ($_smarty_tpl->tpl_vars['Pages']->value != 1 && $_smarty_tpl->tpl_vars['Pages']->value != 0) {?>
                                 <a href="?page=<?php echo $_smarty_tpl->tpl_vars['Pages']->value;
 echo $_smarty_tpl->tpl_vars['get']->value;?>
 " aria-current="page"
@@ -266,19 +266,20 @@ echo $_smarty_tpl->tpl_vars['get']->value;?>
                 <label for="a">Tous</label></br>
                 <a href="?scales=1<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
 "><input type="radio" name="scales" value="1"<?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 1) {?> checked<?php }?>></a>
-                <label for="scales">Il y a 1 jour</label></br>
+                <label for="scales">Hier</label></br>
                 <a href="?scales=2<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
 "><input type="radio"  name="scales" value="2"<?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 2) {?> checked<?php }?>></a>
-                <label for="radio">Il y a 2 à 7 jours</label></br>
-                <a href="?scales=3<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
-"><input type="radio"  name="scales" value="3" <?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 3) {?> checked<?php }?>></a>
-                <label for="scales">Il y a 8 à 14 jours</label></br>
-                <a href="?scales=4<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
-"><input type="radio"  name="scales" value="4"<?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 4) {?> checked<?php }?>></a>
-                <label for="scales">Il y a 15 à 30 jours</label></br>
+                <label for="radio">La semaine dernière</label></br>
                 <a href="?scales=5<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
 "><input type="radio"  name="scales" value="5"<?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 5) {?> checked<?php }?>></a>
-                <label for="scales">Il y a plus de 30 jours</label></br>
+                <label for="scales"> 1 mois ou +</label></br>
+                <a href="?scales=3<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
+"><input type="radio" class="hidden" name="scales" value="3" <?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 3) {?> checked<?php }?>></a>
+                <label for="scales" class="hidden">Il y a 8 à 14 jours</label></br>
+                <a href="?scales=4<?php echo $_smarty_tpl->tpl_vars['SearchGet']->value;?>
+"><input type="radio" class="hidden"  name="scales" value="4"<?php if ($_smarty_tpl->tpl_vars['ActualScale']->value == 4) {?> checked<?php }?>></a>
+                <label for="scales" class="hidden">Il y a 15 à 30 jours</label></br>
+                
                 </form>
             </div>
         </div>
