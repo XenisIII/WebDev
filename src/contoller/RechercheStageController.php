@@ -45,7 +45,7 @@ class RechercheStageController{
                         else{
                             $yesterday=(intval(date('y'))-1)."12"."31";
                         }
-                    }
+                    }else{$yesterday=date("y-m-").(intval(date('d'))-1);}
                     $statement="date_mise_en_ligne=$yesterday";
                     $arrayOffer=$this->offer->getAllOfferScale($statement);
                     break;
@@ -68,9 +68,26 @@ class RechercheStageController{
                         else{
                             $yesterday=(intval(date('y'))-1)."12"."31";
                         }
-                    }
-                    $weekago=date('y-m-').date('d');
-                    $statement="date_mise_en_ligne=$yesterday";
+                    }else{$yesterday=date("y-m-").(intval(date('d'))-1);}
+
+                    
+                    if(!checkdate(date('m'),(intval(date('d'))-7),date('y'))){
+                        if(checkdate((intval(date('m'))-1),date('d'),date('y'))){
+                            if(checkdate((intval(date('m'))-1),31,date('y'))){
+                                $day=31-7+intval(date('d'));
+                            }elseif(checkdate((intval(date('m'))-1),30,date('y'))){
+                                $day=30-7+intval(date('d'));
+                            }elseif(checkdate((intval(date('m'))-1),29,date('y'))){
+                                $day=29-7+intval(date('d'));
+                            }else{$day=28-7+intval(date('d'));}
+                            $weekago=$yesterday=date("y-").(intval(date('m'))-1).$day;;
+                        }
+                        else{
+                            $weekago=(intval(date('y'))-7)."12".(31-7+intval(date('d')));
+                        }
+                    }else{$weekago=date("y-m-").(intval(date('d'))-7);}
+
+                    $statement="date_mise_en_ligne>$yesterday and date_mise_en_ligne<$weekago";
                     break;
                 case 3:
                     $yesterday=date("y-m-").date('d'-1);
