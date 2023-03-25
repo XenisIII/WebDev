@@ -60,7 +60,7 @@ class RechercheStageController{
                                 $day="31";
                             }elseif(checkdate((intval(date('m'))-1),30,date('y'))){
                                 $day="30";
-                            }elseif(checkdate((intval(date('m'))-1),d29,date('y'))){
+                            }elseif(checkdate((intval(date('m'))-1),29,date('y'))){
                                 $day='29';
                             }else{$day='28';}
                             $yesterday=date("y-").(intval(date('m'))-1).$day;
