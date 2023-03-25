@@ -10,7 +10,11 @@
     oui
     <h1><?php require(__DIR__."/src/modele/OffreModele.php");
     $offre=new OffreModele();
-    print_r($offre->getAllOfferLike("%dév%"));
+    $yesterday=date("y-m-").(intval(date('d'))-1);
+    $statement="date_mise_en_ligne=$yesterday";
+    print_r($statement);
+    $arrayOffer=$offre->getAllOfferScale($statement);
+    print_r($arrayOffer);
     ?></h1>
 </body>
 </html>

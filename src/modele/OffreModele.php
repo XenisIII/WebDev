@@ -26,6 +26,10 @@ class OffreModele{
         $statement="SELECT * from Offre natural join Localite natural join Entreprise where $value";
         return $this->db->Query($statement);
     }
+    public function getALLofferScaleLike($scale,$search){
+        $statement="SELECT * from (Select * from Offre natural join Localite natural join Entreprise where informations like :string)as a where $scale ";
+        return $this->db->executeAll($statement,array(":string"=>"%".$search."%"));
+    }
 
 
 }

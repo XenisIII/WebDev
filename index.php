@@ -19,7 +19,7 @@ if (file_exists($controllerFile)) {
         // Gestion de l'erreur
         $controller->Error();
     }
-} else {
+} /*else {
     // Gestion de l'erreur
     if(isset($_COOKIE['logged'])){
     require_once(__DIR__."/src/contoller/AccueilController.php");//mettre page_accueil
@@ -30,5 +30,5 @@ if (file_exists($controllerFile)) {
     require_once(__DIR__."/src/contoller/ConnexionController.php"); //mettre page connexion
     $controller= new ConnexionController();
     $controller->index();}
-}
+}*/
 ?>

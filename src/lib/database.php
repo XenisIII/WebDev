@@ -25,7 +25,6 @@
         catch(PDOException $e){
             print_r($e->getMessage()."<br>");
             die();
-            return $e;
         }
     }
 
