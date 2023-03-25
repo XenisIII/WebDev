@@ -1,7 +1,35 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-23 17:55:40
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\accueilTuteur.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_641c848cbf4a12_46612537',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '35c86739bdabb85274bfab28e8dbe73e89f148eb' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\accueilTuteur.tpl',
+      1 => 1679578316,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_641c848cbf4a12_46612537 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 <body>
 <div>
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </div>
 <!--Bouton raccourci-->
 <div class="flex flex-row flex-wrap justify-center min-[880px]:justify-evenly content-evenly ">
@@ -62,15 +90,6 @@
     </div>
     <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
-        {foreach $test as $row}
-            {foreach $row as $column => $value}
-                {if $column!=0}
-                    {$column}:{$value}
-                    {";"}
-                {/if}
-            {/foreach}
-            </br>
-        {/foreach}
         <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
         <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
         <li class="flex justify-between px-3 mb-3">Élément 1 <div class="rounded-full bg-red-200 px-5"> En recherche</div></li>
@@ -107,8 +126,11 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script>
+<?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
         const graph = document.getElementById("graph").getContext("2d");
 
         let massPopChart = new Chart(graph, {
@@ -129,9 +151,12 @@
                 ],
             },
         });
-    </script>
+    <?php echo '</script'; ?>
+>
     <div>
-{include file="footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </div>
 </body>
-</html>
+</html><?php }
+}
