@@ -108,7 +108,7 @@
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
-                        <i id="heart" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2()"></i>
+                        <i id="heart-{$nboffre}" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}')"></i>
                     </div>
                 </div>
                 {/for}
@@ -209,9 +209,8 @@
     </div>
     <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
     <script>
-        function heartv2() {
-            heart.setAttribute("class", "text-red-500 fa fa-heart m-8")
-            console.log('test');
+        function heartv2(id) {
+            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8")
         }
 
         function mobileFastSearch() {

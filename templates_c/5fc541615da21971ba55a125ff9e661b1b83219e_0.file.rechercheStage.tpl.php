@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-25 15:19:15
+/* Smarty version 4.3.0, created on 2023-03-25 15:42:57
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641f02e3acaba9_71366364',
+  'unifunc' => 'content_641f0871a7d051_08605595',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5fc541615da21971ba55a125ff9e661b1b83219e' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\rechercheStage.tpl',
-      1 => 1679753954,
+      1 => 1679755295,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641f02e3acaba9_71366364 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641f0871a7d051_08605595 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -148,7 +148,9 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
-                        <i id="heart" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2()"></i>
+                        <i id="heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
+" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2('heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
+')"></i>
                     </div>
                 </div>
                 <?php }
@@ -287,9 +289,8 @@ echo $_smarty_tpl->tpl_vars['get']->value;?>
     <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
     <?php echo '<script'; ?>
 >
-        function heartv2() {
-            heart.setAttribute("class", "text-red-500 fa fa-heart m-8")
-            console.log('test');
+        function heartv2(id) {
+            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8")
         }
 
         function mobileFastSearch() {
