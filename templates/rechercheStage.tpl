@@ -108,7 +108,7 @@
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
-                        <i id="heart-{$nboffre}" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}',true)"></i>
+                        <i id="heart-{$nboffre}" class="fa fa-heart {if $AlreadyFav}text-red-500{/if} m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}',{if $AlreadyFav}{else}true{/if},{$AllOffer[$nboffre]->id_offre})"></i>
                     </div>
                 </div>
                 {/for}
@@ -209,14 +209,15 @@
     </div>
     <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
     <script>
-        function heartv2(id,bool) {
+        function heartv2(id,bool,idoffre) {
             if(bool==true){
-            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8 cursor-pointer")
-            document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',false)")
+            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8 cursor-pointer");
+            document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',false)");
+            document.location.href="/index.php/rechercheStage/fav?id_offre="+idoffre; 
         }
             else{
-                document.getElementById(id).setAttribute("class", "fa fa-heart text-black m-8 cursor-pointer")
-                document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',true)")
+                document.getElementById(id).setAttribute("class", "fa fa-heart text-black m-8 cursor-pointer");
+                document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',true)");
             }
         }
 

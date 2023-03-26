@@ -1,16 +1,26 @@
 <?php
 require(__DIR__."/../lib/smarty.php");
 require(__DIR__."/../modele/OffreModele.php");
+require(__DIR__."/../modele/EtudiantModele.php");
 class RechercheStageController{
     private $smarty;
     private $offer;
+    private $student;
 
     function __construct()
     {
         $this->smarty=new AppSmarty();
         $this->offer=new OffreModele();
+        $this->student= new EtudiantModele();
+    }
+    public function fav(){
+        $id_offre=$_GET['id_offre'];
+        $id_student=$_SESSION['user_id'];
+        $this->offer->ChangeStatut($id_offre,$id_student,5);
+        header('Location : /index.php/rechercheStage/index');
     }
     public function index(){
+        $alredayFav=$this->student->getFavById($_SESSION['user_id']);
         $get="";
         $searchget="";
         $scale=0;
@@ -141,6 +151,7 @@ class RechercheStageController{
         $this->smarty->assign('SearchGet',$searchget);
         $this->smarty->assign("get",$get);
         $this->smarty->assign("ActualScale",$scale);
+        $this->smarty->assign("AlredyFav",$alredayFav);
         $this->smarty->display('rechercheStage.tpl');
     }
     public function error(){
