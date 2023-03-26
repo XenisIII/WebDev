@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-25 15:42:57
+/* Smarty version 4.3.0, created on 2023-03-26 09:42:57
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641f0871a7d051_08605595',
+  'unifunc' => 'content_641ff781ec14f9_84029733',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5fc541615da21971ba55a125ff9e661b1b83219e' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\rechercheStage.tpl',
-      1 => 1679755295,
+      1 => 1679816576,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641f0871a7d051_08605595 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641ff781ec14f9_84029733 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -150,7 +150,7 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                         <!-- Div pour centrer le coeur -->
                         <i id="heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
 " class="fa fa-heart m-8 cursor-pointer" onclick="heartv2('heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
-')"></i>
+',true)"></i>
                     </div>
                 </div>
                 <?php }
@@ -289,8 +289,15 @@ echo $_smarty_tpl->tpl_vars['get']->value;?>
     <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
     <?php echo '<script'; ?>
 >
-        function heartv2(id) {
-            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8")
+        function heartv2(id,bool) {
+            if(bool==true){
+            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8 cursor-pointer")
+            document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',false)")
+        }
+            else{
+                document.getElementById(id).setAttribute("class", "fa fa-heart text-black m-8 cursor-pointer")
+                document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',true)")
+            }
         }
 
         function mobileFastSearch() {

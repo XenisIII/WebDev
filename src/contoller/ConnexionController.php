@@ -14,6 +14,7 @@ class ConnexionController{
 
     public function index(){
         if (isset($_POST["username"]) && isset($_POST["password"])){
+            echo 'oui';
             $userName=$_POST["username"];
             $password=$_POST["password"];
             $loggedIn = $this->model->login($userName,$password);
@@ -26,13 +27,13 @@ class ConnexionController{
                 $type = $_SESSION['user_type'];
                 switch($type){
                     case "Eleve":
-                        header("Location: index.php/accueilEtudiant");
+                        header("Location: /index.php/accueilEtudiant");
                         break;
                     case "Tuteur":
-                        header("Location: index.php/accueilTuteur");
+                        header("Location: /index.php/accueilTuteur");
                         break;
                     case "Admin":
-                        header("Location: index.php/accueilAdmin");
+                        header("Location: /index.php/accueilAdmin");
                         break;
                 }
             } else{
