@@ -1,5 +1,7 @@
 <?php
-require(__DIR__."\\..\\lib\\smarty.php");
+require(__DIR__."/../lib/smarty.php");
+require(__DIR__."/../modele/EtudiantModele.php");
+require(__DIR__."/../modele/TuteurModele.php");
 class RechercheEtudiantController{
     private $smarty;
     function __construct()
@@ -7,7 +9,11 @@ class RechercheEtudiantController{
         $this->smarty=new AppSmarty();
     }
     public function index(){
-        $this->smarty->assign("DocumentTitle","rRechercheEtudiant");
+        $student = new EtudiantModele;
+        $tuteur = new TuteurModele;
+        $this->smarty->assign("etudiant",$student->getAllByIdTuteur());
+        $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
+        $this->smarty->assign("DocumentTitle","RechercheEtudiant");
         $this->smarty->display('rechercheEtudiant.tpl');
     }
     public function error(){
