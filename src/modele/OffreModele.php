@@ -34,7 +34,11 @@ class OffreModele{
         $statement="INSERT INTO Postule(id_offre,id_eleve,id_statut) VALUES($id_offre,$id_user,$id_statue)";
         $this->db->Query($statement);
     }
+    public function DeleteStatut($id_offre,$id_user){
+        $statement="DELETE from Postule where id_offre=$id_offre and id_eleve=$id_user";
+        $this->db->Query($statement); 
+    }
 
 
 }
-?>
+?>  

@@ -108,7 +108,8 @@
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
-                        <i id="heart-{$nboffre}" class="fa fa-heart {if $AlreadyFav}text-red-500{/if} m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}',{if $AlreadyFav}{else}true{/if},{$AllOffer[$nboffre]->id_offre})"></i>
+                        {$fav='true'}
+                        <i id="heart-{$nboffre}" class="fa fa-heart {foreach $AlreadyFav as $offer}{if $offer==$AllOffer[$nboffre]->id_offre}text-red-500{$fav='false'}{/if}{{/foreach}} m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}',{$fav},{$AllOffer[$nboffre]->id_offre})"></i>
                     </div>
                 </div>
                 {/for}
@@ -218,6 +219,7 @@
             else{
                 document.getElementById(id).setAttribute("class", "fa fa-heart text-black m-8 cursor-pointer");
                 document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',true)");
+                document.location.href="/index.php/rechercheStage/unfav?id_offre="+idoffre; 
             }
         }
 
