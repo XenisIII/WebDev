@@ -11,21 +11,15 @@
         <!-- contact -->
         <div class="border rounded border-black h-fit ml-3" >
         <div class="flex items-center justify-between px-2" id="div-nom">
-        <p id="p-nom">
-        {$nom} 
-        </p>
-        <input type="text" id="text-nom" class="hidden border" ></input>
-        <i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')"></i>
+        <p id="p-nom">{$nom}</p>
+        <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
+        {if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i>{/if}
         </div>
         <div>
-        <p>
-        {$prenom} <i class="fa-solid fa-gear cursor-pointer"></i>
-        </p>
+        <p id="p-prenom">{$prenom} </p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
         </div>
-        <div>
-        <p>
-        {$prenom}.{$nom}@viacesi.fr <i class="fa-solid fa-gear cursor-pointer"></i>
-        </p>
+        <div> 
+        <p id="p-mail">{$prenom}.{$nom}@viacesi.fr</p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('mail')" ></i>{/if}
         </div>
 
         </div>
@@ -48,7 +42,7 @@
         {foreach $AllOffer as $Offer}
         <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
         w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
-            <div class="flex flex-col grow">
+            <a href="/index.php/Offre/index?id={$Offer->id_offre}"><div class="flex flex-col grow">
                 <div class=''>
                     <h2 class="mb-2 text-sm font-medium text-xl"> {$Offer->nom_offre} </h2>
                 </div>
@@ -56,7 +50,7 @@
                     <i class="fa fa-building"></i> {$Offer->nom_entreprise}
                     <i class="fa fa-location-dot"></i> {$Offer->localite}
                     <i class="fa fa-clock"></i> {$Offer->duree_stage} mois
-                </div>
+                </div></a>
             </div>
             <div class="flex items-stretch self-center">
         <i class="fa fa-star  {if $Offer->confiance_pilote >=1}text-yellow-300{else}text-black{/if}" name="star1" id="star1"></i>

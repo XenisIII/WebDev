@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-26 23:32:05
+/* Smarty version 4.3.0, created on 2023-03-27 19:15:22
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6420b9d5da7f50_22802775',
+  'unifunc' => 'content_6421cf2a429245_41500703',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd0414b749e75e8a4e41cadc60f00c993ca694c2' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\rechercheStage.tpl',
-      1 => 1679866241,
+      1 => 1679936496,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6420b9d5da7f50_22802775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6421cf2a429245_41500703 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -120,7 +120,7 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <!--div contenant les différentes colones-->
                     <a href="/index.php/offre/index?id=<?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->id_offre;?>
-"><div class="flex flex-col cursor-pointer ">
+" class="grow"><div class="flex flex-col cursor-pointer ">
                         <!-- Div pour séparer le titre de la location ect-->
                         <div class=''>
                             <!-- Div Pour le titre du stage-->
@@ -130,7 +130,7 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                         </div>
                         <div class="invisible sm:visible">
                             <!-- Div pour la location ect qui se cache quand on est sur téléphone-->
-                            <i class="fa fa-building"></i> <?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->nom_offre;?>
+                            <i class="fa fa-building"></i> <?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->nom_entreprise;?>
 
                             <i class="fa fa-location-dot"></i> <?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->localite;?>
  
@@ -148,9 +148,23 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
+                        <?php $_smarty_tpl->_assignInScope('fav', 'true');?>
                         <i id="heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
-" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2('heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
-',true,<?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->id_offre;?>
+" class="fa fa-heart <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['AlreadyFav']->value, 'offer');
+$_smarty_tpl->tpl_vars['offer']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['offer']->value) {
+$_smarty_tpl->tpl_vars['offer']->do_else = false;
+if ($_smarty_tpl->tpl_vars['offer']->value == $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->id_offre) {?>text-red-500<?php $_smarty_tpl->_assignInScope('fav', 'false');
+}
+ob_start();
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+ m-8 cursor-pointer" onclick="heartv2('heart-<?php echo $_smarty_tpl->tpl_vars['nboffre']->value;?>
+',<?php echo $_smarty_tpl->tpl_vars['fav']->value;?>
+,<?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->id_offre;?>
 )"></i>
                     </div>
                 </div>
@@ -299,6 +313,7 @@ echo $_smarty_tpl->tpl_vars['get']->value;?>
             else{
                 document.getElementById(id).setAttribute("class", "fa fa-heart text-black m-8 cursor-pointer");
                 document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',true)");
+                document.location.href="/index.php/rechercheStage/unfav?id_offre="+idoffre; 
             }
         }
 
