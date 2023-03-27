@@ -13,13 +13,13 @@ class ConnexionController{
     }
 
     public function index(){
-        if (isset($_POST["username"]) && isset($_POST["password"])){
-            $userName=$_POST["username"];
+        if (isset($_POST["login"]) && isset($_POST["password"])){
+            $login=$_POST["login"];
             $password=$_POST["password"];
-            $loggedIn = $this->model->login($userName,$password);
+            $loggedIn = $this->model->login($login,$password);
             if ($loggedIn == "false"){
                 //Afficher message erreur
-                $this->smarty->assign("errorMessage","Invalid username or password");
+                $this->smarty->assign("errorMessage","Invalid login or password");
                 $this->smarty->display('connexion.tpl');
             }
             if(isset($_SESSION['user_type'])){
@@ -36,7 +36,7 @@ class ConnexionController{
                         break;
                 }
             } else{
-                $this->smarty->assign("errorMessage","Invalid username or password");
+                $this->smarty->assign("errorMessage","Invalid login or password");
                 $this->smarty->display('connexion.tpl');
             }
             
