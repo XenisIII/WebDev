@@ -42,12 +42,19 @@ class CreationEntrepriseController{
         } else{
             $cp = NULL;
         }
+        if(isset($_POST["eval_stagiaire"])){
+            $evalStagiaire = $_POST["eval_stagiaire"];
+        } else{
+            $evalStagiaire = NULL;
+        }
+
         $this->entreprise->setCP($cp);
         $this->entreprise->setLocalite($localite);
         $this->entreprise->setNomEntr($nomEntr);
         $this->entreprise->setSecteurAct($secteurAct);
         $this->entreprise->setNbAncienStagiaire($nbAncienStagiaire);
         $this->entreprise->setConfPilote($confPilote);
+        $this->entreprise->setEvalStagiaire($evalStagiaire);
         $this->entreprise->verifyEntreprise();
     }
 

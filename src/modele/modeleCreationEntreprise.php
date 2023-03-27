@@ -109,7 +109,7 @@ class modeleCreationEntreprise{
 
     public function create(){
         $statement = "INSERT INTO Entreprise (nom_entreprise, secteur_activite, nb_ancien_stagiaire, evaluation_stagiaire, confiance_pilote) VALUES (:nomEntr, :secteurAct, :nbAncienStagiaire, :evalStagiaire, :confPilote);";
-        $user = $this->db->execute($statement, array(':nomEntr'=>$this->nomEntr, ':secteurAct'=>$this->secteurAct, ':nbAncienStagiaire'=>$this->nbAncienStagiaire, ':evalStagiaire'=>'5', ':confPilote'=>$this->confPilote));
+        $user = $this->db->execute($statement, array(':nomEntr'=>$this->nomEntr, ':secteurAct'=>$this->secteurAct, ':nbAncienStagiaire'=>$this->nbAncienStagiaire, ':evalStagiaire'=>$evalStagiaire, ':confPilote'=>$this->confPilote));
     }
 }
 ?>
