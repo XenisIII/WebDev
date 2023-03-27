@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-24 16:50:02
+/* Smarty version 4.3.0, created on 2023-03-27 09:13:27
   from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\accueilEtudiant.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641dc6aaad9a04_10086794',
+  'unifunc' => 'content_64214217de9288_87835435',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '592b5c588b8b101e7cd9d755c26ed076235007a3' => 
     array (
       0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\accueilEtudiant.tpl',
-      1 => 1679672999,
+      1 => 1679900837,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_641dc6aaad9a04_10086794 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64214217de9288_87835435 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -127,7 +127,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <li class="flex justify-between items-center px-3">Élève 10 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
                     <li class="flex justify-between items-center px-3">Élève 11 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
                     <li class="flex justify-between items-center px-3">Élève 12 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                </ul>
+                    </ul>
             </div>
         </div>
         </div>
