@@ -9,4 +9,6 @@
     <link rel="icon" href="/../img/Logo.png"/>
     <script src="https://cdn.tailwindcss.com/3.2.6"></script>
     <script src="https://kit.fontawesome.com/8ed527737a.js" crossorigin="anonymous"></script>
+    <link rel="manifest" href="/../script/manifest.json">
+    <script src="/service_worker.js"></script>
 </head>
