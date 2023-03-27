@@ -1,8 +1,36 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-27 22:53:24
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\mentionLegals.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_642202448d1586_69300196',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6f8600e937486cd34317bc52c4ff8c843ffc4fab' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\mentionLegals.tpl',
+      1 => 1679950403,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_642202448d1586_69300196 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <body>
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
         <div class="text-center">
             <title>Mentions légales</title>
             <h1>Mentions légales</h1>
@@ -83,8 +111,10 @@
 
     <div>
 
-        {include file="footer.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </div>
 
 
-</body>
+</body><?php }
+}
