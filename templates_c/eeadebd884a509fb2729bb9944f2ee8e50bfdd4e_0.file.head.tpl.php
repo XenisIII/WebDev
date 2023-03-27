@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-25 19:26:04
+/* Smarty version 4.3.0, created on 2023-03-27 09:12:58
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641f3cbc4451c3_15482176',
+  'unifunc' => 'content_642141fac43297_75439598',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eeadebd884a509fb2729bb9944f2ee8e50bfdd4e' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\head.tpl',
-      1 => 1679768753,
+      1 => 1679901170,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641f3cbc4451c3_15482176 (Smarty_Internal_Template $_smarty_tpl) {
+function content_642141fac43297_75439598 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -39,7 +39,7 @@ function content_641f3cbc4451c3_15482176 (Smarty_Internal_Template $_smarty_tpl)
 >
     <link rel="manifest" href="/../script/manifest.json">
     <?php echo '<script'; ?>
- src="/../script/service_worker.js"><?php echo '</script'; ?>
+ src="/service_worker.js"><?php echo '</script'; ?>
 >
 </head>
 <?php }
