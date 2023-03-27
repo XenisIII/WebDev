@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 20:16:10
+/* Smarty version 4.3.0, created on 2023-03-27 21:34:22
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421dd6aa23ac0_14841589',
+  'unifunc' => 'content_6421efbe649b77_61034504',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7944b4e89d95fd52e40dedbabddbfcd503e53b3d' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\profil.tpl',
-      1 => 1679940300,
+      1 => 1679945661,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:head.tpl' => 1,
     'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6421dd6aa23ac0_14841589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6421efbe649b77_61034504 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5] h-screen">
@@ -118,7 +119,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
     <?php }?>
 </div>
-<?php echo '<script'; ?>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+echo '<script'; ?>
  >
 function modify(id){
    var obj_p=document.getElementById("p-"+id);
@@ -143,6 +145,7 @@ function send(id){
 }
 <?php echo '</script'; ?>
 >
+
 </body>
 </html><?php }
 }

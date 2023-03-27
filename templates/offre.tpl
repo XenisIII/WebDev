@@ -11,8 +11,8 @@
     <!-- Titre/compétence/durée-->
         <div>
             <!-- Titre -->
-            <div class="mt-3 text-2xl">
-                <h3>{$nomOffre}</h3>
+            <div class="mt-3 text-2xl flex items-center">
+                <h3>{$nomOffre}</h3>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">

@@ -13,7 +13,7 @@ class ProfilController{
         $this->student= new EtudiantModele();
     }
     public function of(){
-        $isStudent=$this->user->IsStudent($_GET['user_id']);
+        $isStudent=$this->user->IsStudent($_SESSION['user_id']);
         $objuser=$this->user->getAllById($_GET['user_id'])[0];
         $AllOffer=$this->student->getAllFavById($_GET['user_id']);
         $this->smarty->assign("id_profil",$_GET['user_id']);

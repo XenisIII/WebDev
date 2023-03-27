@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 19:15:13
+/* Smarty version 4.3.0, created on 2023-03-27 21:41:40
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421cf219d26a8_09419122',
+  'unifunc' => 'content_6421f1747d6648_06962699',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60b68d69071b06cfbe4f9e26bc2e77ead64922a3' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\offre.tpl',
-      1 => 1679863702,
+      1 => 1679946099,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6421cf219d26a8_09419122 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6421f1747d6648_06962699 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
@@ -39,9 +39,9 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     <!-- Titre/compétence/durée-->
         <div>
             <!-- Titre -->
-            <div class="mt-3 text-2xl">
+            <div class="mt-3 text-2xl flex items-center">
                 <h3><?php echo $_smarty_tpl->tpl_vars['nomOffre']->value;?>
-</h3>
+</h3><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">

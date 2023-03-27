@@ -75,6 +75,7 @@
     </div>
     {/if}
 </div>
+{include file="footer.tpl"}
 <script >
 function modify(id){
    var obj_p=document.getElementById("p-"+id);
@@ -97,5 +98,6 @@ function send(id){
 
 }
 </script>
+
 </body>
 </html>
