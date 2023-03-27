@@ -40,6 +40,7 @@
         return($tmp_->fetchAll(PDO::FETCH_OBJ));
 
     }
+    
     /*public function executeCount($statement,$params=array()){
         $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
         $tmp_->execute($params);

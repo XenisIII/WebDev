@@ -24,20 +24,8 @@ class ModeleConnexion{
         return FALSE;
     }
 
-    /*public function login($username,$password){
-        $statement ="SELECT * FROM Utilisateur WHERE nom_utilisateur=:username AND mdp=:password;";
-        $user = $this->db->execute($statement, array(':username'=>$username, ':password'=>$password));
-        if ($this->db->executeCount($user)==1){
-            session_start();
-            $_SESSION['user_id']=$user->id_utilisateur;
-            $_SESSION['user_type']=$this->searchUserRole($user->id_utilisateur);
-            return $user!=false;
-        }
-        return $user!=true;
-    }*/
-
-    public function login($username,$password){
-        $user = $this->db->execute("SELECT * FROM Utilisateur WHERE nom_utilisateur=:username AND mdp=:password;", array(':username'=>$username, ':password'=>$password));
+    public function login($login,$password){
+        $user = $this->db->execute("SELECT * FROM Utilisateur WHERE login=:login_user AND mdp=:password;", array(':login_user'=>$login, ':password'=>$password));
         if ($user!=null){
             session_start();
             $_SESSION['user_id']=$user->id_utilisateur;

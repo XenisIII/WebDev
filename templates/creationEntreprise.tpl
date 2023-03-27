@@ -7,7 +7,7 @@
         <div class="flex rounded-md w-[95%] bg-[#fefefe] h-5/6 flex-col content-center flex-wrap">
             <h3 class="text-base xs:text-xl mt-5 text-center content-center"> Création Entreprise </h3>
             <div class=" content-center  w-[95%] sm:w-[70%] lg:w-[50%] xl:w-[40%]">
-                <form name="creation_enteprise" action="creation_entreprise.php" id="creation_entreprise" method="post" class="">
+                <form name="creation_enteprise" action="CreationEntreprise/createEntreprise" id="creation_entreprise" method="post" class="">
                     <label name="nom_entreprise" class="my-1"> Nom entreprise </label>
                     <input type="text" name="nom_entreprise" placeholder="Nom entreprise"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
@@ -20,18 +20,24 @@
                     <input type="text" name="localite" placeholder="localite"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
 
+                    <label name="CP" class="my-1"> Code Postal </label>
+                    <input type="number" name="CP" placeholder="CP"
+                        class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
+
                     <label name="nb_ancien_stagiaire" class="my-1"> Nombre d'anciens stagiaires venant de CESI </label>
                     <input type="text" name="nb_ancien_stagiaire"
                         placeholder="Nombre d'anciens stagiaires venant de CESI"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
                         <p class="my-1">Confiance du pilote</p>
-                    <div class="">
+                    <div class="" >
                         <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1" onclick="star(1)"></i>
                         <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
                         <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
                         <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
                         <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
                     </div>
+                    <input type="hidden" name="confiance" value="1" id="confiance"
+                        class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
 
                     <div class="flex  justify-evenly mt-5">
                         <button type="reset" name="reset"
@@ -91,6 +97,7 @@
            
         };
         star_value = etoile;
+        confiance.setAttribute("value", star_value);
        };
 
 </script>
