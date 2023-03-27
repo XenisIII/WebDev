@@ -25,9 +25,9 @@ class ModeleConnexion{
     }
 
     public function login($login,$password){
-        $user = $this->db->execute("SELECT * FROM Utilisateur WHERE login=:login_user AND mdp=:password;", array(':login_user'=>$login, ':password'=>$password));
+        $user = $this->db->execute("SELECT * FROM Utilisateur WHERE login=:login_user AND mdp=:password_user;", array(':login_user'=>$login, ':password_user'=>$password));
         if ($user!=null){
-            session_start();
+            echo 'oui';
             $_SESSION['user_id']=$user->id_utilisateur;
             $_SESSION['user_type']=$this->searchUserRole($user->id_utilisateur);
             return $user!=false;

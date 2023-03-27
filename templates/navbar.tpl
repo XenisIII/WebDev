@@ -79,7 +79,7 @@
             <div class="my-4 mt-0 ml-0 w-auto">
                 <a href="/index.php/accueil"><i onclick="bgChange(1)"
                         class="fas fa-tachometer-alt text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/profil/index"><i onclick="bgChange(2)"
+                <a href="/index.php/profil/index"><i onclick="bgChange(2)"
                         class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
                 <a href="/index.php/rechercheStage/index"><i onclick="bgChange(3)"
                         class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
