@@ -16,13 +16,13 @@ class RechercheStageController{
     public function fav(){
         $id_offre=$_GET['id_offre'];
         $id_student=$_SESSION['user_id'];
-        $this->offer->ChangeStatut($id_offre,$id_student,5);
+        $this->offer->ChangeStatut($id_offre,$this->student->getIdEleveById($id_student),5);
         echo "<script>window.location.replace('/index.php/rechercheStage/index');</script>"; 
     }
     public function unfav(){
         $id_offre=$_GET['id_offre'];
         $id_student=$_SESSION['user_id'];
-        $this->offer->DeleteStatut($id_offre,$id_student);
+        $this->offer->DeleteStatut($id_offre,$this->student->getIdEleveById($id_student));
         echo "<script>window.location.replace('/index.php/rechercheStage/index');</script>"; 
     }
     public function index(){

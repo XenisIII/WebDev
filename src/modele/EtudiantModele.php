@@ -67,8 +67,12 @@ class EtudiantModele{
         $this->db->Query($statement);
     }
     public function getFavById($id_user){
-        $statement="SELECT id_offre from Postule WHERE id_eleve=$id_user and id_statut=5";
+        $statement="SELECT id_offre from Postule WHERE id_eleve in(SELECT id_eleve from Eleve where id_utilisateur=$id_user) and id_statut=5";
         return $this->db->Query($statement);
+    }
+    public function getIdEleveByID($id_user){
+        $statement="SELECT id_eleve from Eleve where id_utilisateur=$id_user";
+        return $this->db->Query($statement)[0]->id_eleve;
     }
 }
 ?>
