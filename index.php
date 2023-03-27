@@ -6,8 +6,10 @@ $controllerName = !empty($parts[2]) ? ucfirst($parts[2]) . 'Controller' : 'Defau
 $actionName = !empty($parts[3]) ? $parts[3] : 'index';
 $actionName=explode('?',$actionName);
 $trueActionName=$actionName[0];
+session_start();
 // Chargement du contrôleur
 $controllerFile = __DIR__ . '/src/contoller/' . $controllerName . '.php';
+if(isset($_SESSION['user_type'])){
 if (file_exists($controllerFile)) {
     require_once $controllerFile;
     $controller = new $controllerName();
@@ -18,17 +20,16 @@ if (file_exists($controllerFile)) {
     } else {
         // Gestion de l'erreur
         $controller->Error();
-    }
+    }}
 } else {
     // Gestion de l'erreur
-    if(isset($_COOKIE['logged'])){
-    require_once(__DIR__."/src/contoller/AccueilController.php");//mettre page_accueil
-    $controller= new NavbarController();
-    $controller->index();
-    }
-    else{
+    if(isset($_SESSION['Connexion'])){
     require_once(__DIR__."/src/contoller/ConnexionController.php"); //mettre page connexion
     $controller= new ConnexionController();
     $controller->index();}
+    else{
+        $_SESSION['Connexion']=true;
+        header('location: index.php/connexion');
+    }
 }
 ?>

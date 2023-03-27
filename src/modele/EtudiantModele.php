@@ -1,6 +1,8 @@
 <?php
-require(__DIR__."/../lib/database.php");
-session_start();
+
+
+require_once(__DIR__."/../lib/database.php");
+
 class EtudiantModele{
     private $db;
     function __construct(){
@@ -59,6 +61,14 @@ class EtudiantModele{
             )
             ;";
         return $this->db->executeAll($statement,array(":sess"=>$_SESSION['user_id']));
+    }
+    public function ChangeStatut($id_offre,$id_user,$id_statue){
+        $statement="INSERT INTO Postule(id_offre,id_eleve,id_statut) VALUES($id_offre,$id_user,$id_statue)";
+        $this->db->Query($statement);
+    }
+    public function getFavById($id_user){
+        $statement="SELECT id_offre from Postule WHERE id_eleve=$id_user and id_statut=5";
+        return $this->db->Query($statement);
     }
 }
 ?>

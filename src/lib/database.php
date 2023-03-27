@@ -20,7 +20,7 @@
     public function Query($statement){
         try{
         $tmp_=$this->pdo->query($statement)->fetchAll(PDO::FETCH_OBJ);
-        $this->pdo->query($statement)->closeCursor();
+        
         return $tmp_;}
         catch(PDOException $e){
             print_r($e->getMessage()."<br>");

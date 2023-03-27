@@ -108,7 +108,8 @@
                     </div>
                     <div class="flex items-stretch self-center">
                         <!-- Div pour centrer le coeur -->
-                        <i id="heart-{$nboffre}" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}')"></i>
+                        {$fav='true'}
+                        <i id="heart-{$nboffre}" class="fa fa-heart {foreach $AlreadyFav as $offer}{if $offer==$AllOffer[$nboffre]->id_offre}text-red-500{$fav='false'}{/if}{{/foreach}} m-8 cursor-pointer" onclick="heartv2('heart-{$nboffre}',{$fav},{$AllOffer[$nboffre]->id_offre})"></i>
                     </div>
                 </div>
                 {/for}
@@ -209,8 +210,17 @@
     </div>
     <!-- JavaScript pour faire l'animation du coeur et le bouton trier apparaitre-->
     <script>
-        function heartv2(id) {
-            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8")
+        function heartv2(id,bool,idoffre) {
+            if(bool==true){
+            document.getElementById(id).setAttribute("class", "text-red-500 fa fa-heart m-8 cursor-pointer");
+            document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',false)");
+            document.location.href="/index.php/rechercheStage/fav?id_offre="+idoffre; 
+        }
+            else{
+                document.getElementById(id).setAttribute("class", "fa fa-heart text-black m-8 cursor-pointer");
+                document.getElementById(id).setAttribute("onclick","heartv2('"+id+"',true)");
+                document.location.href="/index.php/rechercheStage/unfav?id_offre="+idoffre; 
+            }
         }
 
         function mobileFastSearch() {
