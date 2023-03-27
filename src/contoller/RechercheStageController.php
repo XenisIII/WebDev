@@ -1,16 +1,32 @@
 <?php
 require(__DIR__."/../lib/smarty.php");
 require(__DIR__."/../modele/OffreModele.php");
+require(__DIR__."/../modele/EtudiantModele.php");
 class RechercheStageController{
     private $smarty;
     private $offer;
+    private $student;
 
     function __construct()
     {
         $this->smarty=new AppSmarty();
         $this->offer=new OffreModele();
+        $this->student= new EtudiantModele();
+    }
+    public function fav(){
+        $id_offre=$_GET['id_offre'];
+        $id_student=$_SESSION['user_id'];
+        $this->offer->ChangeStatut($id_offre,$id_student,5);
+        echo "<script>window.location.replace('/index.php/rechercheStage/index');</script>"; 
+    }
+    public function unfav(){
+        $id_offre=$_GET['id_offre'];
+        $id_student=$_SESSION['user_id'];
+        $this->offer->DeleteStatut($id_offre,$id_student);
+        echo "<script>window.location.replace('/index.php/rechercheStage/index');</script>"; 
     }
     public function index(){
+        $alreadyFav=$this->student->getFavById($_SESSION['user_id']);
         $get="";
         $searchget="";
         $scale=0;
@@ -119,6 +135,7 @@ class RechercheStageController{
                         $moreamonth=date('y-').intval(date('m').date('d'));
                     }
                     $statement="date_mise_en_ligne>$moreamonth";
+                    $arrayOffer=$this->offer->getAllOfferScale($statement);
                     break;
             }
 
@@ -131,6 +148,10 @@ class RechercheStageController{
             }
         $count=count($arrayOffer);
         $nbpage=intval(round($count/5));
+        $arrFav=array();
+        foreach($alreadyFav as $obj){
+            array_push($arrFav,$obj->id_offre);
+        }
         $this->smarty->assign("DocumentTitle","Recherche Stage");
         $this->smarty->assign("Pages",$nbpage);
         $this->smarty->assign("Thispage",$page);
@@ -141,6 +162,7 @@ class RechercheStageController{
         $this->smarty->assign('SearchGet',$searchget);
         $this->smarty->assign("get",$get);
         $this->smarty->assign("ActualScale",$scale);
+        $this->smarty->assign("AlreadyFav",$arrFav);
         $this->smarty->display('rechercheStage.tpl');
     }
     public function error(){
