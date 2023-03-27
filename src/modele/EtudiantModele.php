@@ -1,6 +1,8 @@
 <?php
 
+
 require_once(__DIR__."/../lib/database.php");
+
 class EtudiantModele{
     private $db;
     function __construct(){
