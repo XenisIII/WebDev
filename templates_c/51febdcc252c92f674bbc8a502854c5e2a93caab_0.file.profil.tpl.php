@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 16:21:58
+/* Smarty version 4.3.0, created on 2023-03-27 16:55:21
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421a68671a9d9_40137525',
+  'unifunc' => 'content_6421ae59d604c0_32475251',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51febdcc252c92f674bbc8a502854c5e2a93caab' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\profil.tpl',
-      1 => 1679926916,
+      1 => 1679928918,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_6421a68671a9d9_40137525 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6421ae59d604c0_32475251 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5] h-screen">
@@ -36,13 +36,14 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
 <!-- div image et cv-->
     <div class="flex justify-between w-full mt-5">
         <!-- contact -->
-        <div class="border rounded border-black h-fit ml-3">
-        <div class="flex items-center justify-between px-2">
+        <div class="border rounded border-black h-fit ml-3" >
+        <div class="flex items-center justify-between px-2" id="div-nom">
         <p id="p-nom">
         <?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
  
         </p>
-        <i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('p-nom')"></i>
+        <input type="text" id="text-nom" class="hidden border" ></input>
+        <i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')"></i>
         </div>
         <div>
         <p>

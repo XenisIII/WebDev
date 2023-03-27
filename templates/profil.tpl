@@ -9,12 +9,13 @@
 <!-- div image et cv-->
     <div class="flex justify-between w-full mt-5">
         <!-- contact -->
-        <div class="border rounded border-black h-fit ml-3">
-        <div class="flex items-center justify-between px-2">
+        <div class="border rounded border-black h-fit ml-3" >
+        <div class="flex items-center justify-between px-2" id="div-nom">
         <p id="p-nom">
         {$nom} 
         </p>
-        <i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('p-nom')"></i>
+        <input type="text" id="text-nom" class="hidden border" ></input>
+        <i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')"></i>
         </div>
         <div>
         <p>
