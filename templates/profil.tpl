@@ -17,9 +17,11 @@
         </div>
         <div>
         <p id="p-prenom">{$prenom} </p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
+            <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
         </div>
         <div> 
         <p id="p-mail">{$prenom}.{$nom}@viacesi.fr</p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('mail')" ></i>{/if}
+            <input type="text" id="text-mail" class="hidden border" onfocusout="send('mail');"></input>
         </div>
 
         </div>
@@ -73,6 +75,27 @@
     </div>
     {/if}
 </div>
-<script src="/script/profil.js"></script>
+<script >
+function modify(id){
+   var obj_p=document.getElementById("p-"+id);
+   txt=obj_p.textContent;
+   obj_p.style.display="none";
+   var textbox=document.getElementById("text-"+id);
+    textbox.style.display="inline";
+    textbox.focus();
+    textbox.value=txt;
+}
+function send(id){
+   var obj_t=document.getElementById("text-"+id);
+   var obj_p=document.getElementById('p-'+id);
+   txt=obj_t.value;
+   obj_p.textContent=txt;
+   obj_t.style.display='none';
+   obj_p.style.display="block";
+   document.location.href="/../index.php/profil/send?id={$id_profil}&"+id+"="+txt;
+
+
+}
+</script>
 </body>
 </html>

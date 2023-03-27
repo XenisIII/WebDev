@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 19:31:02
+/* Smarty version 4.3.0, created on 2023-03-27 20:16:10
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421d2d6401153_60519463',
+  'unifunc' => 'content_6421dd6aa23ac0_14841589',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7944b4e89d95fd52e40dedbabddbfcd503e53b3d' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\profil.tpl',
-      1 => 1679938261,
+      1 => 1679940300,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_6421d2d6401153_60519463 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6421dd6aa23ac0_14841589 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5] h-screen">
@@ -46,11 +46,13 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <div>
         <p id="p-prenom"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
  </p><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
+            <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
         </div>
         <div> 
         <p id="p-mail"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
 .<?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
 @viacesi.fr</p><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('mail')" ></i><?php }?>
+            <input type="text" id="text-mail" class="hidden border" onfocusout="send('mail');"></input>
         </div>
 
         </div>
@@ -117,7 +119,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php }?>
 </div>
 <?php echo '<script'; ?>
- src="/script/profil.js"><?php echo '</script'; ?>
+ >
+function modify(id){
+   var obj_p=document.getElementById("p-"+id);
+   txt=obj_p.textContent;
+   obj_p.style.display="none";
+   var textbox=document.getElementById("text-"+id);
+    textbox.style.display="inline";
+    textbox.focus();
+    textbox.value=txt;
+}
+function send(id){
+   var obj_t=document.getElementById("text-"+id);
+   var obj_p=document.getElementById('p-'+id);
+   txt=obj_t.value;
+   obj_p.textContent=txt;
+   obj_t.style.display='none';
+   obj_p.style.display="block";
+   document.location.href="/../index.php/profil/send?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+&"+id+"="+txt;
+
+
+}
+<?php echo '</script'; ?>
 >
 </body>
 </html><?php }

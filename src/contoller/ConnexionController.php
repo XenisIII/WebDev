@@ -13,10 +13,8 @@ class ConnexionController{
     }
 
     public function index(){
-
         if (isset($_POST["login"]) && isset($_POST["password"])){
             $login=$_POST["login"];
-
             $password=$_POST["password"];
             $loggedIn = $this->model->login($login,$password);
             if ($loggedIn == "false"){

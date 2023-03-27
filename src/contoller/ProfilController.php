@@ -16,6 +16,7 @@ class ProfilController{
         $isStudent=$this->user->IsStudent($_GET['user_id']);
         $objuser=$this->user->getAllById($_GET['user_id'])[0];
         $AllOffer=$this->student->getAllFavById($_GET['user_id']);
+        $this->smarty->assign("id_profil",$_GET['user_id']);
         $this->smarty->assign("nom",$objuser->nom_utilisateur);
         $this->smarty->assign("prenom",$objuser->prenom_utilisateur );
         $this->smarty->assign("isStudent",$isStudent);
@@ -27,12 +28,26 @@ class ProfilController{
         $isStudent=$this->user->IsStudent($_SESSION['user_id']);
         $objuser=$this->user->getAllById($_SESSION['user_id'])[0];
         $AllOffer=$this->student->getAllFavById($_SESSION['user_id']);
+        $this->smarty->assign("id_profil",$_SESSION['user_id']);
         $this->smarty->assign("nom",$objuser->nom_utilisateur);
         $this->smarty->assign("prenom",$objuser->prenom_utilisateur );
         $this->smarty->assign("isStudent",$isStudent);
         $this->smarty->assign("AllOffer",$AllOffer);
         $this->smarty->assign("DocumentTitle","profil");
         $this->smarty->display('profil.tpl');
+    }
+    public function send(){
+        if(isset($_GET['nom'])){
+            $nom=$_GET['nom'];
+            $this->student->modifyNameById($_GET['id'],$nom);
+        }
+        if(isset($_GET['prenom'])){
+            $prenom=$_GET['prenom'];
+        }
+        if(isset($_GET['mail'])){
+            $mail=$_GET['mail'];
+        }
+        echo "<script>window.location.replace('/index.php/profil/of?user_id=".$_GET['id']."');</script>"; 
     }
     public function error(){
         $this->smarty->assign("DocumentTitle","404 NOT FOUND");

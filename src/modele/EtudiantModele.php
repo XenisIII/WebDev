@@ -78,5 +78,9 @@ class EtudiantModele{
         $statement="SELECT id_eleve from Eleve where id_utilisateur=$id_user";
         return $this->db->Query($statement)[0]->id_eleve;
     }
+    public function modifyNameById($id,$name){
+        $statement="UPDATE Utilisateur SET nom_utilisateur='$name' where id_utilisateur=$id";
+        return $this->db->Query($statement);
+    }
 }
 ?>
