@@ -1,5 +1,5 @@
 <?php
-require(__DIR__."/../lib/database.php");
+require_once(__DIR__."/../lib/database.php");
 class OffreModele{
     private $db;
     function __construct(){

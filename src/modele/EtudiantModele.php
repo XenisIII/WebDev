@@ -70,6 +70,10 @@ class EtudiantModele{
         $statement="SELECT id_offre from Postule WHERE id_eleve in(SELECT id_eleve from Eleve where id_utilisateur=$id_user) and id_statut=5";
         return $this->db->Query($statement);
     }
+    public function getAllFavByID($id_user){
+        $statement="SELECT * from Postule natural join Offre natural join Localite natural join Entreprise WHERE id_eleve in(SELECT id_eleve from Eleve where id_utilisateur=$id_user) and id_statut=5";
+        return $this->db->Query($statement);
+    }
     public function getIdEleveByID($id_user){
         $statement="SELECT id_eleve from Eleve where id_utilisateur=$id_user";
         return $this->db->Query($statement)[0]->id_eleve;
