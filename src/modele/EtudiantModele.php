@@ -1,6 +1,6 @@
 <?php
 require(__DIR__."/../lib/database.php");
-
+session_start();
 class EtudiantModele{
     private $db;
     function __construct(){
