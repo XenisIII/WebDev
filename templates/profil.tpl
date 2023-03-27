@@ -1,5 +1,27 @@
 {include file="head.tpl"}
 <body class="bg-[#f5f5f5] h-screen">
+<script>
+function modify(id){
+   var obj_p=document.getElementById("p-"+id);
+   txt=obj_p.textContent;
+   obj_p.style.display="none";
+   var textbox=document.getElementById("text-"+id);
+    textbox.style.display="inline";
+    textbox.focus();
+    textbox.value=txt;
+}
+function send(id){
+   var obj_t=document.getElementById("text-"+id);
+   var obj_p=document.getElementById('p-'+id);
+   txt=obj_t.value;
+   obj_p.textContent=txt;
+   obj_t.style.display='none';
+   obj_p.style.display="block";
+   document.location.href="/../index.php/profil/send?id={$id_profil}&"+id+"="+txt;
+
+
+}
+</script>
 <div>
 {include file="navbar.tpl"}
 </div>
@@ -15,21 +37,27 @@
         <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
         {if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i>{/if}
         </div>
-        <div>
+        <div class="flex items-center justify-between px-2">
         <p id="p-prenom">{$prenom} </p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
             <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
         </div>
         <div> 
-        <p id="p-mail">{$prenom}.{$nom}@viacesi.fr</p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('mail')" ></i>{/if}
-            <input type="text" id="text-mail" class="hidden border" onfocusout="send('mail');"></input>
+        <p id="p-mail">{$prenom}.{$nom}@viacesi.fr</p>
         </div>
-
         </div>
-        <!-- CV 
+        <div>
+        Promo : {$promo}
+        </div>
+        <div>
+        Centre : {$centre}
+        </div>
+        <!-- CV -->
         <div class="mr-3">
             <h3>CV:</h3>
-        </div>-->
-        
+        </div>
+        <div class="px-5 {if $isStudent}hidden{/if}">
+        <i class="fa-solid fa-trash-can" onclick="delete({$id_profil})"></i>
+    </div>    
     </div>
     <!-- wishList-->
     {if $isStudent}
@@ -76,26 +104,10 @@
     {/if}
 </div>
 {include file="footer.tpl"}
-<script >
-function modify(id){
-   var obj_p=document.getElementById("p-"+id);
-   txt=obj_p.textContent;
-   obj_p.style.display="none";
-   var textbox=document.getElementById("text-"+id);
-    textbox.style.display="inline";
-    textbox.focus();
-    textbox.value=txt;
-}
-function send(id){
-   var obj_t=document.getElementById("text-"+id);
-   var obj_p=document.getElementById('p-'+id);
-   txt=obj_t.value;
-   obj_p.textContent=txt;
-   obj_t.style.display='none';
-   obj_p.style.display="block";
-   document.location.href="/../index.php/profil/send?id={$id_profil}&"+id+"="+txt;
+<script>
 
-
+function delete(id){
+    document.location.href="/../index.php/profil/delete?id={$id_profil}";
 }
 </script>
 

@@ -16,7 +16,14 @@ class ProfilController{
         $isStudent=$this->user->IsStudent($_SESSION['user_id']);
         $objuser=$this->user->getAllById($_GET['user_id'])[0];
         $AllOffer=$this->student->getAllFavById($_GET['user_id']);
+        $isStudent=$this->user->IsStudent($_GET['user_id']);
+        $promo="";
+        if($isStudent){
+            $promo=$this->student->getPromoById($_GET['user_id'])[0];
+        }
         $this->smarty->assign("id_profil",$_GET['user_id']);
+        $this->smarty->assign("promo",$promo->promotion);
+        $this->smarty->assign("centre",$promo->centre);
         $this->smarty->assign("nom",$objuser->nom_utilisateur);
         $this->smarty->assign("prenom",$objuser->prenom_utilisateur );
         $this->smarty->assign("isStudent",$isStudent);
@@ -26,8 +33,14 @@ class ProfilController{
     }
     public function index(){
         $isStudent=$this->user->IsStudent($_SESSION['user_id']);
+        $promo="";
+        if($isStudent){
+            $promo=$this->student->getPromoById($_SESSION['user_id'])[0];
+        }
         $objuser=$this->user->getAllById($_SESSION['user_id'])[0];
         $AllOffer=$this->student->getAllFavById($_SESSION['user_id']);
+        $this->smarty->assign("promo",$promo->promotion);
+        $this->smarty->assign("centre",$promo->centre);
         $this->smarty->assign("id_profil",$_SESSION['user_id']);
         $this->smarty->assign("nom",$objuser->nom_utilisateur);
         $this->smarty->assign("prenom",$objuser->prenom_utilisateur );
@@ -43,11 +56,12 @@ class ProfilController{
         }
         if(isset($_GET['prenom'])){
             $prenom=$_GET['prenom'];
-        }
-        if(isset($_GET['mail'])){
-            $mail=$_GET['mail'];
+            $this->student->modifyPrenomById($_GET['id'],$prenom);
         }
         echo "<script>window.location.replace('/index.php/profil/of?user_id=".$_GET['id']."');</script>"; 
+    }
+    public function delete(){
+        $id=$_GET['id'];
     }
     public function error(){
         $this->smarty->assign("DocumentTitle","404 NOT FOUND");

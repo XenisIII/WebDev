@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 21:34:22
+/* Smarty version 4.3.0, created on 2023-03-27 22:38:00
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421efbe649b77_61034504',
+  'unifunc' => 'content_6421fea8070850_55467621',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7944b4e89d95fd52e40dedbabddbfcd503e53b3d' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\profil.tpl',
-      1 => 1679945661,
+      1 => 1679949070,
       2 => 'file',
     ),
   ),
@@ -23,10 +23,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6421efbe649b77_61034504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6421fea8070850_55467621 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5] h-screen">
+<?php echo '<script'; ?>
+>
+function modify(id){
+   var obj_p=document.getElementById("p-"+id);
+   txt=obj_p.textContent;
+   obj_p.style.display="none";
+   var textbox=document.getElementById("text-"+id);
+    textbox.style.display="inline";
+    textbox.focus();
+    textbox.value=txt;
+}
+function send(id){
+   var obj_t=document.getElementById("text-"+id);
+   var obj_p=document.getElementById('p-'+id);
+   txt=obj_t.value;
+   obj_p.textContent=txt;
+   obj_t.style.display='none';
+   obj_p.style.display="block";
+   document.location.href="/../index.php/profil/send?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+&"+id+"="+txt;
+
+
+}
+<?php echo '</script'; ?>
+>
 <div>
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -44,7 +69,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
         <?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i><?php }?>
         </div>
-        <div>
+        <div class="flex items-center justify-between px-2">
         <p id="p-prenom"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
  </p><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
             <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
@@ -52,16 +77,25 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <div> 
         <p id="p-mail"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
 .<?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
-@viacesi.fr</p><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('mail')" ></i><?php }?>
-            <input type="text" id="text-mail" class="hidden border" onfocusout="send('mail');"></input>
+@viacesi.fr</p>
         </div>
+        </div>
+        <div>
+        Promo : <?php echo $_smarty_tpl->tpl_vars['promo']->value;?>
 
         </div>
-        <!-- CV 
+        <div>
+        Centre : <?php echo $_smarty_tpl->tpl_vars['centre']->value;?>
+
+        </div>
+        <!-- CV -->
         <div class="mr-3">
             <h3>CV:</h3>
-        </div>-->
-        
+        </div>
+        <div class="px-5 <?php if ($_smarty_tpl->tpl_vars['isStudent']->value) {?>hidden<?php }?>">
+        <i class="fa-solid fa-trash-can" onclick="delete(<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+)"></i>
+    </div>    
     </div>
     <!-- wishList-->
     <?php if ($_smarty_tpl->tpl_vars['isStudent']->value) {?>
@@ -121,27 +155,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 echo '<script'; ?>
- >
-function modify(id){
-   var obj_p=document.getElementById("p-"+id);
-   txt=obj_p.textContent;
-   obj_p.style.display="none";
-   var textbox=document.getElementById("text-"+id);
-    textbox.style.display="inline";
-    textbox.focus();
-    textbox.value=txt;
-}
-function send(id){
-   var obj_t=document.getElementById("text-"+id);
-   var obj_p=document.getElementById('p-'+id);
-   txt=obj_t.value;
-   obj_p.textContent=txt;
-   obj_t.style.display='none';
-   obj_p.style.display="block";
-   document.location.href="/../index.php/profil/send?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
-&"+id+"="+txt;
+>
 
-
+function delete(id){
+    document.location.href="/../index.php/profil/delete?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+";
 }
 <?php echo '</script'; ?>
 >
