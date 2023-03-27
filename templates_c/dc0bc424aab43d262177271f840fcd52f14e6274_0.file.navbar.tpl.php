@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-25 11:04:29
+/* Smarty version 4.3.0, created on 2023-03-27 11:32:37
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641ec72d8feec1_45293969',
+  'unifunc' => 'content_642162b50d3394_77976111',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc0bc424aab43d262177271f840fcd52f14e6274' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\navbar.tpl',
-      1 => 1679738534,
+      1 => 1679909134,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641ec72d8feec1_45293969 (Smarty_Internal_Template $_smarty_tpl) {
+function content_642162b50d3394_77976111 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<header class="bg-[#f5f5f5] sm:overflow-hidden">
+<header class="bg-[#f5f5f5]">
     <div class="min-h-full">
         <nav class="bg-gray-900">
             <div class="mx-auto px-2 lg:ml-0">
@@ -50,12 +50,12 @@ function content_641ec72d8feec1_45293969 (Smarty_Internal_Template $_smarty_tpl)
 
                     <div class="flex flex-1 sm:items-stretch sm:justify-start ml-2 lg:ml-0">
                         <div class="flex flex-shrink-0 items-center">
-                            <img class="block h-9 w-auto h-6" src="../img/krita.png" alt="Your Company">
+                            <img class="block h-9 w-auto h-6" src="/../../img/krita.png" alt="Your Company">
                         </div>
                         <div class="sm:ml-6 sm:block">
                             <div class="flex space-x-4">
 
-                                <a href="#" class="text-white rounded-md px-3 py-2 text-lg font-medium"
+                                <a href="/index.php/accueil" class="text-white rounded-md px-3 py-2 text-lg font-medium"
                                     aria-current="page">InternTracker</a>
                             </div>
                         </div>
@@ -100,13 +100,13 @@ function content_641ec72d8feec1_45293969 (Smarty_Internal_Template $_smarty_tpl)
         <div class="hidden float-left md:block top-0 left-0 h-screen w-12 bg-gray-300 text-black flex justify-center">
             <!-- Contenu de la side left bar -->
             <div class="my-4 mt-0 ml-0 w-auto">
-                <a href=""><i onclick="bgChange(1)"
+                <a href="/index.php/accueil"><i onclick="bgChange(1)"
                         class="fas fa-tachometer-alt text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href=""><i onclick="bgChange(2)"
+                <a href="/profil/index"><i onclick="bgChange(2)"
                         class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href=""><i onclick="bgChange(3)"
+                <a href="/index.php/rechercheStage/index"><i onclick="bgChange(3)"
                         class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href=""><i onclick="bgChange(4)"
+                <a href="/rechercheEntreprise/index"><i onclick="bgChange(4)"
                         class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
             </div>
 
@@ -114,12 +114,12 @@ function content_641ec72d8feec1_45293969 (Smarty_Internal_Template $_smarty_tpl)
         <div class="hidden lg:hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                <a href="/index.php/accueil" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
                     aria-current="page" id="mobile-menu-item">Dashboard</a>
 
-                <a href="#"
+                <a href="/index.php/rechercheStage/index"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                    id="mobile-menu-item">Team</a>
+                    id="mobile-menu-item">Offre</a>
 
                 <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
