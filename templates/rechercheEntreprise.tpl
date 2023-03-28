@@ -56,6 +56,9 @@
                     </div>
                 </form>
             </div>
+            {if role != "Eleve"}
+                <a href="/../index.php/creationEntreprise" class="text-center bg-gray-100 rounded-full">Créer une entreprise</a>
+            {/if}
             <div
                 class="bg-white divide-y w-[90%] h-fit sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
                 <!--grande div contenant les offres-->

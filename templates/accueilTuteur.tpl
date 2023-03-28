@@ -18,15 +18,15 @@
                 class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
 
                 <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
-                    <a href="rechercheEtudiant/index">
+                    <a href="/../index.php/rechercheEtudiant/index">
                         <p class="text-center ">Gestion Étudiant</p>
 
 
                     </a>
                 </div>
                 <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
-                    <a href="rechercheEtudiant/index">
-                        <p class="text-center ">Statut Recherche</p>
+                    <a href="/../index.php/creationEtudiant/index">
+                        <p class="text-center ">Création étudiant</p>
                     </a>
                 </div>
             </div>
@@ -39,12 +39,21 @@
                 <i class="fa-solid fa-briefcase text-2xl"></i>
                 <p class="">Offre</p>
             </div>
-            <div class="flex items-center justify-around flex-wrap border border-[#dfdfdf] bg-[#fafafa]  rounded-b-lg ">
-                <a href="rechercheStage/index">
-                    <div class="flex items-center max-[880px]:h-10 h-20 cursor-pointer">
-                        <p>Recherche Stage</p>
-                    </div>
-                </a>
+            <div
+                class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
+
+                <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
+                    <a href="/../index.php/rechercheStage/index">
+                        <p class="text-center ">Recherche stage</p>
+
+
+                    </a>
+                </div>
+                <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
+                    <a href="/../index.php/creationoffre/index">
+                        <p class="text-center ">Création offre</p>
+                    </a>
+                </div>
             </div>
         </div>
         <!--Bouton Raccourci Entreprise-->
@@ -55,12 +64,21 @@
                 <i class="fa-solid fa-building text-2xl"></i>
                 <p class="">Entreprise</p>
             </div>
-            <div class="flex justify-around flex-wrap border border-[#dfdfdf] bg-[#fafafa] rounded-b-lg ">
-                <a href="vueEntreprise/index">
-                    <div class="flex items-center max-[880px]:h-10 h-20 cursor-pointer">
-                        <p>Gestion Entreprise</p>
-                    </div>
-                </a>
+            <div
+                class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
+
+                <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
+                    <a href="/../index.php/rechercheEntreprise/index">
+                        <p class="text-center ">Gestion entreprise</p>
+
+
+                    </a>
+                </div>
+                <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
+                    <a href="/../index.php/creationEntreprise/index">
+                        <p class="text-center ">Création entreprise</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

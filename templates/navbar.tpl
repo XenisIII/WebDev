@@ -83,7 +83,7 @@
                         class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
                 <a href="/../index.php/rechercheStage/index"><i onclick="bgChange(3)"
                         class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/../rechercheEntreprise/index"><i onclick="bgChange(4)"
+                <a href="/../index.php/rechercheEntreprise/index"><i onclick="bgChange(4)"
                         class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
             </div>
 

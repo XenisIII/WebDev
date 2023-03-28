@@ -12,6 +12,7 @@ class RechercheEntrepriseController{
     }
 
     public function index(){
+        $role = $_SESSION['user_type'];
         $get="";
         $searchget="";
         $scale=0;
@@ -59,6 +60,7 @@ class RechercheEntrepriseController{
         $this->smarty->assign('SearchGet',$searchget);
         $this->smarty->assign("get",$get);
         $this->smarty->assign("ActualScale",$scale);
+        $this->smarty->assign("role", $role);
         $this->smarty->display('rechercheEntreprise.tpl');
     }
     public function error(){
