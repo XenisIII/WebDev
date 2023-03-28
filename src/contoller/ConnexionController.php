@@ -11,7 +11,7 @@ class ConnexionController{
         $this->smarty=new AppSmarty();
         $this->model= new ModeleConnexion();
     }
-
+    
     public function index(){
 
         if (isset($_POST["login"]) && isset($_POST["password"])){
