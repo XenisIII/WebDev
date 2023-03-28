@@ -13,6 +13,25 @@ class OffreModele{
         $statement="SELECT * from Offre natural join Competence_requise natural join Competence where id_offre='$id'";
         return $this->db->Query($statement);
     }
+
+
+    
+
+    public function getOffreCompetence(){
+        $statement ="SELECT nom_offre, competence 
+        FROM Offre 
+        NATURAL JOIN Competence_requise 
+        NATURAL JOIN Competence 
+        ORDER BY date_mise_en_ligne ASC 
+        LIMIT 20";
+        return $this->db->Query($statement);
+    }
+
+    public function AccueilEtudiant(){
+        $id_eleve = $this->db->execute("SELECT * FROM Offre NATURAL JOIN Postule NATURAL JOIN Statut WHERE statut = 'En attente' AND id_eleve = ':sess';", array(':sess'=>$_Session[id_utilisateur]));
+        return $id_eleve ;
+    }
+
     public function getAllOffer($order="ORDER BY id_offre desc"){
         $statement="SELECT * from Offre natural join Localite natural join Entreprise $order" ;
         return $this->db->Query($statement);
