@@ -90,5 +90,15 @@ class EtudiantModele{
         $statement="UPDATE Utilisateur SET prenom_utilisateur='$prenom' where id_utilisateur=$id";
         return $this->db->Query($statement);
     }
+    public function deleteById($id){
+        $statement="UPDATE Utilisateur SET prenom_utilisateur='DELETED_USER-$id' where id_utilisateur=$id";
+        $this->db->Query($statement);
+        $statement="UPDATE Utilisateur SET nom_utilisateur='DELETED_USER-$id' where id_utilisateur=$id";
+        $this->db->Query($statement);
+        $statement="UPDATE Utilisateur SET login='' where id_utilisateur=$id";
+        $this->db->Query($statement);
+        $statement="UPDATE Utilisateur SET mdp='' where id_utilisateur=$id";
+        $this->db->Query($statement);
+    }
 }
 ?>

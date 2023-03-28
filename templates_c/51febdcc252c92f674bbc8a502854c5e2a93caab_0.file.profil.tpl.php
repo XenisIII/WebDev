@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 16:55:21
+/* Smarty version 4.3.0, created on 2023-03-28 10:18:38
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421ae59d604c0_32475251',
+  'unifunc' => 'content_6422a2de9f4a02_24397565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51febdcc252c92f674bbc8a502854c5e2a93caab' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\profil.tpl',
-      1 => 1679928918,
+      1 => 1679991515,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,40 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:head.tpl' => 1,
     'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6421ae59d604c0_32475251 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6422a2de9f4a02_24397565 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5] h-screen">
+<?php echo '<script'; ?>
+>
+function modify(id){
+   var obj_p=document.getElementById("p-"+id);
+   txt=obj_p.textContent;
+   obj_p.style.display="none";
+   var textbox=document.getElementById("text-"+id);
+    textbox.style.display="inline";
+    textbox.focus();
+    textbox.value=txt;
+}
+function send(id){
+   var obj_t=document.getElementById("text-"+id);
+   var obj_p=document.getElementById('p-'+id);
+   txt=obj_t.value;
+   obj_p.textContent=txt;
+   obj_t.style.display='none';
+   obj_p.style.display="block";
+   document.location.href="/../index.php/profil/send?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+&"+id+"="+txt;}
+
+   function deletez(id){
+    document.location.href="/../index.php/profil/delete?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+";
+}
+<?php echo '</script'; ?>
+>
 <div>
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -38,33 +66,42 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <!-- contact -->
         <div class="border rounded border-black h-fit ml-3" >
         <div class="flex items-center justify-between px-2" id="div-nom">
-        <p id="p-nom">
-        <?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
- 
-        </p>
-        <input type="text" id="text-nom" class="hidden border" ></input>
-        <i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')"></i>
+        <p id="p-nom"><?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
+</p>
+        <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
+        <?php if ($_smarty_tpl->tpl_vars['isStudent']->value == 0) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i><?php }?>
         </div>
-        <div>
-        <p>
-        <?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
- <i class="fa-solid fa-gear cursor-pointer"></i>
-        </p>
+        <div class="flex items-center justify-between px-2">
+        <p id="p-prenom"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
+ </p><?php if ($_smarty_tpl->tpl_vars['isStudent']->value == 0) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
+            <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
         </div>
-        <div>
-        <p>
-        <?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
+        
+        <div> 
+        <p id="p-mail"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
 .<?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
-@viacesi.fr <i class="fa-solid fa-gear cursor-pointer"></i>
-        </p>
+@viacesi.fr</p>
         </div>
+        </div>
+        <?php if ($_smarty_tpl->tpl_vars['isTuteur']->value == 1) {?>
+        <div>
+        Promo : <?php echo $_smarty_tpl->tpl_vars['promo']->value;?>
 
         </div>
-        <!-- CV 
+        <div>
+        Centre : <?php echo $_smarty_tpl->tpl_vars['centre']->value;?>
+
+        </div>
+        
+        <!-- CV -->
         <div class="mr-3">
             <h3>CV:</h3>
-        </div>-->
-        
+        </div>
+        <div class="px-5 cursor-pointer <?php if ($_smarty_tpl->tpl_vars['isStudent']->value == 1) {?>hidden<?php }?>">
+        <i class="fa-solid fa-trash-can" onclick="deletez(<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+)"></i>
+    </div>    
+<?php }?>
     </div>
     <!-- wishList-->
     <?php if ($_smarty_tpl->tpl_vars['isStudent']->value) {?>
@@ -84,7 +121,8 @@ $_smarty_tpl->tpl_vars['Offer']->do_else = false;
 ?>
         <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
         w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
-            <div class="flex flex-col grow">
+            <a href="/index.php/Offre/index?id=<?php echo $_smarty_tpl->tpl_vars['Offer']->value->id_offre;?>
+"><div class="flex flex-col grow">
                 <div class=''>
                     <h2 class="mb-2 text-sm font-medium text-xl"> <?php echo $_smarty_tpl->tpl_vars['Offer']->value->nom_offre;?>
  </h2>
@@ -96,7 +134,7 @@ $_smarty_tpl->tpl_vars['Offer']->do_else = false;
 
                     <i class="fa fa-clock"></i> <?php echo $_smarty_tpl->tpl_vars['Offer']->value->duree_stage;?>
  mois
-                </div>
+                </div></a>
             </div>
             <div class="flex items-stretch self-center">
         <i class="fa fa-star  <?php if ($_smarty_tpl->tpl_vars['Offer']->value->confiance_pilote >= 1) {?>text-yellow-300<?php } else { ?>text-black<?php }?>" name="star1" id="star1"></i>
@@ -121,9 +159,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
     <?php }?>
 </div>
-<?php echo '<script'; ?>
- src="/script/profil.js"><?php echo '</script'; ?>
->
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html><?php }
 }
