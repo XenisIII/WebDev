@@ -11,8 +11,27 @@ class RechercheEtudiantController{
     public function index(){
         $student = new EtudiantModele;
         $tuteur = new TuteurModele;
+        if (isset($_POST["search"])){
+            $this->smarty->assign("etudiant",$student->getAllByIdTuteur());
+            $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
+            
+        }
+        else if(isset($_GET['statement'])){
+            $requete = $_GET['statement'];
+            print_r($_GET["statement"]);
+            print_r("<br>");
+            //print_r();
+            print_r("<br>");
+            print_r($student->getAllByIdTuteurByFiltre($requete));
+            $this->smarty->assign("etudiant",$student->getAllByIdTuteurByFiltre($_GET["statement"]));
+            $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());   
+         }
+         else{
+
         $this->smarty->assign("etudiant",$student->getAllByIdTuteur());
         $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
+         }
+
         $this->smarty->assign("DocumentTitle","RechercheEtudiant");
         $this->smarty->display('rechercheEtudiant.tpl');
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 15:55:47
+/* Smarty version 4.3.0, created on 2023-03-28 21:52:21
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\web_dev\WebDev-mvc\templates\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421a063af8d62_83081398',
+  'unifunc' => 'content_64234575049c79_24458859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ac323b731123ded75ed8727e4e2321c085f5578d' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\web_dev\\WebDev-mvc\\templates\\head.tpl',
-      1 => 1679922794,
+      1 => 1680033140,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6421a063af8d62_83081398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64234575049c79_24458859 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -38,9 +38,9 @@ function content_6421a063af8d62_83081398 (Smarty_Internal_Template $_smarty_tpl)
  src="https://kit.fontawesome.com/8ed527737a.js" crossorigin="anonymous"><?php echo '</script'; ?>
 >
     <link rel="manifest" href="/../script/manifest.json">
-    <?php echo '<script'; ?>
+    <!--<?php echo '<script'; ?>
  src="/service_worker.js"><?php echo '</script'; ?>
->
+>-->
 </head>
 <?php }
 }

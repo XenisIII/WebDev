@@ -109,8 +109,5 @@
                 }
                 break;
         }
+        
     };
-
-    function filtre(test){
-    
-    }

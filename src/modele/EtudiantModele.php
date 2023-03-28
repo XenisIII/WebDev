@@ -89,5 +89,20 @@ class EtudiantModele{
             ;";
         return $this->db->executeAll($statement,array(":sess"=>$_SESSION['user_id']));
     }
+
+    public function getAllByIdTuteurByFiltre($filtre){
+        $statement="SELECT *
+        FROM (Eleve e INNER JOIN Utilisateur u on e.id_utilisateur = u.id_utilisateur) 
+        INNER JOIN Statut s on e.id_statut = s.id_statut
+        WHERE (
+            e.id_classe = (SELECT c.id_classe FROM (
+            Classe c INNER JOIN Pilote p on c.id_classe = p.id_classe)
+            INNER JOIN Tuteur t on p.id_tuteur = t.id_tuteur
+            WHERE t.id_utilisateur = :sess AND :filtre
+            ) 
+            ) ORDER BY e.id_statut DESC
+            ;";
+        return $this->db->executeAll($statement,array(":filtre"=>$filtre, ":sess"=>$_SESSION['user_id']));
+    }
 }
 ?>
