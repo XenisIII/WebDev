@@ -82,6 +82,18 @@ class EtudiantModele{
         $statement="SELECT id_eleve from Eleve where id_utilisateur=$id_user";
         return $this->db->Query($statement)[0]->id_eleve;
     }
+    public function countAllOfferById($id){
+        $statement="SELECT * FROM (Select id_eleve from Postule where id_statut<5)a natural join Eleve where id_eleve=$id;";
+        return count($this->db->Query($statement));
+    }
+    public function countRefusedOfferById($id){
+        $statement="SELECT * FROM (Select id_eleve from Postule where id_statut=4)a natural join Eleve where id_eleve=$id;";
+        return count($this->db->Query($statement));
+    }
+    public function countWaitingOfferById($id){
+        $statement="SELECT * FROM (Select id_eleve from Postule where id_statut=1)a natural join Eleve where id_eleve=$id;";
+        return count($this->db->Query($statement));
+    }
     public function modifyNameById($id,$name){
         $statement="UPDATE Utilisateur SET nom_utilisateur='$name' where id_utilisateur=$id";
         return $this->db->Query($statement);

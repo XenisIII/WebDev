@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-26 09:10:35
+/* Smarty version 4.3.0, created on 2023-03-28 17:09:26
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\accueilEtudiant.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641fefebc7a703_79505921',
+  'unifunc' => 'content_64230326a7d045_33079232',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fa4824c1282954c9cf662ff2f63a65d66819d984' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\accueilEtudiant.tpl',
-      1 => 1679736287,
+      1 => 1680016165,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:head.tpl' => 1,
     'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641fefebc7a703_79505921 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64230326a7d045_33079232 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,6 +32,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
         <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <div
+        
         class="flex sm:flex-wrap sm:justify-between lg:mr-[7%] lg:ml-[10%] mt-5 md:ml-[10%] sm:mx-[3%] md:mr-[5%] lg:mt-6 flex-col sm:flex-row">
         <div class="rounded-md w-[90%] sm:w-[30%] h-[8rem] bg-white mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] border border-[#dfdfdf]">
             <div
@@ -76,12 +78,15 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             <div class="rounded-r-md w-1/2 lg:pr-4 md:pr-2 pr-0 pt-2 max-[270px]:w-[60%] max-[270px]:pl-1 ">
                 <p class="lg:text-[15px] md:text-[12px] sm:text-[11px] text-[14px]">Vous avez postulé à</p>
                 <p class="lg:text-[14px] md:text-[11px] sm:text-[10px] text-[13px] pl-3"><strong
-                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">120</strong> offres</p>
+                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]"><?php echo $_smarty_tpl->tpl_vars['NbOffre']->value;?>
+</strong> offres</p>
                 <p class="lg:text-[15px] md:text-[12px] sm:text-[11px] text-[14px]">Vous avez</p>
                 <p class="lg:text-[14px] md:text-[11px] sm:text-[10px] text-[13px] pl-3"><strong
-                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">30</strong> en attente</p>
+                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]"><?php echo $_smarty_tpl->tpl_vars['NbWaiting']->value;?>
+</strong> en attente</p>
                 <p class="lg:text-[14px] md:text-[11px] sm:text-[10px] text-[13px] pl-3"><strong
-                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">90</strong> refus</p>
+                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]"><?php echo $_smarty_tpl->tpl_vars['NbRefused']->value;?>
+</strong> refus</p>
             </div>
         </div>
     </div>
@@ -93,19 +98,20 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     </div>
     <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['DerniereOffre']->value, 'data');
+$_smarty_tpl->tpl_vars['data']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
+$_smarty_tpl->tpl_vars['data']->do_else = false;
+?>
+        <a href="/../index.php/offre/index?id=<?php echo $_smarty_tpl->tpl_vars['data']->value->id_offre;?>
+" class="block odd:bg-gray-100 py-2 px-2"><li class="flex justify-between "><?php echo $_smarty_tpl->tpl_vars['data']->value->nom_offre;?>
+ <div class="px-5"><?php echo $_smarty_tpl->tpl_vars['data']->value->nom_entreprise;?>
+</div></li></a> <!-- dollar est une variable/  nom_offre =attribut attribut lié a l'objet
+         -->
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </ul>
     </div>
         </div>
@@ -115,19 +121,18 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             </div>
             <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
                 <ul class="list-disc ">
-                    <li class="flex justify-between items-center px-3">Élève 1 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 2 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 3 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 4 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 5 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 6 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 7 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 8 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 9 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 10 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 11 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 12 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                </ul>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['AllOffer']->value, 'Offer');
+$_smarty_tpl->tpl_vars['Offer']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['Offer']->value) {
+$_smarty_tpl->tpl_vars['Offer']->do_else = false;
+?>
+                    <li class="flex justify-between items-center px-3 border"><?php echo $_smarty_tpl->tpl_vars['Offer']->value->nom_offre;?>
+<div class="rounded-full bg-red-200 px-5 my-1"> En Attente</div></li>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>    
+                    </ul>
             </div>
         </div>
         </div>
@@ -137,6 +142,8 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"><?php echo '</script'; ?>
 >
     <!---------------------------------------------------------------------------------------------->
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 
 </html>
@@ -152,11 +159,17 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             datasets: [
                 {
                     label: "Population en M ",
-                    data: [90, 30],
+                    data: [<?php echo $_smarty_tpl->tpl_vars['NbRefused']->value;?>
+, <?php echo $_smarty_tpl->tpl_vars['NbWaiting']->value;?>
+,<?php echo $_smarty_tpl->tpl_vars['NbOffre']->value;?>
+-<?php echo $_smarty_tpl->tpl_vars['NbRefused']->value;?>
+-<?php echo $_smarty_tpl->tpl_vars['NbWaiting']->value;?>
+],
                     // backgroundColor: "blue",
                     backgroundColor: [
                         "red",
                         "orange",
+                        "green"
                     ],
                     hoverBorderWidth: 3,
                 },

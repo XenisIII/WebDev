@@ -64,7 +64,7 @@ function oui(){
         </div>
         <!-- Bouton-->
         <div class="flex justify-between max-[880px]:hidden h-1/5 items-center">
-            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='{$last}'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 rounded" onclick="oui()"><a href="mailto:{$mailContact}">Postuler</a></button>
         </div>
     </div>
