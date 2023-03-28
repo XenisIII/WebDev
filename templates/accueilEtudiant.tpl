@@ -18,10 +18,9 @@
                     <p>Candidatures</p>
                 </div>
                 <div
-                    class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center">
-                    <select id="statut" class="rounded-full bg-white text-center mx-2 us" onchange="staut(this.id)">
-                        <option class="bg-white" value="Recherche">Recherche</option>
-                        <option class="bg-white" value="En attente">En attente</option>
+                    class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center hidden">
+                    <select id="statut-0" class="rounded-full bg-red-400 text-center mx-2 us" onchange="staut(this.id)">
+                        <option class="bg-white" value="En Recherche">En Recherche</option>
                         <option class="bg-white" value="Validé">Validé</option>
                     </select>
                 </div>
@@ -81,7 +80,14 @@
             <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
                 <ul class="list-disc ">
                 {foreach $AllOffer as $Offer}
-                    <li class="flex justify-between items-center px-3 border">{$Offer->nom_offre}<div class="rounded-full bg-red-200 px-5 my-1"> En Attente</div></li>
+                    <li class="flex justify-between items-center px-3 border">{$Offer->nom_offre}<div class="rounded-full  px-5 my-1"> <div
+                    class="rounded-br-md border-gray-300 w-full bg-[#fafafa] flex flex-col justify-center text-center content-center">
+                    <select id="statut-{$Offer->id_offre}" class="rounded-full bg-orange-400 text-center w-full " onchange="staut(this.id)">
+                        <option class="bg-white" value="En attente">En attente</option>
+                        <option class="bg-white" value="Refusé">Refusé</option>
+                        <option class="bg-white" value="Validé">Validé</option>
+                    </select>
+                </div> </div></li>
                 {/foreach}    
                     </ul>
             </div>
@@ -136,28 +142,42 @@
     function staut(id) {
         var stat = document.getElementById(id);
         var bg = document.getElementById('statut');
+        var id_offre=id.substring(7);
+        console.log(id_offre);
         switch (stat.value) {
-            case 'Recherche':
+            case 'Refusé':
                 if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
-                    stat.classList.remove("bg-orange-400")
-                    stat.classList.remove("bg-green-400")
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-green-400");
                 }
-                stat.classList.add("bg-red-400")
+                stat.classList.add("bg-red-400");
+                var id_statut=4;
                 break;
             case 'En attente':
                 if (stat.classList.contains("bg-red-400") || stat.classList.contains("bg-green-400")) {
-                    stat.classList.remove("bg-red-400")
-                    stat.classList.remove("bg-green-400")
+                    stat.classList.remove("bg-red-400");
+                    stat.classList.remove("bg-green-400");
                 }
-                stat.classList.add("bg-orange-400")
+                stat.classList.add("bg-orange-400");
+                var id_statut=1;
+                break;
+            case 'En Recherche':
+            if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-green-400");
+                }
+                stat.classList.add("bg-red-400");
+                var id_statut=3;
                 break;
             case 'Validé':
                 if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-red-400")) {
-                    stat.classList.remove("bg-orange-400")
-                    stat.classList.remove("bg-red-400")
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-red-400");
                 }
-                stat.classList.add("bg-green-400")
+                stat.classList.add("bg-green-400");
+                var id_statut=2;
                 break;
         }
+        window.location.href="/../index.php/AccueilEtudiant/changeStatut?id_offre="+id_offre+"&id_statut="+id_statut;
     }; 
 </script>

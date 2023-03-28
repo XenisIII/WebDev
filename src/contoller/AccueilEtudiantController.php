@@ -27,6 +27,20 @@ class AccueilEtudiantController{
         $this->smarty->assign("DocumentTitle","404 NOT FOUND");
         $this->smarty->display('error.tpl');
     }
+    public function changeStatut(){
+        $id_offer=$_GET['id_offre'];
+        $id_statut=$_GET['id_statut'];
+        $id_user=$_SESSION['user_id'];
+        $id_student=$this->student->getIdEleveById($id_user);
+        if($this->student->isStatued($id_offer,$id_student)){
+            $this->student->UpdateStatut($id_offer,$id_student,$id_statut);
+
+        }else{
+            $this->student->ChangeStatut($id_offer,$id_student,$id_statut);
+        }
+        header('Location:'.$_SERVER['HTTP_REFERER']);
+        $this->smarty->display('error.tpl');
+    }
 }
 /*$tmp_=new AppSmarty();
 $tmp_->assign("DocumentTitle","Démo");
