@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-26 13:59:51
+/* Smarty version 4.3.0, created on 2023-03-28 16:22:08
   from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\accueilAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_642033b78cfef1_17943861',
+  'unifunc' => 'content_6422f81042c0d4_98421685',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69ca0aca66a8cfd88a1454c97afff1869db30404' => 
     array (
       0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\accueilAdmin.tpl',
-      1 => 1679578316,
+      1 => 1680013325,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_642033b78cfef1_17943861 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6422f81042c0d4_98421685 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -83,19 +83,19 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     <?php echo '<script'; ?>
 >
         function gestion_offre() {
-            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "creationOffre/index"
         }
 
         function gestion_entreprise() {
-            location.href = "https://www.santevet.com/upload/admin/images/article/Chat%202/Monty/Monty%20chat.jpg"
+            location.href = "creationEntreprise/index"
         }
 
         function gestion_etudiant() {
-            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "creationEtudiant/index"
         }
 
         function gestion_tuteur() {
-            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "creationTuteur/index"
         }
     <?php echo '</script'; ?>
 >

@@ -54,19 +54,19 @@
     </div>
     <script>
         function gestion_offre() {
-            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "creationOffre/index"
         }
 
         function gestion_entreprise() {
-            location.href = "https://www.santevet.com/upload/admin/images/article/Chat%202/Monty/Monty%20chat.jpg"
+            location.href = "creationEntreprise/index"
         }
 
         function gestion_etudiant() {
-            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "creationEtudiant/index"
         }
 
         function gestion_tuteur() {
-            location.href = "https://cdn-s-www.lalsace.fr/images/8F3A8E1E-8090-4BD0-B342-6172A5AA616B/FB1200/photo-1630559945.jpg"
+            location.href = "creationTuteur/index"
         }
     </script>
 {include file="footer.tpl"}
