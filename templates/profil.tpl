@@ -17,9 +17,10 @@ function send(id){
    obj_p.textContent=txt;
    obj_t.style.display='none';
    obj_p.style.display="block";
-   document.location.href="/../index.php/profil/send?id={$id_profil}&"+id+"="+txt;
+   document.location.href="/../index.php/profil/send?id={$id_profil}&"+id+"="+txt;}
 
-
+   function deletez(id){
+    document.location.href="/../index.php/profil/delete?id={$id_profil}";
 }
 </script>
 <div>
@@ -35,29 +36,33 @@ function send(id){
         <div class="flex items-center justify-between px-2" id="div-nom">
         <p id="p-nom">{$nom}</p>
         <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
-        {if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i>{/if}
+        {if $isStudent==0}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i>{/if}
         </div>
         <div class="flex items-center justify-between px-2">
-        <p id="p-prenom">{$prenom} </p>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
+        <p id="p-prenom">{$prenom} </p>{if $isStudent==0}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
             <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
         </div>
+        
         <div> 
         <p id="p-mail">{$prenom}.{$nom}@viacesi.fr</p>
         </div>
         </div>
+        {if $isTuteur==1}
         <div>
         Promo : {$promo}
         </div>
         <div>
         Centre : {$centre}
         </div>
+        
         <!-- CV -->
         <div class="mr-3">
             <h3>CV:</h3>
         </div>
-        <div class="px-5 {if $isStudent}hidden{/if}">
-        <i class="fa-solid fa-trash-can" onclick="delete({$id_profil})"></i>
+        <div class="px-5 cursor-pointer {if $isStudent==1}hidden{/if}">
+        <i class="fa-solid fa-trash-can" onclick="deletez({$id_profil})"></i>
     </div>    
+{/if}
     </div>
     <!-- wishList-->
     {if $isStudent}
@@ -104,12 +109,5 @@ function send(id){
     {/if}
 </div>
 {include file="footer.tpl"}
-<script>
-
-function delete(id){
-    document.location.href="/../index.php/profil/delete?id={$id_profil}";
-}
-</script>
-
 </body>
 </html>
