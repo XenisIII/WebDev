@@ -99,6 +99,12 @@ class EtudiantModele{
         $this->db->Query($statement);
         $statement="UPDATE Utilisateur SET mdp='' where id_utilisateur=$id";
         $this->db->Query($statement);
+        $statement="UPDATE Eleve SET CV='' where id_utilisateur=$id";
+        $this->db->Query($statement);
+        $statement="UPDATE Eleve SET id_classe='' where id_utilisateur=$id";
+        $this->db->Query($statement);
+        $statement="UPDATE Eleve SET id_statut='' where id_utilisateur=$id";
+        $this->db->Query($statement);
     }
 }
 ?>

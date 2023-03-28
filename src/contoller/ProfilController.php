@@ -36,6 +36,7 @@ class ProfilController{
         $this->smarty->assign("DocumentTitle","profil");
         $this->smarty->display('profil.tpl');
     }
+    
     public function index(){
         $isStudent=$this->user->IsStudent($_SESSION['user_id']);
         $this->smarty->assign("isTuteur",$isStudent);
@@ -68,7 +69,8 @@ class ProfilController{
             $prenom=$_GET['prenom'];
             $this->student->modifyPrenomById($_GET['id'],$prenom);
         }
-        echo "<script>window.location.replace('/index.php/profil/of?user_id=".$_GET['id']."');</script>"; 
+        header("Location: /index.php/profil/of?user_id=".$_GET['id']);
+        $this->smarty->display('error.tpl');
     }
     public function delete(){
         $id=$_GET['id'];

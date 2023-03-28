@@ -6,7 +6,7 @@ class OffreModele{
         $this->db= new Database();
     }
     public function getAllById($id){
-        $statement="SELECT * from Offre natural join Localite natural join Entreprise where id_offre='$id'";
+        $statement="SELECT * from Offre natural join Localite natural join Entreprise natural join Contact where id_offre='$id'";
         return $this->db->Query($statement)[0];
     }
     public function getCompetencesById($id){
@@ -38,7 +38,5 @@ class OffreModele{
         $statement="DELETE from Postule where id_offre=$id_offre and id_eleve=$id_student";
         $this->db->Query($statement); 
     }
-
-
 }
 ?>  

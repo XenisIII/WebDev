@@ -17,13 +17,16 @@ class RechercheStageController{
         $id_offre=$_GET['id_offre'];
         $id_student=$_SESSION['user_id'];
         $this->offer->ChangeStatut($id_offre,$this->student->getIdEleveById($id_student),5);
-        echo "<script>window.location.replace('/index.php/rechercheStage/index');</script>"; 
+        header("Location: /index.php/rechercheStage/index");
+        $this->smarty->display('error.tpl');
     }
     public function unfav(){
         $id_offre=$_GET['id_offre'];
         $id_student=$_SESSION['user_id'];
         $this->offer->DeleteStatut($id_offre,$this->student->getIdEleveById($id_student));
-        echo "<script>window.location.replace('/index.php/rechercheStage/index');</script>"; 
+        header("Location: /index.php/rechercheStage/index");
+        $this->smarty->display('error.tpl');
+        
     }
     public function index(){
         $alreadyFav=$this->student->getFavById($_SESSION['user_id']);
