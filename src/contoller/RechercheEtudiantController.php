@@ -39,7 +39,7 @@ class RechercheEtudiantController{
         $this->smarty->assign("etudiant",$student->getAllByIdTuteur());
         */
     $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
-         }
+         
 
         $this->smarty->assign("DocumentTitle","RechercheEtudiant");
         $this->smarty->display('rechercheEtudiant.tpl');
@@ -51,5 +51,5 @@ class RechercheEtudiantController{
 
 /*$tmp_=new AppSmarty();
 $tmp_->assign("DocumentTitle","Démo");
-$tmp_->display('demo.tpl');*/
+$tmp_->display('demo.tpl');*/}
 ?>
