@@ -29,7 +29,7 @@
         </div>
 
         {if ($role != "Eleve")}
-        <div class="max-[768px]:ml-6 ml-20">
+        <div class="flex max-[768px]:ml-6 ml-20">
             <button class="px-10 bg-gray-300 rounded-sm" onclick="toggleHidden()">Modifier</button>
             <form method="post" action="/index.php/entreprise/delete">
             <button class="px-10 bg-gray-300 rounded-sm">Supprimer</button>

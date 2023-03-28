@@ -14,8 +14,9 @@ class EntrepriseController{
     public function delete(){
         if ($_SESSION['user_type'] != "Eleve"){
             $id = $_POST['id'];
-            $this->entreprise->modifyNom($id, "DELETED")
-            header(Location: "/../index.php/rechercheEntreprise.php");
+            $this->entreprise->modifyNom($id, "DELETED");
+            header("Location: /../index.php/rechercheEntreprise.php");
+            $this->smarty->display('error.tpl');
         }
     }
 
@@ -137,7 +138,7 @@ class EntrepriseController{
         $this->smarty->assign("localite",$this->entreprise->getLocaliteEntreprise($id));
         $this->smarty->assign("confPilote", $this->entreprise->getEntreprise($id));
         $this->smarty->assign("offres",$this->entreprise->getOffres($id));
-        $this->smarty->assign("role", $role);
+        $this->smarty->assign("role", $this->role);
         $this->smarty->display('entreprise.tpl');
     }
     public function error(){

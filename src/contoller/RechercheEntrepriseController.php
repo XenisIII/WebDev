@@ -59,7 +59,6 @@ class RechercheEntrepriseController{
         $this->smarty->assign('SearchGet',$searchget);
         $this->smarty->assign("get",$get);
         $this->smarty->assign("ActualScale",$scale);
-    //print_r(/*$this->entreprise->getAllEntreprise()*/$arrayEntreprise);
         $this->smarty->display('rechercheEntreprise.tpl');
     }
     public function error(){
