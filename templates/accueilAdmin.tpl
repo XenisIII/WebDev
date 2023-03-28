@@ -5,15 +5,27 @@
         {include file="navbar.tpl"}
         <div class="flex flex-wrap justify-between max-w-screen-xl md:ml-24 md:mr-20 ml-16 mr-8 mt-12  ">
             <div class="w-full w-[70%] h-40 md:w-[40%] md:h-52 bg-gray-300 m-1 rounded-xl grid grid-rows-2 cursor-pointer "
-                onclick="gestion_etudiant()">
+                >
                 <div
                     class="row-span-1 bg-[#67ace6] rounded-t-xl text-6xl  flex flex-col justify-center text-center content-center ">
                     <i class=" fa-solid fa-user-graduate "></i>
                 </div>
-                <div
+                <div class="rounded-b-md flex h-1/2 divide-x py-2">
+                    <div
+                        class="rounded-bl-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center cursor-pointer" >
+                        <p>Gestion Etudiant</p>
+                    </div>
+                    <div
+                        class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-centercursor-pointer" onclick="gestion_etudiant()">
+                       <p>Création Etudiant</p>
+                    </div>
+
+
+                </div>
+                <!--<div
                     class="row-span-1 bg-[#fafafa] rounded-b-xl text-3xl flex flex-col justify-center text-center content-center">
                     <p>Gestion des étudiants</p>
-                </div>
+                </div>-->
             </div>
             <div class="w-full w-[70%] h-40 md:w-[40%] md:h-52 bg-gray-300 m-1 rounded-xl grid grid-rows-2 w-full cursor-pointer "
                 onclick="gestion_offre()">

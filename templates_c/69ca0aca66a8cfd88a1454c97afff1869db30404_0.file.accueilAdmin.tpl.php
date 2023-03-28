@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-28 16:22:08
+/* Smarty version 4.3.0, created on 2023-03-28 22:19:02
   from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\accueilAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6422f81042c0d4_98421685',
+  'unifunc' => 'content_64234bb6eb89a1_03153522',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69ca0aca66a8cfd88a1454c97afff1869db30404' => 
     array (
       0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\accueilAdmin.tpl',
-      1 => 1680013325,
+      1 => 1680034739,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6422f81042c0d4_98421685 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64234bb6eb89a1_03153522 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -33,15 +33,27 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
 ?>
         <div class="flex flex-wrap justify-between max-w-screen-xl md:ml-24 md:mr-20 ml-16 mr-8 mt-12  ">
             <div class="w-full w-[70%] h-40 md:w-[40%] md:h-52 bg-gray-300 m-1 rounded-xl grid grid-rows-2 cursor-pointer "
-                onclick="gestion_etudiant()">
+                >
                 <div
                     class="row-span-1 bg-[#67ace6] rounded-t-xl text-6xl  flex flex-col justify-center text-center content-center ">
                     <i class=" fa-solid fa-user-graduate "></i>
                 </div>
-                <div
+                <div class="rounded-b-md flex h-1/2 divide-x py-2">
+                    <div
+                        class="rounded-bl-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center cursor-pointer" >
+                        <p>Gestion Etudiant</p>
+                    </div>
+                    <div
+                        class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-centercursor-pointer" onclick="gestion_etudiant()">
+                       <p>Création Etudiant</p>
+                    </div>
+
+
+                </div>
+                <!--<div
                     class="row-span-1 bg-[#fafafa] rounded-b-xl text-3xl flex flex-col justify-center text-center content-center">
                     <p>Gestion des étudiants</p>
-                </div>
+                </div>-->
             </div>
             <div class="w-full w-[70%] h-40 md:w-[40%] md:h-52 bg-gray-300 m-1 rounded-xl grid grid-rows-2 w-full cursor-pointer "
                 onclick="gestion_offre()">
