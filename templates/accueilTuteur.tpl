@@ -56,11 +56,13 @@
                 <p class="">Entreprise</p>
             </div>
             <div class="flex justify-around flex-wrap border border-[#dfdfdf] bg-[#fafafa] rounded-b-lg ">
-                <a href="vueEntreprise/index">
+                <!--<a href="vueEntreprise/index">-->
                     <div class="flex items-center max-[880px]:h-10 h-20 cursor-pointer">
-                        <p>Gestion Entreprise</p>
+                        <a href="rechercheEntreprise/index">
+                            <p>Gestion Entreprise</p>
+                        </a>
                     </div>
-                </a>
+                <!--</a>-->
             </div>
         </div>
     </div>

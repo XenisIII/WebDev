@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-28 15:51:32
+/* Smarty version 4.3.0, created on 2023-03-28 21:55:49
   from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\accueilTuteur.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6422f0e4abb107_44677017',
+  'unifunc' => 'content_64234645af2ad4_06488730',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35c86739bdabb85274bfab28e8dbe73e89f148eb' => 
     array (
       0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\accueilTuteur.tpl',
-      1 => 1679920659,
+      1 => 1680033344,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6422f0e4abb107_44677017 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64234645af2ad4_06488730 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -84,11 +84,13 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                 <p class="">Entreprise</p>
             </div>
             <div class="flex justify-around flex-wrap border border-[#dfdfdf] bg-[#fafafa] rounded-b-lg ">
-                <a href="vueEntreprise/index">
+                <!--<a href="vueEntreprise/index">-->
                     <div class="flex items-center max-[880px]:h-10 h-20 cursor-pointer">
-                        <p>Gestion Entreprise</p>
+                        <a href="rechercheEntreprise/index">
+                            <p>Gestion Entreprise</p>
+                        </a>
                     </div>
-                </a>
+                <!--</a>-->
             </div>
         </div>
     </div>
