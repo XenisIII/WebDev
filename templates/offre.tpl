@@ -11,8 +11,8 @@
     <!-- Titre/compétence/durée-->
         <div>
             <!-- Titre -->
-            <div class="mt-3 text-2xl">
-                <h3>{$nomOffre}</h3>
+            <div class="mt-3 text-2xl flex items-center">
+                <h3>{$nomOffre}</h3>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
@@ -59,7 +59,7 @@
         </div>
         <!-- Bouton-->
         <div class="flex justify-between max-[880px]:hidden h-1/5 items-center">
-            <button class="border border-black w-3/12 h-3/5 rounded">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 rounded">Postuler</button>
         </div>
     </div>
@@ -74,7 +74,7 @@
             <p class="h-full p-2 min-[880px]:p-7  text-md ">{$info}</p>
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button>
         </div>
 

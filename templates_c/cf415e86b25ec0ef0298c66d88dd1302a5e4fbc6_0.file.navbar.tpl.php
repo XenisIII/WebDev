@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 11:22:55
+/* Smarty version 4.3.0, created on 2023-03-24 16:34:01
   from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\project_git\WebDev-mvc\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c287fcb5a66_91749565',
+  'unifunc' => 'content_641dc2e9e29144_42103023',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cf415e86b25ec0ef0298c66d88dd1302a5e4fbc6' => 
     array (
       0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\project_git\\WebDev-mvc\\templates\\navbar.tpl',
-      1 => 1679566641,
+      1 => 1679667185,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c287fcb5a66_91749565 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641dc2e9e29144_42103023 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<header class="bg-[#f5f5f5] sm:overflow-hidden">
+<header class="bg-[#f5f5f5]">
     <div class="min-h-full">
         <nav class="bg-gray-900">
             <div class="mx-auto px-2 lg:ml-0">
@@ -50,7 +50,7 @@ function content_641c287fcb5a66_91749565 (Smarty_Internal_Template $_smarty_tpl)
 
                     <div class="flex flex-1 sm:items-stretch sm:justify-start ml-2 lg:ml-0">
                         <div class="flex flex-shrink-0 items-center">
-                            <img class="block h-9 w-auto h-6" src="../img/krita.png" alt="Your Company">
+                            <img class="block h-9 w-auto h-6" src="/../img/krita.png" alt="Your Company">
                         </div>
                         <div class="sm:ml-6 sm:block">
                             <div class="flex space-x-4">

@@ -20,18 +20,30 @@
     public function Query($statement){
         try{
         $tmp_=$this->pdo->query($statement)->fetchAll(PDO::FETCH_OBJ);
-        $this->pdo->query($statement)->closeCursor();
         return $tmp_;}
         catch(PDOException $e){
             print_r($e->getMessage()."<br>");
             die();
-            return $e;
         }
     }
 
     public function execute($statement,$params=array()){
         $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
         $tmp_->execute($params);
+        return($tmp_->fetch(PDO::FETCH_OBJ));
+
     }
+    public function executeAll($statement,$params=array()){
+        $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $tmp_->execute($params);
+        return($tmp_->fetchAll(PDO::FETCH_OBJ));
+
+    }
+    
+    /*public function executeCount($statement,$params=array()){
+        $tmp_=$this->pdo->prepare($statement,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $tmp_->execute($params);
+        return($tmp_->columnCount());
+    }*/
 }
 ?>
