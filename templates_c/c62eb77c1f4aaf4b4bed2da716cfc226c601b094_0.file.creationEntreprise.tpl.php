@@ -1,8 +1,36 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-28 09:30:48
+  from 'C:\Users\pc\Desktop\Prosit\A2\WEB\livrable\WebDev\WebDev-mvc\templates\creationEntreprise.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_642297a85d9e99_35860615',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c62eb77c1f4aaf4b4bed2da716cfc226c601b094' => 
+    array (
+      0 => 'C:\\Users\\pc\\Desktop\\Prosit\\A2\\WEB\\livrable\\WebDev\\WebDev-mvc\\templates\\creationEntreprise.tpl',
+      1 => 1679988630,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_642297a85d9e99_35860615 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <body>
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
         <div class="flex w-[90%] bg-none mx-20 my-[2%] ">
         <div class="flex rounded-md w-[95%] bg-[#fefefe] h-5/6 flex-col content-center flex-wrap">
             <h3 class="text-base xs:text-xl mt-5 text-center content-center"> Création Entreprise </h3>
@@ -16,7 +44,7 @@
                     <input type="text" name="secteur_activite" placeholder="Secteur d'activité"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
 
-                    <label name="localite" class="my-1" id=""> Localité </label>
+                    <label name="localite" class="my-1" id="pVille"> Localité </label>
                     <input type="text" name="localite" placeholder="localite" id="ville"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
 
@@ -53,7 +81,8 @@
         </div>
 
     </div>
-<script>
+<?php echo '<script'; ?>
+>
 
     let star_value;
 
@@ -100,8 +129,12 @@
         confiance.setAttribute("value", star_value);
        };
 
-</script>
+<?php echo '</script'; ?>
+>
 </div>
-{include file="footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
+<?php }
+}
