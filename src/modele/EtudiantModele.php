@@ -89,5 +89,9 @@ class EtudiantModele{
             ;";
         return $this->db->executeAll($statement,array(":sess"=>$_SESSION['user_id']));
     }
+    public function getAllStudentLike($id,$search){
+        $statement="select * from (SELECT id_classe from (SELECT * from Tuteur where id_utilisateur=2)a natural join Pilote natural join Classe )b natural join Eleve natural join Utilisateur where nom_utilisateur like :search or prenom_utilisateur like :search ";
+        return $this->db->executeAll($statement,array(":search"=>"%".$search."%"));
+    }
 }
 ?>
