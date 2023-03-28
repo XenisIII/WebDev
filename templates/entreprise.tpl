@@ -27,6 +27,40 @@
             <i class="fa fa-star  {if $confPilote->confiance_pilote >=5}text-yellow-300{else}text-black{/if}" name="star5" id="star5"></i>
             </p>
         </div>
+
+        {if ($role != "Eleve")}
+        <div class="max-[768px]:ml-6 ml-20">
+            <button class="px-10 bg-gray-300 rounded-sm" onclick="toggleHidden()">Modifier</button>
+            <form method="post" action="/index.php/entreprise/delete">
+            <button class="px-10 bg-gray-300 rounded-sm">Supprimer</button>
+            <input type="hidden" name="id" value="{$nomEntreprise->id_entreprise}"></input>
+            </form>
+        </div>
+        <form method="post" action="/index.php/entreprise/modify">
+        <div class="flex flex-col max-[768px]:ml-6 ml-20 hidden" id="modif">
+            <input type="text" name="nom" placeholder="Nom"></input>
+            <input type="text" name="secteur" placeholder="Secteur d'activité"></input>
+            <input type="number" name="nbStagiaire" placeholder="Nb stagiaire"></input>
+            <input type="number" name="confiance" placeholder="Confiance pilote"></input>
+            <input type="text" name="localite" placeholder="Localite"></input>
+            <input type="number" name="CP" placeholder="CP"></input>
+            <button class="px-10 bg-gray-300 rounded-sm">Envoyer</button>
+        </div>
+        <input type="hidden" name="id" value="{$nomEntreprise->id_entreprise}"></input>
+
+        <script>
+        function toggleHidden(){
+            var attribute = document.getElementById("modif");
+            if(attribute.classList.contains("hidden")){
+                attribute.classList.remove("hidden");  
+            } else {
+                attribute.classList.add("hidden");
+            }
+        }
+        </script>
+        </form>
+        {/if}
+
         </div>
         <img class="max-[860px]:hidden w-[250px] mx-10" alt="Image Entreprise" src="/../img/krita.png"></img>
         </div>
