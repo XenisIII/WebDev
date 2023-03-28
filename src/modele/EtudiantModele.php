@@ -14,6 +14,10 @@ class EtudiantModele{
         INNER JOIN Statut s on e.id_statut = s.id_statut WHERE e.id_eleve = :id;";
         return $this->db->executeAll($statement,array(':id'=>$id));
     }
+    public function getPromoById($id){
+        $statement="SELECT * from (Select id_utilisateur from Utilisateur where id_utilisateur=$id)a natural join Eleve  natural join Classe natural join Centre ";
+        return $this->db->Query($statement);
+    }
     public function getAllByStatut($statut){
         $statement="SELECT u.id_utilisateur, u.nom_utilisateur, u.prenom_utilisateur, u.login, u.mdp, e.id_eleve, e.CV, e.id_classe, s.id_statut, s.statut FROM
          (Eleve e INNER JOIN Utilisateur u on e.id_utilisateur = u.id_utilisateur) 
@@ -70,9 +74,21 @@ class EtudiantModele{
         $statement="SELECT id_offre from Postule WHERE id_eleve in(SELECT id_eleve from Eleve where id_utilisateur=$id_user) and id_statut=5";
         return $this->db->Query($statement);
     }
+    public function getAllFavByID($id_user){
+        $statement="SELECT * from Postule natural join Offre natural join Localite natural join Entreprise WHERE id_eleve in(SELECT id_eleve from Eleve where id_utilisateur=$id_user) and id_statut=5";
+        return $this->db->Query($statement);
+    }
     public function getIdEleveByID($id_user){
         $statement="SELECT id_eleve from Eleve where id_utilisateur=$id_user";
         return $this->db->Query($statement)[0]->id_eleve;
+    }
+    public function modifyNameById($id,$name){
+        $statement="UPDATE Utilisateur SET nom_utilisateur='$name' where id_utilisateur=$id";
+        return $this->db->Query($statement);
+    }
+    public function modifyPrenomById($id,$prenom){
+        $statement="UPDATE Utilisateur SET prenom_utilisateur='$prenom' where id_utilisateur=$id";
+        return $this->db->Query($statement);
     }
 }
 ?>

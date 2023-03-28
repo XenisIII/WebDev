@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 10:22:19
+/* Smarty version 4.3.0, created on 2023-03-27 15:47:07
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\rechercheStage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421523b5fc5d4_40853412',
+  'unifunc' => 'content_64219e5bc83b94_95756118',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5fc541615da21971ba55a125ff9e661b1b83219e' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\rechercheStage.tpl',
-      1 => 1679905337,
+      1 => 1679924825,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6421523b5fc5d4_40853412 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64219e5bc83b94_95756118 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -120,7 +120,7 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <!--div contenant les différentes colones-->
                     <a href="/index.php/offre/index?id=<?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->id_offre;?>
-"><div class="flex flex-col cursor-pointer ">
+" class="grow"><div class="flex flex-col cursor-pointer ">
                         <!-- Div pour séparer le titre de la location ect-->
                         <div class=''>
                             <!-- Div Pour le titre du stage-->
@@ -130,7 +130,7 @@ $_smarty_tpl->tpl_vars['nboffre']->first = $_smarty_tpl->tpl_vars['nboffre']->it
                         </div>
                         <div class="invisible sm:visible">
                             <!-- Div pour la location ect qui se cache quand on est sur téléphone-->
-                            <i class="fa fa-building"></i> <?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->nom_offre;?>
+                            <i class="fa fa-building"></i> <?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->nom_entreprise;?>
 
                             <i class="fa fa-location-dot"></i> <?php echo $_smarty_tpl->tpl_vars['AllOffer']->value[$_smarty_tpl->tpl_vars['nboffre']->value]->localite;?>
  

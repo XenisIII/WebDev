@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 11:32:37
+/* Smarty version 4.3.0, created on 2023-03-27 13:06:32
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_642162b50d3394_77976111',
+  'unifunc' => 'content_642178b82c1e34_71208080',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc0bc424aab43d262177271f840fcd52f14e6274' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\navbar.tpl',
-      1 => 1679909134,
+      1 => 1679915189,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_642162b50d3394_77976111 (Smarty_Internal_Template $_smarty_tpl) {
+function content_642178b82c1e34_71208080 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="bg-[#f5f5f5]">
     <div class="min-h-full">
@@ -102,7 +102,7 @@ function content_642162b50d3394_77976111 (Smarty_Internal_Template $_smarty_tpl)
             <div class="my-4 mt-0 ml-0 w-auto">
                 <a href="/index.php/accueil"><i onclick="bgChange(1)"
                         class="fas fa-tachometer-alt text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/profil/index"><i onclick="bgChange(2)"
+                <a href="/index.php/profil/index"><i onclick="bgChange(2)"
                         class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
                 <a href="/index.php/rechercheStage/index"><i onclick="bgChange(3)"
                         class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>

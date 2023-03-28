@@ -1,18 +1,23 @@
 <?php
     require(__DIR__."/../lib/smarty.php");
     require(__DIR__."/../modele/OffreModele.php");
+    require_once(__DIR__."/../modele/EtudiantModele.php");
+    require_once(__DIR__."/../modele/userModele.php");
     class OffreController{
         private $smarty;
         private $offre;
         private $id;
+        private $user;
         function __construct()
         {
             $this->smarty=new AppSmarty();
             $this->offre=new OffreModele();
             $this->id=$_GET["id"];
+            $this->user=new UserModele();
         }
         public function index(){
-
+            $isStudent=$this->user->IsStudent($_SESSION['user_id']);
+            $this->smarty->assign('isStudent',$isStudent);
             $this->smarty->assign("DocumentTitle",$this->offre->getAllById($this->id)->nom_offre);
             $this->smarty->assign("nomOffre",$this->offre->getAllById($this->id)->nom_offre);
             $this->smarty->assign("Duree",$this->offre->getAllById($this->id)->duree_stage);
