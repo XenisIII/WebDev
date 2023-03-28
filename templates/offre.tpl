@@ -3,6 +3,11 @@
 <div>
 {include file="navbar.tpl"}
 </div>
+<script>
+function oui(){
+    window.location.href='/../index.php/offre/postule?id={$id}'
+}
+</script>
 <!-- Box globale-->
 <div class="bg-[#f5f5f5] flex justify-center min-[880px]:h-screen h-[100%]">
 <div class="bg-white flex max-[880px]:flex-col max-[880px]:items-center max-[880px]:justify-start rounded-[12px] border border-[#dadada] mt-10 min-[880px]:h-5/6 w-11/12 ">
@@ -11,8 +16,8 @@
     <!-- Titre/compétence/durée-->
         <div>
             <!-- Titre -->
-            <div class="mt-3 text-2xl">
-                <h3>{$nomOffre}</h3>
+            <div class="mt-3 text-2xl flex items-center">
+                <h3>{$nomOffre}</h3>{if !$isStudent}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
@@ -60,7 +65,7 @@
         <!-- Bouton-->
         <div class="flex justify-between max-[880px]:hidden h-1/5 items-center">
             <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
-            <button class="border border-black w-3/12 h-3/5 rounded">Postuler</button>
+            <button class="border border-black w-3/12 h-3/5 rounded" onclick="oui()"><a href="mailto:{$mailContact}">Postuler</a></button>
         </div>
     </div>
     <!-- Partie informations-->
@@ -75,7 +80,7 @@
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
             <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button>
+            <a href=""><button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button></a>
         </div>
 
     </div>

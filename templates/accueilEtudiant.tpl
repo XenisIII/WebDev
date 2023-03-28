@@ -67,19 +67,10 @@
     </div>
     <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        <li class="flex justify-between px-3 mb-3">Intitulé du stage <div class="px-5">Cathégorie</div></li>
-        
+        {foreach $DerniereOffre as $data}
+        <li class="flex justify-between px-3 mb-3">{$data->nom_offre} <div class="px-5">{$data->competence}</div></li> <!-- dollar est une variable/  nom_offre =attribut attribut lié a l'objet
+         -->
+        {/foreach}
         </ul>
     </div>
         </div>
@@ -101,7 +92,7 @@
                     <li class="flex justify-between items-center px-3">Élève 10 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
                     <li class="flex justify-between items-center px-3">Élève 11 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
                     <li class="flex justify-between items-center px-3">Élève 12 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                </ul>
+                    </ul>
             </div>
         </div>
         </div>

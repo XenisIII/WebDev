@@ -1,22 +1,14 @@
 <?php
 require(__DIR__."/../lib/smarty.php");
-require(__DIR__."/../modele/OffreModele.php");
-
-class AccueilEtudiantController{
+class MentionLegalsController{
     private $smarty;
-    private $offre;
     function __construct()
     {
         $this->smarty=new AppSmarty();
-        $this->offre=new OffreModele();
     }
     public function index(){
-        /* print_r($this->offre->getOffreCompetence());*/
-        $this->smarty->assign("DocumentTitle","accueilEtudiant");
-        $this->smarty->assign("DerniereOffre",$this->offre->getOffreCompetence());
-
-
-        $this->smarty->display('accueilEtudiant.tpl');
+        $this->smarty->assign("DocumentTitle","Mentions Légals");
+        $this->smarty->display('mentionLegals.tpl');
     }
     public function error(){
         $this->smarty->assign("DocumentTitle","404 NOT FOUND");

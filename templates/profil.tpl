@@ -1,5 +1,28 @@
 {include file="head.tpl"}
 <body class="bg-[#f5f5f5] h-screen">
+<script>
+function modify(id){
+   var obj_p=document.getElementById("p-"+id);
+   txt=obj_p.textContent;
+   obj_p.style.display="none";
+   var textbox=document.getElementById("text-"+id);
+    textbox.style.display="inline";
+    textbox.focus();
+    textbox.value=txt;
+}
+function send(id){
+   var obj_t=document.getElementById("text-"+id);
+   var obj_p=document.getElementById('p-'+id);
+   txt=obj_t.value;
+   obj_p.textContent=txt;
+   obj_t.style.display='none';
+   obj_p.style.display="block";
+   document.location.href="/../index.php/profil/send?id={$id_profil}&"+id+"="+txt;}
+
+   function deletez(id){
+    document.location.href="/../index.php/profil/delete?id={$id_profil}";
+}
+</script>
 <div>
 {include file="navbar.tpl"}
 </div>
@@ -9,23 +32,40 @@
 <!-- div image et cv-->
     <div class="flex justify-between w-full mt-5">
         <!-- contact -->
-        <div class="border rounded border-black h-fit ml-3">
-        <p>
-        NOM
-        </p>
-        <p>
-        Prénom
-        </p>
-        <p>
-        prénom.nom@viacesi.fr
-        </p>
+        <div class="border rounded border-black h-fit ml-3" >
+        <div class="flex items-center justify-between px-2" id="div-nom">
+        <p id="p-nom">{$nom}</p>
+        <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
+        {if $isStudent==0}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i>{/if}
         </div>
+        <div class="flex items-center justify-between px-2">
+        <p id="p-prenom">{$prenom} </p>{if $isStudent==0}<i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i>{/if}
+            <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
+        </div>
+        
+        <div> 
+        <p id="p-mail">{$prenom}.{$nom}@viacesi.fr</p>
+        </div>
+        </div>
+        {if $isTuteur==1}
+        <div>
+        Promo : {$promo}
+        </div>
+        <div>
+        Centre : {$centre}
+        </div>
+        
         <!-- CV -->
         <div class="mr-3">
             <h3>CV:</h3>
         </div>
+        <div class="px-5 cursor-pointer {if $isStudent==1}hidden{/if}">
+        <i class="fa-solid fa-trash-can" onclick="deletez({$id_profil})"></i>
+    </div>    
+{/if}
     </div>
     <!-- wishList-->
+    {if $isStudent}
     <div class="my-5 mx-5 border border-black h-full overflow-y-scroll max-h-[100%]">
         <div class="border-b border-black text-center text-2xl h-12">
         <h1>
@@ -34,131 +74,40 @@
         </div>
         <div>
         <div class="bg-white divide-y w-[90%] sm:w-[95%] h-[500px] mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] lg:ml-[2%]">
+        {foreach $AllOffer as $Offer}
         <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
         w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
-            <div class="flex flex-col ">
+            <a href="/index.php/Offre/index?id={$Offer->id_offre}"><div class="flex flex-col grow">
                 <div class=''>
-                    <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
+                    <h2 class="mb-2 text-sm font-medium text-xl"> {$Offer->nom_offre} </h2>
                 </div>
                 <div class="invisible sm:visible">
-                    <i class="fa fa-building"></i> Orange
-                    <i class="fa fa-location-dot"></i> Orléans
-                    <i class="fa fa-clock"></i> 3 mois
-                </div>
+                    <i class="fa fa-building"></i> {$Offer->nom_entreprise}
+                    <i class="fa fa-location-dot"></i> {$Offer->localite}
+                    <i class="fa fa-clock"></i> {$Offer->duree_stage} mois
+                </div></a>
             </div>
             <div class="flex items-stretch self-center">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                    onclick="star(1)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
+        <i class="fa fa-star  {if $Offer->confiance_pilote >=1}text-yellow-300{else}text-black{/if}" name="star1" id="star1"></i>
+        <i class="fa fa-star {if $Offer->confiance_pilote >=2}text-yellow-300{else}text-black{/if}" name="star2" id="star2"></i>
+        <i class="fa fa-star {if $Offer->confiance_pilote >=3}text-yellow-300{else}text-black{/if}" name="star3" id="star3"></i>
+        <i class="fa fa-star  {if $Offer->confiance_pilote >=4}text-yellow-300{else}text-black{/if}" name="star4" id="star4"></i>
+        <i class="fa fa-star  {if $Offer->confiance_pilote >=5}text-yellow-300{else}text-black{/if}" name="star5" id="star5"></i>
             </div>
             <div class="flex items-stretch self-center">
-                <i id="heart" class="fa fa-heart m-8 cursor-pointer" onclick="heartv2()"></i>
+                <i id="heart" class="fa fa-heart m-8 text-red-500" onclick="heartv2()"></i>
             </div>
         </div>
-        <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-        w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-            <div class="flex flex-col ">
-                <div>
-                    <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                </div>
-                <div class="invisible sm:visible">
-                    <i class="fa fa-building"></i> Orange
-                    <i class="fa fa-location-dot"></i> Orléans
-                    <i class="fa fa-clock"></i> 3 mois
-                </div>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                    onclick="star(1)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-heart m-8"></i>
-            </div>
-        </div>
-        <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-        w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-            <div class="flex flex-col ">
-                <div>
-                    <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                </div>
-                <div class="mb-0 invisible sm:visible">
-                    <i class="fa fa-building"></i> Orange
-                    <i class="fa fa-location-dot"></i> Orléans
-                    <i class="fa fa-clock"></i> 3 mois
-                </div>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                    onclick="star(1)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-heart m-8"></i>
-            </div>
-        </div>
-        <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-        w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%] ">
-            <div class="flex flex-col ">
-                <div>
-                    <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                </div>
-                <div class="mb-0 invisible sm:visible">
-                    <i class="fa fa-building"></i> Orange
-                    <i class="fa fa-location-dot"></i> Orléans
-                    <i class="fa fa-clock"></i> 3 mois
-                </div>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                    onclick="star(1)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-heart m-8"></i>
-            </div>
-        </div>
-        <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between 
-        w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]">
-            <div class="flex flex-col ">
-                <div>
-                    <h2 class="mb-2 text-sm font-medium text-xl"> Ceci est un post </h2>
-                </div>
-                <div class="invisible sm:visible">
-                    <i class="fa fa-building"></i> Orange
-                    <i class="fa fa-location-dot"></i> Orléans
-                    <i class="fa fa-clock"></i> 3 mois
-                </div>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1"
-                    onclick="star(1)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
-                <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
-            </div>
-            <div class="flex items-stretch self-center">
-                <i class="fa fa-heart m-8"></i>
-                <!---text-red-500-->
-            </div>
+    {/foreach}  
+        
         </div>
         </div>
+        
     
 
     </div>
+    {/if}
 </div>
+{include file="footer.tpl"}
 </body>
 </html>

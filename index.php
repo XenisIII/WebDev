@@ -17,7 +17,7 @@ if (file_exists($controllerFile)) {
     // Appel de l'action
     if (method_exists($controller, $trueActionName)) {
         $controller->$trueActionName();
-    } else {
+    } else {    
         // Gestion de l'erreur
         $controller->Error();
     }}
