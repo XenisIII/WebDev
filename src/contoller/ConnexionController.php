@@ -12,6 +12,11 @@ class ConnexionController{
         $this->model= new ModeleConnexion();
     }
 
+    public function logout(){
+        session_destroy();
+        header("Location: /../");
+    }
+
     public function index(){
         if (isset($_POST["login"]) && isset($_POST["password"])){
             $login=$_POST["login"];
