@@ -18,7 +18,7 @@
                 class="flex justify-between items-center bg-[#fafafa] divide-x divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
 
                 <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 cursor-pointer">
-                    <a href="/../index.php/rechercheEtudiant/index">
+                    <a href="/../index.php/rechercheEtudiant/index?search=">
                         <p class="text-center ">Gestion Étudiant</p>
 
 

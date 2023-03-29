@@ -128,7 +128,7 @@
                     class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf] mt-6 rounded-md">
                     <ul class="list-disc ">
                         {foreach $etudiant as $row}
-                            <a href="/../index.php/profile/of?id={$row->id_utilisateur}"><li class="flex justify-between px-3 mb-3">
+                            <a href="/../index.php/profil/of?user_id={$row->id_utilisateur}"><li class="flex justify-between px-3 mb-3">
                                 {$row->prenom_utilisateur}
                                 {$row->nom_utilisateur}
                                 <div class="px-5">

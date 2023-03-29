@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-28 17:00:46
+/* Smarty version 4.3.0, created on 2023-03-29 09:45:53
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6423011eed9469_84729265',
+  'unifunc' => 'content_6423ecb18c7b76_51458969',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc0bc424aab43d262177271f840fcd52f14e6274' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\navbar.tpl',
-      1 => 1680015453,
+      1 => 1680075937,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6423011eed9469_84729265 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6423ecb18c7b76_51458969 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="bg-[#f5f5f5]">
     <div class="min-h-full">
@@ -78,11 +78,9 @@ function content_6423011eed9469_84729265 (Smarty_Internal_Template $_smarty_tpl)
                             class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                            <a href="/../index.php/profil" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                 tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
-                                tabindex="-1" id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                            <a href="/../index.php/connexion/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                 tabindex="-1" id="user-menu-item-2">Sign out</a>
                         </div>
                     </div>
@@ -106,7 +104,7 @@ function content_6423011eed9469_84729265 (Smarty_Internal_Template $_smarty_tpl)
                         class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
                 <a href="/../index.php/rechercheStage/index"><i onclick="bgChange(3)"
                         class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/../rechercheEntreprise/index"><i onclick="bgChange(4)"
+                <a href="/../index.php/rechercheEntreprise/index"><i onclick="bgChange(4)"
                         class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
             </div>
         </div>
@@ -120,7 +118,7 @@ function content_6423011eed9469_84729265 (Smarty_Internal_Template $_smarty_tpl)
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                     id="mobile-menu-item">Offre</a>
 
-                <a href="#"
+                <a href="/index.php/rechercheENtreprise/index"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                     id="mobile-menu-item">Projects</a>
             </div>

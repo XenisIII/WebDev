@@ -115,7 +115,6 @@ class EtudiantModele{
             ;";
         return $this->db->executeAll($statement,array(":filtre"=>$filtre, ":sess"=>$_SESSION['user_id']));
     }
-}
     public function countAllOfferById($id){
         $statement="SELECT * FROM (Select id_eleve from Postule where id_statut<5)a natural join Eleve where id_eleve=$id;";
         return count($this->db->Query($statement));
