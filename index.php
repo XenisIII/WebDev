@@ -9,6 +9,19 @@ $trueActionName=$actionName[0];
 session_start();
 // Chargement du contrôleur
 $controllerFile = __DIR__ . '/src/contoller/' . $controllerName . '.php';
+if(isset($_SESSION['user_id']) && isset($_SESSION['user_type']) && $_SERVER['REQUEST_URI'] == "/"){
+    switch ($_SESSION['user_type']){
+        case "Eleve":
+            header("Location: /index.php/accueilEtudiant");
+            break;
+        case "Tuteur":
+            header("Location: /index.php/accueilTuteur");
+            break;
+        case "Admin":
+            header("Location: /index.php/accueilAdmin");
+            break;
+    }
+}
 if(isset($_SESSION['user_type'])){
 if (file_exists($controllerFile)) {
     require_once $controllerFile;

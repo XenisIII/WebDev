@@ -37,7 +37,7 @@
             </div>
             <div
                 class="rounded-b-md h-1/2 sm:h-1/2 md:h-1/2 lg:h-[45] bg-[#fafafa] flex flex-col justify-center text-center content-center">
-                <p>Parcourir les offres</p>
+                <a href="/../index.php/rechercheStage"><p>Parcourir les offres</p></a>
             </div>
         </div>
         <div class="rounded-md w-[90%] sm:w-[30%] h-[8rem]  bg-gray-300 mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] flex ">
