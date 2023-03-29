@@ -12,6 +12,7 @@ class RechercheEtudiantController{
     public function index(){
         $id_tuteur=$_SESSION['user_id'];
         $student = new EtudiantModele;
+        print_r($id_tuteur);
         $tuteur = new TuteurModele;
         if(isset($_GET['search'])){
             $AllStudent=$student->getAllStudentlike($id_tuteur,$_GET["search"]);
@@ -22,7 +23,7 @@ class RechercheEtudiantController{
         if (isset($_POST["search"])){
             $this->smarty->assign("etudiant",$student->getAllByIdTuteur());
             $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
-            
+
         }
         else if(isset($_GET['statement'])){
             $requete = $_GET['statement'];
@@ -34,11 +35,10 @@ class RechercheEtudiantController{
             $this->smarty->assign("etudiant",$student->getAllByIdTuteurByFiltre($_GET["statement"]));
             $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());   
          }
-         else{
+         else{*/
 
-        $this->smarty->assign("etudiant",$student->getAllByIdTuteur());
-        */
-    $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
+        $this->smarty->assign("etudiant",$AllStudent);
+        $this->smarty->assign("promo",$tuteur->getAllClasseByTuteur());
          
 
         $this->smarty->assign("DocumentTitle","RechercheEtudiant");
