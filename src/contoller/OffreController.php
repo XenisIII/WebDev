@@ -19,6 +19,7 @@
         }
         public function index(){
             $isStudent=$this->user->IsStudent($_SESSION['user_id']);
+            $this->smarty->assign("last",$_SERVER['HTTP_REFERER']);
             $this->smarty->assign('isStudent',$isStudent);
             $this->smarty->assign('id',$this->id);
             $this->smarty->assign("DocumentTitle",$this->offre->getAllById($this->id)->nom_offre);

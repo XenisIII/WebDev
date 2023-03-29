@@ -18,10 +18,9 @@
                     <p>Candidatures</p>
                 </div>
                 <div
-                    class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center">
-                    <select id="statut" class="rounded-full bg-white text-center mx-2 us" onchange="staut(this.id)">
-                        <option class="bg-white" value="Recherche">Recherche</option>
-                        <option class="bg-white" value="En attente">En attente</option>
+                    class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center hidden">
+                    <select id="statut-0" class="rounded-full bg-red-400 text-center mx-2 us" onchange="staut(this.id)">
+                        <option class="bg-white" value="En Recherche">En Recherche</option>
                         <option class="bg-white" value="Validé">Validé</option>
                     </select>
                 </div>
@@ -50,12 +49,12 @@
             <div class="rounded-r-md w-1/2 lg:pr-4 md:pr-2 pr-0 pt-2 max-[270px]:w-[60%] max-[270px]:pl-1 ">
                 <p class="lg:text-[15px] md:text-[12px] sm:text-[11px] text-[14px]">Vous avez postulé à</p>
                 <p class="lg:text-[14px] md:text-[11px] sm:text-[10px] text-[13px] pl-3"><strong
-                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">120</strong> offres</p>
+                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">{$NbOffre}</strong> offres</p>
                 <p class="lg:text-[15px] md:text-[12px] sm:text-[11px] text-[14px]">Vous avez</p>
                 <p class="lg:text-[14px] md:text-[11px] sm:text-[10px] text-[13px] pl-3"><strong
-                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">30</strong> en attente</p>
+                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">{$NbWaiting}</strong> en attente</p>
                 <p class="lg:text-[14px] md:text-[11px] sm:text-[10px] text-[13px] pl-3"><strong
-                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">90</strong> refus</p>
+                        class="lg:text-[15px] md:text-[14px] sm:text-[12px] text-[14px]">{$NbRefused}</strong> refus</p>
             </div>
         </div>
     </div>
@@ -68,7 +67,7 @@
     <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
         <ul class="list-disc ">
         {foreach $DerniereOffre as $data}
-        <li class="flex justify-between px-3 mb-3">{$data->nom_offre} <div class="px-5">{$data->competence}</div></li> <!-- dollar est une variable/  nom_offre =attribut attribut lié a l'objet
+        <a href="/../index.php/offre/index?id={$data->id_offre}" class="block odd:bg-gray-100 py-2 px-2"><li class="flex justify-between ">{$data->nom_offre} <div class="px-5">{$data->nom_entreprise}</div></li></a> <!-- dollar est une variable/  nom_offre =attribut attribut lié a l'objet
          -->
         {/foreach}
         </ul>
@@ -80,18 +79,16 @@
             </div>
             <div class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf]">
                 <ul class="list-disc ">
-                    <li class="flex justify-between items-center px-3">Élève 1 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 2 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 3 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 4 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 5 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 6 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 7 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 8 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 9 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 10 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 11 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
-                    <li class="flex justify-between items-center px-3">Élève 12 <div class="rounded-full bg-red-200 px-5 my-1"> En recherche</div></li>
+                {foreach $AllOffer as $Offer}
+                    <li class="flex justify-between items-center px-3 border">{$Offer->nom_offre}<div class="rounded-full  px-5 my-1"> <div
+                    class="rounded-br-md border-gray-300 w-full bg-[#fafafa] flex flex-col justify-center text-center content-center">
+                    <select id="statut-{$Offer->id_offre}" class="rounded-full bg-orange-400 text-center w-full " onchange="staut(this.id)">
+                        <option class="bg-white" value="En attente">En attente</option>
+                        <option class="bg-white" value="Refusé">Refusé</option>
+                        <option class="bg-white" value="Validé">Validé</option>
+                    </select>
+                </div> </div></li>
+                {/foreach}    
                     </ul>
             </div>
         </div>
@@ -100,6 +97,7 @@
     <!-----------------------------------------------graphe----------------------------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <!---------------------------------------------------------------------------------------------->
+    {include file="footer.tpl"}
 </body>
 
 </html>
@@ -114,11 +112,12 @@
             datasets: [
                 {
                     label: "Population en M ",
-                    data: [90, 30],
+                    data: [{$NbRefused}, {$NbWaiting},{$NbOffre}-{$NbRefused}-{$NbWaiting}],
                     // backgroundColor: "blue",
                     backgroundColor: [
                         "red",
                         "orange",
+                        "green"
                     ],
                     hoverBorderWidth: 3,
                 },
@@ -143,28 +142,42 @@
     function staut(id) {
         var stat = document.getElementById(id);
         var bg = document.getElementById('statut');
+        var id_offre=id.substring(7);
+        console.log(id_offre);
         switch (stat.value) {
-            case 'Recherche':
+            case 'Refusé':
                 if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
-                    stat.classList.remove("bg-orange-400")
-                    stat.classList.remove("bg-green-400")
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-green-400");
                 }
-                stat.classList.add("bg-red-400")
+                stat.classList.add("bg-red-400");
+                var id_statut=4;
                 break;
             case 'En attente':
                 if (stat.classList.contains("bg-red-400") || stat.classList.contains("bg-green-400")) {
-                    stat.classList.remove("bg-red-400")
-                    stat.classList.remove("bg-green-400")
+                    stat.classList.remove("bg-red-400");
+                    stat.classList.remove("bg-green-400");
                 }
-                stat.classList.add("bg-orange-400")
+                stat.classList.add("bg-orange-400");
+                var id_statut=1;
+                break;
+            case 'En Recherche':
+            if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-green-400");
+                }
+                stat.classList.add("bg-red-400");
+                var id_statut=3;
                 break;
             case 'Validé':
                 if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-red-400")) {
-                    stat.classList.remove("bg-orange-400")
-                    stat.classList.remove("bg-red-400")
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-red-400");
                 }
-                stat.classList.add("bg-green-400")
+                stat.classList.add("bg-green-400");
+                var id_statut=2;
                 break;
         }
+        window.location.href="/../index.php/AccueilEtudiant/changeStatut?id_offre="+id_offre+"&id_statut="+id_statut;
     }; 
 </script>

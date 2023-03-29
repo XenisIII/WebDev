@@ -66,8 +66,8 @@ class EtudiantModele{
             ;";
         return $this->db->executeAll($statement,array(":sess"=>$_SESSION['user_id']));
     }
-    public function ChangeStatut($id_offre,$id_user,$id_statue){
-        $statement="INSERT INTO Postule(id_offre,id_eleve,id_statut) VALUES($id_offre,$id_user,$id_statue)";
+    public function ChangeStatut($id_offre,$id_user,$id_statut){
+        $statement="INSERT INTO Postule(id_offre,id_eleve,id_statut) VALUES($id_offre,$id_user,$id_statut)";
         $this->db->Query($statement);
     }
     public function getFavById($id_user){
@@ -81,6 +81,18 @@ class EtudiantModele{
     public function getIdEleveByID($id_user){
         $statement="SELECT id_eleve from Eleve where id_utilisateur=$id_user";
         return $this->db->Query($statement)[0]->id_eleve;
+    }
+    public function countAllOfferById($id){
+        $statement="SELECT * FROM (Select id_eleve from Postule where id_statut<5)a natural join Eleve where id_eleve=$id;";
+        return count($this->db->Query($statement));
+    }
+    public function countRefusedOfferById($id){
+        $statement="SELECT * FROM (Select id_eleve from Postule where id_statut=4)a natural join Eleve where id_eleve=$id;";
+        return count($this->db->Query($statement));
+    }
+    public function countWaitingOfferById($id){
+        $statement="SELECT * FROM (Select id_eleve from Postule where id_statut=1)a natural join Eleve where id_eleve=$id;";
+        return count($this->db->Query($statement));
     }
     public function modifyNameById($id,$name){
         $statement="UPDATE Utilisateur SET nom_utilisateur='$name' where id_utilisateur=$id";
@@ -106,5 +118,18 @@ class EtudiantModele{
         $statement="UPDATE Eleve SET id_statut='' where id_utilisateur=$id";
         $this->db->Query($statement);
     }
-}
+    public function isStatued($id_offre,$id_student){
+            $statement="SELECT * from Utilisateur natural join Postule where id_offre=$id_offre and id_eleve=$id_student";
+            if(count($this->db->Query($statement))>=1){
+                return true;
+            }
+            return false;
+        }
+
+    public function UpdateStatut($id_offre,$id_student,$id_statut){
+            $statement="UPDATE Postule SET id_statut=$id_statut where id_eleve=$id_student and id_offre=$id_offre";
+            $this->db->Query($statement);
+        }
+    }
+
 ?>

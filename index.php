@@ -23,6 +23,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['user_type']) && $_SERVER['REQ
     }
 }
 if(isset($_SESSION['user_type'])){
+
 if (file_exists($controllerFile)) {
     require_once $controllerFile;
     $controller = new $controllerName();
