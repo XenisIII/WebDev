@@ -12,7 +12,6 @@ class RechercheEtudiantController{
     public function index(){
         $id_tuteur=$_SESSION['user_id'];
         $student = new EtudiantModele;
-        print_r($id_tuteur);
         $tuteur = new TuteurModele;
         if(isset($_GET['search'])){
             $AllStudent=$student->getAllStudentlike($id_tuteur,$_GET["search"]);
