@@ -95,7 +95,7 @@
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                     id="mobile-menu-item">Offre</a>
 
-                <a href="#"
+                <a href="/index.php/rechercheENtreprise/index"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                     id="mobile-menu-item">Projects</a>
             </div>

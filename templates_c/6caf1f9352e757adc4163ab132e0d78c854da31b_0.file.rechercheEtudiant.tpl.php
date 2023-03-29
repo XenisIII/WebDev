@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-29 09:23:37
+/* Smarty version 4.3.0, created on 2023-03-29 09:50:35
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\rechercheEtudiant.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6423e7798d30a3_39434906',
+  'unifunc' => 'content_6423edcb6072f3_52326603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6caf1f9352e757adc4163ab132e0d78c854da31b' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\rechercheEtudiant.tpl',
-      1 => 1680074515,
+      1 => 1680076233,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6423e7798d30a3_39434906 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6423edcb6072f3_52326603 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -174,7 +174,7 @@ $_smarty_tpl->tpl_vars['row']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->do_else = false;
 ?>
-                            <a href="/../index.php/profile/of?id=<?php echo $_smarty_tpl->tpl_vars['row']->value->id_utilisateur;?>
+                            <a href="/../index.php/profil/of?user_id=<?php echo $_smarty_tpl->tpl_vars['row']->value->id_utilisateur;?>
 "><li class="flex justify-between px-3 mb-3">
                                 <?php echo $_smarty_tpl->tpl_vars['row']->value->prenom_utilisateur;?>
 
