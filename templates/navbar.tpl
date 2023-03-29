@@ -59,7 +59,7 @@
                                 tabindex="-1" id="user-menu-item-0">Your Profile</a>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                 tabindex="-1" id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                            <a href="/../index.php/connexion/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                 tabindex="-1" id="user-menu-item-2">Sign out</a>
                         </div>
                     </div>
@@ -77,16 +77,15 @@
         <div class="hidden float-left md:block top-0 left-0 h-screen w-12 bg-gray-300 text-black flex justify-center">
             <!-- Contenu de la side left bar -->
             <div class="my-4 mt-0 ml-0 w-auto">
-                <a href="/index.php/accueil"><i onclick="bgChange(1)"
+                <a href="/../index.php/accueil"><i onclick="bgChange(1)"
                         class="fas fa-tachometer-alt text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/profil/index"><i onclick="bgChange(2)"
+                <a href="/../index.php/profil/index"><i onclick="bgChange(2)"
                         class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/index.php/rechercheStage/index"><i onclick="bgChange(3)"
+                <a href="/../index.php/rechercheStage/index"><i onclick="bgChange(3)"
                         class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href="/rechercheEntreprise/index"><i onclick="bgChange(4)"
+                <a href="/../index.php/rechercheEntreprise/index"><i onclick="bgChange(4)"
                         class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
             </div>
-
         </div>
         <div class="hidden lg:hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">

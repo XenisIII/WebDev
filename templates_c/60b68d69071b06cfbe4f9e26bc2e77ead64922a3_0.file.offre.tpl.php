@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 23:00:50
+/* Smarty version 4.3.0, created on 2023-03-28 23:10:21
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\offre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641ccc1262a760_50244018',
+  'unifunc' => 'content_642357bdbaadc9_71393455',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60b68d69071b06cfbe4f9e26bc2e77ead64922a3' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\offre.tpl',
-      1 => 1679608845,
+      1 => 1680027818,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_641ccc1262a760_50244018 (Smarty_Internal_Template $_smarty_tpl) {
+function content_642357bdbaadc9_71393455 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5]">
@@ -31,6 +31,14 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </div>
+<?php echo '<script'; ?>
+>
+function oui(){
+    window.location.href='/../index.php/offre/postule?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+'
+}
+<?php echo '</script'; ?>
+>
 <!-- Box globale-->
 <div class="bg-[#f5f5f5] flex justify-center min-[880px]:h-screen h-[100%]">
 <div class="bg-white flex max-[880px]:flex-col max-[880px]:items-center max-[880px]:justify-start rounded-[12px] border border-[#dadada] mt-10 min-[880px]:h-5/6 w-11/12 ">
@@ -39,9 +47,9 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
     <!-- Titre/compétence/durée-->
         <div>
             <!-- Titre -->
-            <div class="mt-3 text-2xl">
+            <div class="mt-3 text-2xl flex items-center">
                 <h3><?php echo $_smarty_tpl->tpl_vars['nomOffre']->value;?>
-</h3>
+</h3><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
             </div>
             <!-- Compétences-->
             <div class="max-[880px]:w-9/12 w-full">
@@ -101,8 +109,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <!-- Bouton-->
         <div class="flex justify-between max-[880px]:hidden h-1/5 items-center">
-            <button class="border border-black w-3/12 h-3/5 rounded">Retour</button>
-            <button class="border border-black w-3/12 h-3/5 rounded">Postuler</button>
+            <button class="border border-black w-3/12 h-3/5 rounded hover:bg-slate-50 " onclick="window.location='<?php echo $_smarty_tpl->tpl_vars['last']->value;?>
+'">Retour</button>
+            <button class="border border-black w-3/12 h-3/5 rounded" onclick="oui()"><a href="mailto:<?php echo $_smarty_tpl->tpl_vars['mailContact']->value;?>
+">Postuler</a></button>
         </div>
     </div>
     <!-- Partie informations-->
@@ -117,8 +127,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </p>
             </div>
         <div class="flex justify-between min-[880px]:hidden h-3/5 items-center min-h-12 mt-3">
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage'">Retour</button>
-            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button>
+            <button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-ful hover:bg-slate-50 " onclick="window.location='/index.php/rechercheStage/index'">Retour</button>
+            <a href=""><button class="border border-black w-3/12 h-3/5 min-w-fit min-h-fit rounded max-[880px]:h-full hover:bg-slate-50">Postuler</button></a>
         </div>
 
     </div>

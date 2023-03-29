@@ -84,7 +84,7 @@
                 <div class="flex flex-row sm:flex-row sm:flex-wrap sm:justify-between                                           
                 w-[90%] sm:w-[95%] h-16 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%] lg:ml-[2%]  ">
                     <!--div contenant les différentes colones-->
-                    <a href="/index.php/offre/index?id={$AllOffer[$nboffre]->id_offre}"><div class="flex flex-col cursor-pointer ">
+                    <a href="/index.php/offre/index?id={$AllOffer[$nboffre]->id_offre}" class="grow"><div class="flex flex-col cursor-pointer ">
                         <!-- Div pour séparer le titre de la location ect-->
                         <div class=''>
                             <!-- Div Pour le titre du stage-->
@@ -93,7 +93,7 @@
                         </div>
                         <div class="invisible sm:visible">
                             <!-- Div pour la location ect qui se cache quand on est sur téléphone-->
-                            <i class="fa fa-building"></i> {$AllOffer[$nboffre]->nom_offre}
+                            <i class="fa fa-building"></i> {$AllOffer[$nboffre]->nom_entreprise}
                             <i class="fa fa-location-dot"></i> {$AllOffer[$nboffre]->localite} 
                             <i class="fa fa-clock"></i> {$AllOffer[$nboffre]->duree_stage} mois 
                         </div>
