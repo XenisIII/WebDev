@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-28 17:09:26
+/* Smarty version 4.3.0, created on 2023-03-29 10:04:43
   from 'C:\Users\daval\Documents\CESI\Projet\WebDev-mvc\templates\accueilEtudiant.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64230326a7d045_33079232',
+  'unifunc' => 'content_6423f11b6352a6_81013747',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fa4824c1282954c9cf662ff2f63a65d66819d984' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\CESI\\Projet\\WebDev-mvc\\templates\\accueilEtudiant.tpl',
-      1 => 1680016165,
+      1 => 1680077078,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_64230326a7d045_33079232 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6423f11b6352a6_81013747 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,10 +46,9 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
                     <p>Candidatures</p>
                 </div>
                 <div
-                    class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center">
-                    <select id="statut" class="rounded-full bg-white text-center mx-2 us" onchange="staut(this.id)">
-                        <option class="bg-white" value="Recherche">Recherche</option>
-                        <option class="bg-white" value="En attente">En attente</option>
+                    class="rounded-br-md border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center hidden">
+                    <select id="statut-0" class="rounded-full bg-red-400 text-center mx-2 us" onchange="staut(this.id)">
+                        <option class="bg-white" value="En Recherche">En Recherche</option>
                         <option class="bg-white" value="Validé">Validé</option>
                     </select>
                 </div>
@@ -65,7 +64,7 @@ $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smar
             </div>
             <div
                 class="rounded-b-md h-1/2 sm:h-1/2 md:h-1/2 lg:h-[45] bg-[#fafafa] flex flex-col justify-center text-center content-center">
-                <p>Parcourir les offres</p>
+                <a href="/../index.php/rechercheStage"><p>Parcourir les offres</p></a>
             </div>
         </div>
         <div class="rounded-md w-[90%] sm:w-[30%] h-[8rem]  bg-gray-300 mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%] flex ">
@@ -128,7 +127,15 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['Offer']->value) 
 $_smarty_tpl->tpl_vars['Offer']->do_else = false;
 ?>
                     <li class="flex justify-between items-center px-3 border"><?php echo $_smarty_tpl->tpl_vars['Offer']->value->nom_offre;?>
-<div class="rounded-full bg-red-200 px-5 my-1"> En Attente</div></li>
+<div class="rounded-full  px-5 my-1"> <div
+                    class="rounded-br-md border-gray-300 w-full bg-[#fafafa] flex flex-col justify-center text-center content-center">
+                    <select id="statut-<?php echo $_smarty_tpl->tpl_vars['Offer']->value->id_offre;?>
+" class="rounded-full bg-orange-400 text-center w-full " onchange="staut(this.id)">
+                        <option class="bg-white" value="En attente">En attente</option>
+                        <option class="bg-white" value="Refusé">Refusé</option>
+                        <option class="bg-white" value="Validé">Validé</option>
+                    </select>
+                </div> </div></li>
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>    
@@ -194,29 +201,43 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     function staut(id) {
         var stat = document.getElementById(id);
         var bg = document.getElementById('statut');
+        var id_offre=id.substring(7);
+        console.log(id_offre);
         switch (stat.value) {
-            case 'Recherche':
+            case 'Refusé':
                 if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
-                    stat.classList.remove("bg-orange-400")
-                    stat.classList.remove("bg-green-400")
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-green-400");
                 }
-                stat.classList.add("bg-red-400")
+                stat.classList.add("bg-red-400");
+                var id_statut=4;
                 break;
             case 'En attente':
                 if (stat.classList.contains("bg-red-400") || stat.classList.contains("bg-green-400")) {
-                    stat.classList.remove("bg-red-400")
-                    stat.classList.remove("bg-green-400")
+                    stat.classList.remove("bg-red-400");
+                    stat.classList.remove("bg-green-400");
                 }
-                stat.classList.add("bg-orange-400")
+                stat.classList.add("bg-orange-400");
+                var id_statut=1;
+                break;
+            case 'En Recherche':
+            if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-green-400");
+                }
+                stat.classList.add("bg-red-400");
+                var id_statut=3;
                 break;
             case 'Validé':
                 if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-red-400")) {
-                    stat.classList.remove("bg-orange-400")
-                    stat.classList.remove("bg-red-400")
+                    stat.classList.remove("bg-orange-400");
+                    stat.classList.remove("bg-red-400");
                 }
-                stat.classList.add("bg-green-400")
+                stat.classList.add("bg-green-400");
+                var id_statut=2;
                 break;
         }
+        window.location.href="/../index.php/AccueilEtudiant/changeStatut?id_offre="+id_offre+"&id_statut="+id_statut;
     }; 
 <?php echo '</script'; ?>
 ><?php }
