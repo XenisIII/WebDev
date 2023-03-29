@@ -86,7 +86,6 @@
                 <a href="/../index.php/rechercheEntreprise/index"><i onclick="bgChange(4)"
                         class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
             </div>
-
         </div>
         <div class="hidden lg:hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">

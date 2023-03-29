@@ -18,11 +18,9 @@ class OffreModele{
     
 
     public function getOffreCompetence(){
-        $statement ="SELECT nom_offre, competence 
-        FROM Offre 
-        NATURAL JOIN Competence_requise 
-        NATURAL JOIN Competence 
-        ORDER BY date_mise_en_ligne ASC 
+        $statement ="SELECT *
+        FROM Offre natural join Entreprise
+        ORDER BY date_mise_en_ligne DESC
         LIMIT 20";
         return $this->db->Query($statement);
     }
@@ -56,6 +54,10 @@ class OffreModele{
     public function DeleteStatut($id_offre,$id_student){
         $statement="DELETE from Postule where id_offre=$id_offre and id_eleve=$id_student";
         $this->db->Query($statement); 
+    }
+    public function getAllOfferByIdStudent($id){
+        $statement="SELECT * from Postule natural join Offre where id_eleve=$id and id_statut=1";
+        return $this->db->Query($statement);
     }
 }
 ?>  

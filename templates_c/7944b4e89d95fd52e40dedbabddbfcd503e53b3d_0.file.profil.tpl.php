@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-27 22:38:00
+/* Smarty version 4.3.0, created on 2023-03-28 23:05:53
   from 'C:\Users\daval\Documents\git\WebDev-mvc\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6421fea8070850_55467621',
+  'unifunc' => 'content_642356b1839781_88360058',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7944b4e89d95fd52e40dedbabddbfcd503e53b3d' => 
     array (
       0 => 'C:\\Users\\daval\\Documents\\git\\WebDev-mvc\\templates\\profil.tpl',
-      1 => 1679949070,
+      1 => 1680027643,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6421fea8070850_55467621 (Smarty_Internal_Template $_smarty_tpl) {
+function content_642356b1839781_88360058 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body class="bg-[#f5f5f5] h-screen">
@@ -46,9 +46,11 @@ function send(id){
    obj_t.style.display='none';
    obj_p.style.display="block";
    document.location.href="/../index.php/profil/send?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
-&"+id+"="+txt;
+&"+id+"="+txt;}
 
-
+   function deletez(id){
+    document.location.href="/../index.php/profil/delete?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+";
 }
 <?php echo '</script'; ?>
 >
@@ -67,19 +69,21 @@ function send(id){
         <p id="p-nom"><?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
 </p>
         <input type="text" id="text-nom" class="hidden border" onfocusout="send('nom');"></input>
-        <?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i><?php }?>
+        <?php if ($_smarty_tpl->tpl_vars['isStudent']->value == 0) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('nom')" ></i><?php }?>
         </div>
         <div class="flex items-center justify-between px-2">
         <p id="p-prenom"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
- </p><?php if (!$_smarty_tpl->tpl_vars['isStudent']->value) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
+ </p><?php if ($_smarty_tpl->tpl_vars['isStudent']->value == 0) {?><i class="fa-solid fa-gear cursor-pointer" id="gear-nom" onclick="modify('prenom')" ></i><?php }?>
             <input type="text" id="text-prenom" class="hidden border" onfocusout="send('prenom');"></input>
         </div>
+        
         <div> 
         <p id="p-mail"><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
 .<?php echo $_smarty_tpl->tpl_vars['nom']->value;?>
 @viacesi.fr</p>
         </div>
         </div>
+        <?php if ($_smarty_tpl->tpl_vars['isTuteur']->value == 1) {?>
         <div>
         Promo : <?php echo $_smarty_tpl->tpl_vars['promo']->value;?>
 
@@ -88,14 +92,16 @@ function send(id){
         Centre : <?php echo $_smarty_tpl->tpl_vars['centre']->value;?>
 
         </div>
+        
         <!-- CV -->
         <div class="mr-3">
             <h3>CV:</h3>
         </div>
-        <div class="px-5 <?php if ($_smarty_tpl->tpl_vars['isStudent']->value) {?>hidden<?php }?>">
-        <i class="fa-solid fa-trash-can" onclick="delete(<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
+        <div class="px-5 cursor-pointer <?php if ($_smarty_tpl->tpl_vars['isStudent']->value == 1) {?>hidden<?php }?>">
+        <i class="fa-solid fa-trash-can" onclick="deletez(<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
 )"></i>
     </div>    
+<?php }?>
     </div>
     <!-- wishList-->
     <?php if ($_smarty_tpl->tpl_vars['isStudent']->value) {?>
@@ -154,16 +160,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php }?>
 </div>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-echo '<script'; ?>
->
-
-function delete(id){
-    document.location.href="/../index.php/profil/delete?id=<?php echo $_smarty_tpl->tpl_vars['id_profil']->value;?>
-";
-}
-<?php echo '</script'; ?>
->
-
+?>
 </body>
 </html><?php }
 }
