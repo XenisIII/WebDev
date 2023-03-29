@@ -16,7 +16,6 @@ class ConnexionController{
         session_destroy();
         header("Location: /../");
     }
-
     public function index(){
         if (isset($_POST["login"]) && isset($_POST["password"])){
             $login=$_POST["login"];

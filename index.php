@@ -7,6 +7,8 @@ $actionName = !empty($parts[3]) ? $parts[3] : 'index';
 $actionName=explode('?',$actionName);
 $trueActionName=$actionName[0];
 session_start();
+
+
 // Chargement du contrôleur
 $controllerFile = __DIR__ . '/src/contoller/' . $controllerName . '.php';
 if(isset($_SESSION['user_id']) && isset($_SESSION['user_type']) && $_SERVER['REQUEST_URI'] == "/"){

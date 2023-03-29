@@ -1,10 +1,39 @@
-{include file="head.tpl"}
+<?php
+/* Smarty version 4.3.0, created on 2023-03-28 22:29:10
+  from 'C:\Users\Léo\Documents\A2\Bloc4_Web\Project\web_dev\WebDev-mvc\templates\rechercheEtudiant.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.0',
+  'unifunc' => 'content_64234e16250960_06372637',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '727520142ddcb95560d84b4e32002342d1db0766' => 
+    array (
+      0 => 'C:\\Users\\Léo\\Documents\\A2\\Bloc4_Web\\Project\\web_dev\\WebDev-mvc\\templates\\rechercheEtudiant.tpl',
+      1 => 1680035346,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_64234e16250960_06372637 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <body>
     <div>
-        {include file="navbar.tpl"}
+        <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </div>
-    <script>
+    <?php echo '<script'; ?>
+>
     let tab_filtre = [];
     let statement = "";
     function list_checkbox(valeur){
@@ -30,7 +59,8 @@
         document.location.href="/../index.php/rechercheEtudiant/index?statement="+statement;
     }
 
-    </script>
+    <?php echo '</script'; ?>
+>
 
     <div class="md:hidden flex justify-center mt-4">
         <button onclick="mobileFastSearch()" type="button"
@@ -58,12 +88,23 @@
                     </p>
                 </div>
                 <ul class="hidden" id="liste_promoM">
-                    {foreach $promo as $row}
-                        <li><input type="checkbox" value="e.id_classe = '{$row->id_classe}'" name="{$row->promotion}m" onclick="list_checkbox('e.id_classe = {$row->id_classe}')"
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['promo']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
+                        <li><input type="checkbox" value="e.id_classe = '<?php echo $_smarty_tpl->tpl_vars['row']->value->id_classe;?>
+'" name="<?php echo $_smarty_tpl->tpl_vars['row']->value->promotion;?>
+m" onclick="list_checkbox('e.id_classe = <?php echo $_smarty_tpl->tpl_vars['row']->value->id_classe;?>
+')"
                                 onclick="filtre(test)"></a>
-                            {$row->promotion}
+                            <?php echo $_smarty_tpl->tpl_vars['row']->value->promotion;?>
+
                             </input></li>
-                    {/foreach}
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </ul>
             </div>
         </div>
@@ -100,13 +141,11 @@
         </div>-->
     </div>
     </div>
+    <form method="POST" action="/../index.php/rechercheEtudiant/index">
         <div class="flex justify-center mt-6">
 
             <div class="flex flex-col max-[768px]:w-3/4 min-[768px]:w-3/5">
 
-    <div class="flex justify-center mt-6">
-        <div class="flex flex-col max-[768px]:w-3/4 min-[768px]:w-3/5">
-            <form  method="get">
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div class="relative">
@@ -117,7 +156,7 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
-                    <input type="search" id="default-search"  name="search"
+                    <input type="search" id="default-search"
                         class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Recherche ton avenir...">
                     <button type="submit"
@@ -127,15 +166,25 @@
                 <div
                     class="overflow-y-scroll bg-white min-[880px]:max-h-[100%] h-80 border border-[#dfdfdf] mt-6 rounded-md">
                     <ul class="list-disc ">
-                        {foreach $etudiant as $row}
-                            <a href="/../index.php/profile/of?id={$row->id_utilisateur}"><li class="flex justify-between px-3 mb-3">
-                                {$row->prenom_utilisateur}
-                                {$row->nom_utilisateur}
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['etudiant']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
+                            <li class="flex justify-between px-3 mb-3">
+                                <?php echo $_smarty_tpl->tpl_vars['row']->value->prenom_utilisateur;?>
+
+                                <?php echo $_smarty_tpl->tpl_vars['row']->value->nom_utilisateur;?>
+
                                 <div class="px-5">
-                                    {$row->statut}
+                                    <?php echo $_smarty_tpl->tpl_vars['row']->value->statut;?>
+
                                 </div>
-                            </li></a>
-                        {/foreach}
+                            </li>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </ul>
                 </div>
             </div>
@@ -154,11 +203,22 @@
                             </p>
                         </div>
                         <ul class="hidden" id="liste_promo">
-                            {foreach $promo as $row}
-                                <li><input type="checkbox" value="e.id_classe = '{$row->id_classe}'" name="{$row->promotion}" onclick="list_checkbox('e.id_classe = {$row->id_classe}')">
-                                    {$row->promotion}
+                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['promo']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
+                                <li><input type="checkbox" value="e.id_classe = '<?php echo $_smarty_tpl->tpl_vars['row']->value->id_classe;?>
+'" name="<?php echo $_smarty_tpl->tpl_vars['row']->value->promotion;?>
+" onclick="list_checkbox('e.id_classe = <?php echo $_smarty_tpl->tpl_vars['row']->value->id_classe;?>
+')">
+                                    <?php echo $_smarty_tpl->tpl_vars['row']->value->promotion;?>
+
                                     </input></li>
-                            {/foreach}
+                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                         </ul>
                     </div>
@@ -201,6 +261,11 @@
             </div>
 
         </div>
-    <script src="/../script/rechercheEtudiant.js"></script>
-    <div>{include file="footer.tpl"}</div>
-</body>
+    </form>
+    <?php echo '<script'; ?>
+ src="/../script/rechercheEtudiant.js"><?php echo '</script'; ?>
+>
+    <div><?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?></div>
+</body><?php }
+}
