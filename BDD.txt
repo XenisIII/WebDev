@@ -1,0 +1,256 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: Entreprise
+#------------------------------------------------------------
+
+CREATE TABLE Entreprise(
+        id_entreprise        Int  Auto_increment  NOT NULL ,
+        nom_entreprise       Varchar (50) NOT NULL ,
+        secteur_activite     Varchar (50) NOT NULL ,
+        nb_ancien_stagiaire  Int NOT NULL ,
+        evaluation_stagiaire Int NOT ,
+        confiance_pilote     Int NOT NULL
+	,CONSTRAINT Entreprise_PK PRIMARY KEY (id_entreprise)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Utilisateur
+#------------------------------------------------------------
+
+CREATE TABLE Utilisateur(
+        id_utilisateur     Int  Auto_increment  NOT NULL ,
+        nom_utilisateur    Varchar (50) NOT NULL ,
+        prenom_utilisateur Varchar (50) NOT NULL ,
+        login              Varchar (50) NOT NULL ,
+        mdp                Varchar (50) NOT NULL
+	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Tuteur
+#------------------------------------------------------------
+
+CREATE TABLE Tuteur(
+        id_tuteur      Int  Auto_increment  NOT NULL ,
+        id_utilisateur Int NOT NULL
+	,CONSTRAINT Tuteur_PK PRIMARY KEY (id_tuteur)
+
+	,CONSTRAINT Tuteur_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Tuteur_Utilisateur_AK UNIQUE (id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Admin
+#------------------------------------------------------------
+
+CREATE TABLE Admin(
+        id_admin       Int  Auto_increment  NOT NULL ,
+        id_utilisateur Int NOT NULL
+	,CONSTRAINT Admin_PK PRIMARY KEY (id_admin)
+
+	,CONSTRAINT Admin_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Admin_Utilisateur_AK UNIQUE (id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Localite
+#------------------------------------------------------------
+
+CREATE TABLE Localite(
+        id_localite Int  Auto_increment  NOT NULL ,
+        localite    Varchar (50) NOT NULL ,
+        cp          Int NOT NULL
+	,CONSTRAINT Localite_PK PRIMARY KEY (id_localite)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Offre
+#------------------------------------------------------------
+
+CREATE TABLE Offre(
+        id_offre           Int  Auto_increment  NOT NULL ,
+        nom_offre          Varchar (50) NOT NULL ,
+        competence_requise Varchar (50) NOT NULL ,
+        duree_stage        Int NOT NULL ,
+        remuneration       Float NOT NULL ,
+        date_mise_en_ligne Date NOT NULL ,
+        nb_place           Int NOT NULL ,
+	date_debut_stage   DATE NOT NULL,
+	informations	   Varchar (15000) NOT NULL,
+        id_entreprise      Int NOT NULL ,
+        id_localite        Int NOT NULL
+	,CONSTRAINT Offre_PK PRIMARY KEY (id_offre)
+
+	,CONSTRAINT Offre_Entreprise_FK FOREIGN KEY (id_entreprise) REFERENCES Entreprise(id_entreprise)
+	,CONSTRAINT Offre_Localite0_FK FOREIGN KEY (id_localite) REFERENCES Localite(id_localite)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Centre
+#------------------------------------------------------------
+
+CREATE TABLE Centre(
+        id_centre Int  Auto_increment  NOT NULL ,
+        centre    Varchar (50) NOT NULL
+	,CONSTRAINT Centre_PK PRIMARY KEY (id_centre)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Classe
+#------------------------------------------------------------
+
+CREATE TABLE Classe(
+        id_classe Int  Auto_increment  NOT NULL ,
+        promotion Varchar (50) NOT NULL ,
+        id_centre Int NOT NULL
+	,CONSTRAINT Classe_PK PRIMARY KEY (id_classe)
+
+	,CONSTRAINT Classe_Centre_FK FOREIGN KEY (id_centre) REFERENCES Centre(id_centre)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Eleve
+#------------------------------------------------------------
+
+CREATE TABLE Eleve(
+        id_eleve       Int  Auto_increment  NOT NULL ,
+        CV             Varchar (50) NOT NULL ,
+        id_classe      Int NOT NULL ,
+        id_utilisateur Int NOT NULL
+	,CONSTRAINT Eleve_PK PRIMARY KEY (id_eleve)
+
+	,CONSTRAINT Eleve_Classe_FK FOREIGN KEY (id_classe) REFERENCES Classe(id_classe)
+	,CONSTRAINT Eleve_Utilisateur0_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Eleve_Utilisateur_AK UNIQUE (id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Statut
+#------------------------------------------------------------
+
+CREATE TABLE Statut(
+        id_statut Int  Auto_increment  NOT NULL ,
+        statut    Varchar (50) NOT NULL
+	,CONSTRAINT Statut_PK PRIMARY KEY (id_statut)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Competence
+#------------------------------------------------------------
+
+CREATE TABLE Competence(
+        id_competence Int  Auto_increment  NOT NULL ,
+        competence    Varchar (50) NOT NULL
+	,CONSTRAINT Competence_PK PRIMARY KEY (id_competence)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Contact
+#------------------------------------------------------------
+
+CREATE TABLE Contact(
+        id_contact    Int  Auto_increment  NOT NULL ,
+        nom           Varchar (50) NOT NULL ,
+        prenom        Varchar (50) NOT NULL ,
+        mail          Varchar (50) NOT NULL ,
+        tel           Int NOT NULL ,
+        id_entreprise Int
+	,CONSTRAINT Contact_PK PRIMARY KEY (id_contact)
+
+	,CONSTRAINT Contact_Entreprise_FK FOREIGN KEY (id_entreprise) REFERENCES Entreprise(id_entreprise)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: Pilote
+#------------------------------------------------------------
+
+CREATE TABLE Pilote(
+        id_tuteur Int NOT NULL ,
+        id_classe Int NOT NULL
+	,CONSTRAINT Pilote_PK PRIMARY KEY (id_tuteur,id_classe)
+
+	,CONSTRAINT Pilote_Tuteur_FK FOREIGN KEY (id_tuteur) REFERENCES Tuteur(id_tuteur)
+	,CONSTRAINT Pilote_Classe0_FK FOREIGN KEY (id_classe) REFERENCES Classe(id_classe)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: lieu_entreprise
+#------------------------------------------------------------
+
+CREATE TABLE lieu_entreprise(
+        id_entreprise Int NOT NULL ,
+        id_localite Int NOT NULL
+	,CONSTRAINT lieu_entreprise_PK PRIMARY KEY (id_entreprise,id_localite)
+
+	,CONSTRAINT lieu_entreprise_entreprise_FK FOREIGN KEY (id_entreprise) REFERENCES Entreprise(id_entreprise)
+	,CONSTRAINT lieu_entreprise_localite_FK FOREIGN KEY (id_localite) REFERENCES Localite(id_localite)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: _Propose
+#------------------------------------------------------------
+
+CREATE TABLE _Propose(
+        id_contact Int NOT NULL ,
+        id_offre Int NOT NULL
+	,CONSTRAINT _Propose_PK PRIMARY KEY (id_contact,id_offre)
+
+	,CONSTRAINT _Propose_contact_FK FOREIGN KEY (id_contact) REFERENCES Contact(id_contact)
+	,CONSTRAINT _Propose_offre_FK FOREIGN KEY (id_offre) REFERENCES Offre(id_offre)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: Postule
+#------------------------------------------------------------
+
+CREATE TABLE Postule(
+        id_offre Int NOT NULL ,
+        id_eleve Int NOT NULL ,
+	id_statut Int NOT NULL
+	,CONSTRAINT Postule_PK PRIMARY KEY (id_offre,id_eleve,id_statut)
+
+	,CONSTRAINT Postule_offre_FK FOREIGN KEY (id_offre) REFERENCES Offre(id_offre)
+	,CONSTRAINT Postule_eleve_FK FOREIGN KEY (id_eleve) REFERENCES Eleve(id_eleve)
+	,CONSTRAINT Postule_statut_FK FOREIGN KEY (id_statut) REFERENCES Statut(id_statut)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: Competence_Temp
+#------------------------------------------------------------
+
+CREATE TABLE Competence_Temp(
+        id_eleve Int NOT NULL ,
+        id_competence Int NOT NULL 
+	,CONSTRAINT Competence_Temp_PK PRIMARY KEY (id_eleve,id_competence)
+
+	,CONSTRAINT Competence_Temp_eleve_FK FOREIGN KEY (id_eleve) REFERENCES Eleve(id_eleve)
+	,CONSTRAINT Competence_Temp_competence_FK FOREIGN KEY (id_competence) REFERENCES Competence(id_competence)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: Competence_requise
+#------------------------------------------------------------
+
+CREATE TABLE Competence_requise(
+        id_competence Int NOT NULL ,
+        id_offre Int NOT NULL
+	,CONSTRAINT Competence_requise_PK PRIMARY KEY (id_competence,id_offre)
+
+	,CONSTRAINT Competence_requise_competence_FK FOREIGN KEY (id_competence) REFERENCES Competence(id_competence)
+	,CONSTRAINT Competence_requise_offre_FK FOREIGN KEY (id_offre) REFERENCES Offre(id_offre)
+)ENGINE=InnoDB;
