@@ -5,7 +5,7 @@
     private $db_host;
     private $pdo;
 
-    public function __construct($db_name="BDD_Projet",$db_user ='Erwan',$db_pass='rootroot',$db_host='dominancea2.ddns.net'){
+    public function __construct($db_name="Your_Database_Name",$db_user ='Your_User',$db_pass='Your_Password',$db_host='Your_ip'){
         $this->db_dsn=$db_name;
         $this->db_user=$db_user;
         $this->db_pass =$db_pass;
